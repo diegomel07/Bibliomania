@@ -1,6 +1,7 @@
+res://Characters/alice.tscn
+res://Characters/alice.gd
 res://Characters/Samurai.tscn
 res://Levels/base.tscn
-res://Characters/alice.tscn
 res://Characters/snake.tscn
 res://Characters/snake02.tscn
 res://Objects/Door.tscn

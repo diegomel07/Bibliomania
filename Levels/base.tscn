@@ -133,7 +133,7 @@ position = Vector2(159, 23)
 position = Vector2(77, 145)
 
 [node name="Alice" parent="." instance=ExtResource("2_jtcvw")]
-position = Vector2(121, 90)
+position = Vector2(154, 97)
 
 [node name="Camera2D" type="Camera2D" parent="Alice"]
 zoom = Vector2(1.4, 1.4)

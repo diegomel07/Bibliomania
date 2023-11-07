@@ -1,5 +1,6 @@
-Timer
 Sprite2D
+AnimationTree
+Timer
 CollisionShape2D
 CollisionPolygon2D
 StaticBody2D
@@ -7,6 +8,5 @@ Camera2D
 TileMap
 Node2D
 AnimationPlayer
-AnimationTree
 CharacterBody2D
 AnimatedSprite2D
