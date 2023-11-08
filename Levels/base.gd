@@ -1,11 +1,6 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
@@ -14,3 +9,11 @@ func _process(delta):
 		
 	elif $Alice.position.y > 400 or $Alice.position.y < -400:
 		$Alice.position.y *= -1
+
+
+func _on_inventory_closed():
+	get_tree().paused = false
+
+
+func _on_inventory_opened():
+	get_tree().paused = true

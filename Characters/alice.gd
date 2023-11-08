@@ -5,6 +5,8 @@ var speed:int = 80
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
 
+@export var inventory: Inventory
+
 var past_direction: Vector2 = Vector2.ZERO
 
 func _process(_delta):
@@ -88,4 +90,10 @@ func mouse_rotation(current_animation: String) -> void:
 			if mouse_position.x < 0:
 				sprite.flip_h = true
 				ap.play_backwards("run")
-			
+		
+
+
+
+func _on_area_2d_area_entered(area):
+	if area.has_method("collect"):
+		area.collect()

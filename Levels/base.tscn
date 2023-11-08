@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ylid3q5usvcc"]
+[gd_scene load_steps=16 format=3 uid="uid://ylid3q5usvcc"]
 
 [ext_resource type="Texture2D" uid="uid://lyg5q5eonfwi" path="res://Graphics/Tiles/Base/base_tileset.png" id="1_e5byf"]
 [ext_resource type="Script" path="res://Levels/base.gd" id="1_yp154"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://brgy3jj0ltf1v" path="res://Characters/snake02.tscn" id="4_fmv4c"]
 [ext_resource type="PackedScene" uid="uid://c7v2hbfbx14cy" path="res://Objects/door02.tscn" id="5_ocljt"]
 [ext_resource type="PackedScene" uid="uid://bm4n6y8pyvc6j" path="res://Characters/snake.tscn" id="6_7fhrx"]
+[ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="8_c1cpp"]
+[ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="8_pddqf"]
+[ext_resource type="PackedScene" uid="uid://xrhi4ix1qfs6" path="res://Collectables/gem.tscn" id="10_jr153"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2fbw"]
 texture = ExtResource("1_e5byf")
@@ -55,8 +58,13 @@ texture = ExtResource("1_e5byf")
 1:10/0 = 0
 1:12/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_p66el"]
+resource_name = "Collectables"
+scenes/1/scene = ExtResource("10_jr153")
+
 [sub_resource type="TileSet" id="TileSet_luykn"]
 sources/0 = SubResource("TileSetAtlasSource_o2fbw")
+sources/1 = SubResource("TileSetScenesCollectionSource_p66el")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e40q3"]
 texture = ExtResource("1_e5byf")
@@ -123,6 +131,13 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(458755, 65536, 12, 458768, 65536, 12, 655366, 196608, 1, 720902, 196608, 2, 786438, 196608, 3, 851974, 196608, 4, 655367, 262144, 1, 720903, 262144, 2, 786439, 262144, 3, 851975, 262144, 4, 655368, 327680, 1, 720904, 327680, 2, 786440, 327680, 3, 851976, 327680, 4, 655369, 393216, 1, 720905, 393216, 2, 786441, 393216, 3, 851977, 393216, 4, 655370, 458752, 1, 720906, 458752, 2, 786442, 458752, 3, 851978, 458752, 4, 655371, 524288, 1, 720907, 524288, 2, 786443, 524288, 3, 851979, 524288, 4, 655372, 589824, 1, 720908, 589824, 2, 786444, 589824, 3, 851980, 589824, 4, 655373, 655360, 1, 720909, 655360, 2, 786445, 655360, 3, 851981, 655360, 4)
+layer_2/name = "Collectables"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(524296, 1, 65536, 524301, 1, 65536, 196622, 1, 65536)
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -149,3 +164,24 @@ tile_set = SubResource("TileSet_um7bc")
 format = 2
 layer_0/name = "Lamps"
 layer_0/tile_data = PackedInt32Array(-262141, 65536, 1, -196605, 65536, 2, -131069, 65536, 3, -65533, 65536, 4, 3, 65536, 5, 65539, 65536, 6, 131075, 65536, 7, 196611, 65536, 8, 262147, 65536, 9, 327683, 65536, 10, -262128, 65536, 1, -196592, 65536, 2, -131056, 65536, 3, -65520, 65536, 4, 16, 65536, 5, 65552, 65536, 6, 131088, 65536, 7, 196624, 65536, 8, 262160, 65536, 9, 327696, 65536, 10, -786429, 65536, 1, -720893, 65536, 2, -655357, 65536, 3, -589821, 65536, 4, -524285, 65536, 5, -458749, 65536, 6, -393213, 65536, 7, -327677, 65536, 8, -1310717, 65536, 1, -1245181, 65536, 2, -1179645, 65536, 3, -1114109, 65536, 4, -1048573, 65536, 5, -983037, 65536, 6, -917501, 65536, 7, -851965, 65536, 8, -1835005, 65536, 1, -1769469, 65536, 2, -1703933, 65536, 3, -1638397, 65536, 4, -1572861, 65536, 5, -1507325, 65536, 6, -1441789, 65536, 7, -1376253, 65536, 8, -2359293, 65536, 1, -2293757, 65536, 2, -2228221, 65536, 3, -2162685, 65536, 4, -2097149, 65536, 5, -2031613, 65536, 6, -1966077, 65536, 7, -1900541, 65536, 8, -786416, 65536, 1, -720880, 65536, 2, -655344, 65536, 3, -589808, 65536, 4, -524272, 65536, 5, -458736, 65536, 6, -393200, 65536, 7, -327664, 65536, 8, -1310704, 65536, 1, -1245168, 65536, 2, -1179632, 65536, 3, -1114096, 65536, 4, -1048560, 65536, 5, -983024, 65536, 6, -917488, 65536, 7, -851952, 65536, 8, -1834992, 65536, 1, -1769456, 65536, 2, -1703920, 65536, 3, -1638384, 65536, 4, -1572848, 65536, 5, -1507312, 65536, 6, -1441776, 65536, 7, -1376240, 65536, 8, -2359280, 65536, 1, -2293744, 65536, 2, -2228208, 65536, 3, -2162672, 65536, 4, -2097136, 65536, 5, -2031600, 65536, 6, -1966064, 65536, 7, -1900528, 65536, 8, 3211268, 65536, 5, 3276804, 65536, 6, 3342340, 65536, 7, 3407876, 65536, 8, 1245187, 65536, 1, 1310723, 65536, 2, 1376259, 65536, 3, 1441795, 65536, 4, 1507331, 65536, 5, 1572867, 65536, 6, 1638403, 65536, 7, 1703939, 65536, 8, 1769475, 65536, 1, 1835011, 65536, 2, 1900547, 65536, 3, 1966083, 65536, 4, 2031619, 65536, 5, 2097155, 65536, 6, 2162691, 65536, 7, 2228227, 65536, 8, 2293763, 65536, 1, 2359299, 65536, 2, 2424835, 65536, 3, 2490371, 65536, 4, 2555907, 65536, 5, 2621443, 65536, 6, 2686979, 65536, 7, 2752515, 65536, 8, 2818051, 65536, 1, 2883587, 65536, 2, 2949123, 65536, 3, 3014659, 65536, 4, 3080195, 65536, 5, 3145731, 65536, 6, 3211267, 65536, 7, 3276803, 65536, 8, 1245200, 65536, 1, 1310736, 65536, 2, 1376272, 65536, 3, 1441808, 65536, 4, 1507344, 65536, 5, 1572880, 65536, 6, 1638416, 65536, 7, 1703952, 65536, 8, 1769488, 65536, 1, 1835024, 65536, 2, 1900560, 65536, 3, 1966096, 65536, 4, 2031632, 65536, 5, 2097168, 65536, 6, 2162704, 65536, 7, 2228240, 65536, 8, 2293776, 65536, 1, 2359312, 65536, 2, 2424848, 65536, 3, 2490384, 65536, 4, 2555920, 65536, 5, 2621456, 65536, 6, 2686992, 65536, 7, 2752528, 65536, 8, 2818064, 65536, 1, 2883600, 65536, 2, 2949136, 65536, 3, 3014672, 65536, 4, 3080208, 65536, 5, 3145744, 65536, 6, 3211280, 65536, 7, 3276816, 65536, 8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("8_c1cpp")
+
+[node name="inventory" parent="CanvasLayer" instance=ExtResource("8_pddqf")]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -62.5
+offset_right = 112.5
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="closed" from="CanvasLayer/inventory" to="." method="_on_inventory_closed"]
+[connection signal="opened" from="CanvasLayer/inventory" to="." method="_on_inventory_opened"]

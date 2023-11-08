@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq26a4yywyp17"]
+[gd_scene load_steps=13 format=3 uid="uid://dq26a4yywyp17"]
 
 [ext_resource type="Script" path="res://Characters/alice.gd" id="1_aft4l"]
 [ext_resource type="Texture2D" uid="uid://0tvti2x5qv7r" path="res://Graphics/Sprites/animations_Alice-Sheet.png" id="1_rjrgr"]
+[ext_resource type="Resource" uid="uid://j8helsth2xy2" path="res://Inventory/playerInventory.tres" id="2_1xam4"]
 
 [sub_resource type="Animation" id="Animation_pkc8e"]
 length = 0.001
@@ -122,8 +123,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjw85"]
 size = Vector2(8, 13.5)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkxfg"]
+radius = 6.0
+height = 18.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_aft4l")
+inventory = ExtResource("2_1xam4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rjrgr")
@@ -138,3 +144,10 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_wjw85")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_kkxfg")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

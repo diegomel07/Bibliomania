@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dokuhbv4dokib"
-path="res://.godot/imported/literallyinsane.jpg-25790405a0229b690f2abcbde48fdd7e.ctex"
+uid="uid://djvbwvg7rq24l"
+path="res://.godot/imported/gem.png-ddf7d45d7bda7382302fc928bd86a93e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Sprites/literallyinsane.jpg"
-dest_files=["res://.godot/imported/literallyinsane.jpg-25790405a0229b690f2abcbde48fdd7e.ctex"]
+source_file="res://Graphics/Sprites/Collectables/gem.png"
+dest_files=["res://.godot/imported/gem.png-ddf7d45d7bda7382302fc928bd86a93e.ctex"]
 
 [params]
 

@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd80li557mpc7"]
+
+[ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Graphics/Tiles/Inventory/inventoryBackground.png" id="1_dvixe"]
+[ext_resource type="Script" path="res://Gui/inventory.gd" id="1_mh4ia"]
+[ext_resource type="PackedScene" uid="uid://3fur1h4sprjs" path="res://Gui/slot.tscn" id="2_p4sy3"]
+
+[node name="inventoryGui" type="Control"]
+custom_minimum_size = Vector2(225, 125)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 125.0
+script = ExtResource("1_mh4ia")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 125.0
+texture = ExtResource("1_dvixe")
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -27.0
+offset_right = 41.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 13
+theme_override_constants/v_separation = 6
+columns = 5
+
+[node name="Slot" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot2" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot3" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot4" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot5" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot6" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot7" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot8" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot9" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot10" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot11" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot12" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot13" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot14" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2
+
+[node name="Slot15" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
+layout_mode = 2

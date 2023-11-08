@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://3fur1h4sprjs"]
+
+[ext_resource type="Texture2D" uid="uid://cldwnd3xebtig" path="res://Graphics/Tiles/Inventory/inventory_panel.png" id="1_02nyk"]
+[ext_resource type="Script" path="res://Gui/slot.gd" id="1_7q8ex"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 25)
+offset_right = 25.0
+offset_bottom = 25.0
+script = ExtResource("1_7q8ex")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_02nyk")
+centered = false
+hframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
+scale = Vector2(0.8, 0.8)

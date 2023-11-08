@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpgqrk2x36k0k"
-path="res://.godot/imported/literallyinsane.jpg-cdf4a1e13131e2ef59fa906a18b21846.ctex"
+uid="uid://lbffwhyli3he"
+path="res://.godot/imported/inventoryBackground.png-4017211fb56ca4cff7c76fb180a96074.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Tiles/Base/Objects/literallyinsane.jpg"
-dest_files=["res://.godot/imported/literallyinsane.jpg-cdf4a1e13131e2ef59fa906a18b21846.ctex"]
+source_file="res://Graphics/Tiles/Inventory/inventoryBackground.png"
+dest_files=["res://.godot/imported/inventoryBackground.png-4017211fb56ca4cff7c76fb180a96074.ctex"]
 
 [params]
 
