@@ -1,8 +1,7 @@
 extends Node2D
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	if $Alice.position.x > 400 or $Alice.position.x < -400:
 		$Alice.position.x *= -1
@@ -12,8 +11,15 @@ func _process(delta):
 
 
 func _on_inventory_closed():
+	$DirectionalLight2D.energy = 0
 	get_tree().paused = false
 
 
 func _on_inventory_opened():
+	$DirectionalLight2D.energy = 0.6
 	get_tree().paused = true
+
+
+func _on_alice_item_droped(item):
+	item.position = $Alice.position
+	$Collectables.add_child(item)

@@ -1,15 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://ylid3q5usvcc"]
+[gd_scene load_steps=19 format=3 uid="uid://ylid3q5usvcc"]
 
 [ext_resource type="Texture2D" uid="uid://lyg5q5eonfwi" path="res://Graphics/Tiles/Base/base_tileset.png" id="1_e5byf"]
 [ext_resource type="Script" path="res://Levels/base.gd" id="1_yp154"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="2_jtcvw"]
 [ext_resource type="PackedScene" uid="uid://cy6lc2wh4bjy" path="res://Objects/Door.tscn" id="2_sqwrr"]
+[ext_resource type="PackedScene" uid="uid://duyv62gjrbddv" path="res://Collectables/sword.tscn" id="4_47iw1"]
 [ext_resource type="PackedScene" uid="uid://brgy3jj0ltf1v" path="res://Characters/snake02.tscn" id="4_fmv4c"]
 [ext_resource type="PackedScene" uid="uid://c7v2hbfbx14cy" path="res://Objects/door02.tscn" id="5_ocljt"]
 [ext_resource type="PackedScene" uid="uid://bm4n6y8pyvc6j" path="res://Characters/snake.tscn" id="6_7fhrx"]
+[ext_resource type="Texture2D" uid="uid://bhit0fk5icq60" path="res://Graphics/lights/circle.png" id="8_7n57p"]
 [ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="8_c1cpp"]
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="8_pddqf"]
 [ext_resource type="PackedScene" uid="uid://xrhi4ix1qfs6" path="res://Collectables/gem.tscn" id="10_jr153"]
+[ext_resource type="AudioStream" uid="uid://dne7msl56aw6a" path="res://Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3" id="13_uss0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2fbw"]
 texture = ExtResource("1_e5byf")
@@ -61,6 +64,7 @@ texture = ExtResource("1_e5byf")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_p66el"]
 resource_name = "Collectables"
 scenes/1/scene = ExtResource("10_jr153")
+scenes/2/scene = ExtResource("4_47iw1")
 
 [sub_resource type="TileSet" id="TileSet_luykn"]
 sources/0 = SubResource("TileSetAtlasSource_o2fbw")
@@ -137,7 +141,7 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(524296, 1, 65536, 524301, 1, 65536, 196622, 1, 65536)
+layer_2/tile_data = PackedInt32Array()
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -151,7 +155,14 @@ position = Vector2(77, 145)
 position = Vector2(154, 97)
 
 [node name="Camera2D" type="Camera2D" parent="Alice"]
-zoom = Vector2(1.4, 1.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Alice/Camera2D"]
+self_modulate = Color(1, 1, 1, 0.380392)
+light_mask = 0
+z_index = 1
+position = Vector2(7.62939e-06, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_7n57p")
 
 [node name="Door02" parent="." instance=ExtResource("5_ocljt")]
 position = Vector2(159, 23)
@@ -171,6 +182,7 @@ script = ExtResource("8_c1cpp")
 
 [node name="inventory" parent="CanvasLayer" instance=ExtResource("8_pddqf")]
 process_mode = 3
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -183,5 +195,23 @@ offset_bottom = 62.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Gem" parent="Collectables" instance=ExtResource("10_jr153")]
+position = Vector2(185, 115)
+
+[node name="Sword" parent="Collectables" instance=ExtResource("4_47iw1")]
+position = Vector2(120, 111)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.0
+blend_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("13_uss0v")
+autoplay = true
+
+[connection signal="item_droped" from="Alice" to="." method="_on_alice_item_droped"]
 [connection signal="closed" from="CanvasLayer/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/inventory" to="." method="_on_inventory_opened"]

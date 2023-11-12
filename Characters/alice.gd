@@ -1,16 +1,21 @@
 extends CharacterBody2D
 
+signal item_droped(item: Area2D)
+
 var speed:int = 80
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
 
 @export var inventory: Inventory
-
+var current_inventory: Array
 var past_direction: Vector2 = Vector2.ZERO
+var can_collect: bool = true
+
+func _ready():
+	inventory.droped.connect(drop_item)
 
 func _process(_delta):
-	
 	
 	# input
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -23,45 +28,34 @@ func _process(_delta):
 	move_and_slide()
 	
 	if past_direction != direction:
-		print(past_direction, direction)
-		update_animations(direction, past_direction)
+		update_animations(direction)
 	
 	past_direction = direction
 	
 	mouse_rotation(ap.current_animation)
 
 
-func update_animations(direction: Vector2, past_direction: Vector2) -> void:
-	
-	var mouse_coordinates = get_local_mouse_position()
-	#print(mouse_coordinates)
+func update_animations(direction: Vector2) -> void:
 	
 	# idle
 	if direction == Vector2.ZERO:
 		if past_direction.y == -1:
-			print('idle up')
 			ap.play("idle_up")
 		else:
-			print('idle')
 			ap.play("idle")
 	
 	elif direction.y == -1:
-		print('up')
 		ap.play("up")
 	
 	elif direction.y == 1:
-		print('down')
 		ap.play("down")
 	
 	else:
-		print('run')
 		ap.play("run")
 
 func mouse_rotation(current_animation: String) -> void:
 	
 	var mouse_position = get_local_mouse_position().normalized()
-	
-	print(mouse_position)
 	
 	if current_animation == "idle":
 		if mouse_position.y < 0:
@@ -92,8 +86,28 @@ func mouse_rotation(current_animation: String) -> void:
 				ap.play_backwards("run")
 		
 
-
-
 func _on_area_2d_area_entered(area):
-	if area.has_method("collect"):
-		area.collect()
+	if area.has_method("collect") and can_collect:
+		if area not in current_inventory:
+			current_inventory.append(area.duplicate())
+			area.collect(inventory)
+
+func print_inventory():
+	for i in current_inventory:
+		print(i)
+	print()
+
+func drop_item(item: InventoryItem):
+	var pos
+	can_collect = false
+	$CollectTimer.start()
+	for i in range(current_inventory.size()):
+		# si encuentra el objeto dentro del inventario
+		if current_inventory[i].itemRes == item:
+			item_droped.emit(current_inventory[i])
+			pos = i
+	current_inventory.erase(current_inventory[pos])
+
+
+func _on_collect_timer_timeout():
+	can_collect = true

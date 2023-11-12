@@ -1,2 +1,3 @@
-Inventory
+Theme
 InventoryItem
+Inventory

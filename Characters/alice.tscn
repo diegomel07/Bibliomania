@@ -7,18 +7,6 @@
 [sub_resource type="Animation" id="Animation_pkc8e"]
 length = 0.001
 loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
 
 [sub_resource type="Animation" id="Animation_bw2hc"]
 resource_name = "down"
@@ -40,9 +28,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_4xmq4"]
 resource_name = "idle"
-length = 0.65
+length = 0.8
 loop_mode = 1
-step = 0.2
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,7 +38,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [18, 19, 20, 21]
@@ -58,9 +46,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vlr7c"]
 resource_name = "idle_up"
-length = 0.65
+length = 0.8
 loop_mode = 1
-step = 0.2
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -68,7 +56,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [22, 23, 24, 25]
@@ -134,6 +122,7 @@ inventory = ExtResource("2_1xam4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rjrgr")
 hframes = 26
+frame = 18
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
@@ -150,4 +139,9 @@ shape = SubResource("RectangleShape2D_wjw85")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_kkxfg")
 
+[node name="CollectTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]

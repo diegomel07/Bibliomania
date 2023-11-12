@@ -1,9 +1,70 @@
-[gd_scene load_steps=3 format=3 uid="uid://dosoabn1xtbg2"]
+[gd_scene load_steps=6 format=3 uid="uid://dosoabn1xtbg2"]
 
 [ext_resource type="Script" path="res://Collectables/Collectable.gd" id="1_wk016"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wflyi"]
 resource_local_to_scene = true
+
+[sub_resource type="Animation" id="Animation_r4iu2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nybjo"]
+resource_name = "spin"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nuu1t"]
+_data = {
+"RESET": SubResource("Animation_r4iu2"),
+"spin": SubResource("Animation_nybjo")
+}
 
 [node name="Collectable" type="Area2D"]
 script = ExtResource("1_wk016")
@@ -12,3 +73,8 @@ script = ExtResource("1_wk016")
 shape = SubResource("RectangleShape2D_wflyi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nuu1t")
+}

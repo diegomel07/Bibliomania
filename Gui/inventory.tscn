@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd80li557mpc7"]
+[gd_scene load_steps=6 format=3 uid="uid://bd80li557mpc7"]
 
 [ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Graphics/Tiles/Inventory/inventoryBackground.png" id="1_dvixe"]
 [ext_resource type="Script" path="res://Gui/inventory.gd" id="1_mh4ia"]
 [ext_resource type="PackedScene" uid="uid://3fur1h4sprjs" path="res://Gui/slot.tscn" id="2_p4sy3"]
+[ext_resource type="Theme" uid="uid://cq53lvjyrl8iq" path="res://Gui/Default.tscn.tres" id="4_u3ejq"]
+[ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="5_6vw2s"]
 
 [node name="inventoryGui" type="Control"]
 custom_minimum_size = Vector2(225, 125)
@@ -79,3 +81,45 @@ layout_mode = 2
 
 [node name="Slot15" parent="TextureRect/GridContainer" instance=ExtResource("2_p4sy3")]
 layout_mode = 2
+
+[node name="DropDown" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.671
+anchor_top = 0.808
+anchor_right = 0.907
+anchor_bottom = 1.0
+offset_left = 1.02499
+offset_top = 22.0
+offset_right = 0.924988
+offset_bottom = 22.0
+stretch_mode = 4
+
+[node name="Drop" type="Button" parent="DropDown"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.28
+anchor_right = 0.64
+anchor_bottom = 0.88
+offset_right = -4.0
+offset_bottom = -3.0
+theme = ExtResource("4_u3ejq")
+text = "DROP"
+
+[node name="Cancel" type="Button" parent="DropDown"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66
+anchor_top = 0.32
+anchor_right = 1.358
+anchor_bottom = 0.903
+offset_top = -1.0
+offset_right = -10.514
+offset_bottom = -0.312002
+theme = ExtResource("5_6vw2s")
+text = "CANCEL"
+
+[connection signal="pressed" from="DropDown/Drop" to="." method="_on_drop_pressed"]
+[connection signal="pressed" from="DropDown/Cancel" to="." method="_on_cancel_pressed"]
