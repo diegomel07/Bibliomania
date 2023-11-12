@@ -11,3 +11,5 @@ res://Gui/slot.tscn
 res://Collectables/collectable.tscn
 res://Collectables/gem.tscn
 res://Collectables/sword.tscn
+res://Levels/titleScreen.gd
+res://Levels/menu.tscn

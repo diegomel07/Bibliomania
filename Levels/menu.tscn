@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpmqmcngfwfjt"]
+
+[ext_resource type="Script" path="res://Levels/titleScreen.gd" id="1_1dhni"]
+[ext_resource type="Texture2D" uid="uid://c6sliun2h2b7c" path="res://Graphics/Tiles/TitleScreen/Background.png" id="2_d4s7q"]
+[ext_resource type="Texture2D" uid="uid://cb7tu2xo06xe1" path="res://Graphics/Tiles/TitleScreen/Book.png" id="3_ivar0"]
+[ext_resource type="AudioStream" uid="uid://h1lmhrktxjlf" path="res://Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3" id="4_p2oc0"]
+
+[sub_resource type="Animation" id="Animation_dcx5s"]
+resource_name = "book_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.24, 0.24), Vector2(0.2, 0.2), Vector2(0.24, 0.24)]
+}
+
+[sub_resource type="Animation" id="Animation_ex0eq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.24, 0.24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_emlm4"]
+_data = {
+"RESET": SubResource("Animation_ex0eq"),
+"book_animation": SubResource("Animation_dcx5s")
+}
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1dhni")
+metadata/_edit_horizontal_guides_ = [-1.0]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Book")
+autoplay = "book_animation"
+libraries = {
+"": SubResource("AnimationLibrary_emlm4")
+}
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.466
+anchor_top = 0.639
+anchor_right = 0.466
+anchor_bottom = 0.639
+offset_left = -1.12001
+offset_top = -34.02
+offset_right = 40.88
+offset_bottom = 13.98
+rotation = 0.328122
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+scale = Vector2(0.249781, 0.250556)
+texture = ExtResource("2_d4s7q")
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(160, 111)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("3_ivar0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p2oc0")
+volume_db = -20.552
+autoplay = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

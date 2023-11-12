@@ -1,11 +1,12 @@
 AudioStreamPlayer
+AnimationPlayer
+Button
 Sprite2D
+Control
 DirectionalLight2D
 PointLight2D
-AnimationPlayer
 Timer
 Node2D
-Button
 TextureRect
 VideoStreamPlayer
 Camera2D
