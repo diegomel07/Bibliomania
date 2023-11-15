@@ -1,14 +1,45 @@
-[gd_scene load_steps=8 format=3 uid="uid://u5puilrv8ujx"]
+[gd_scene load_steps=21 format=3 uid="uid://u5puilrv8ujx"]
 
 [ext_resource type="Script" path="res://Levels/settings.gd" id="1_flnlx"]
 [ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Graphics/Tiles/Inventory/inventoryBackground.png" id="2_lvn78"]
 [ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="3_aa24l"]
+[ext_resource type="FontFile" uid="uid://dxj8pl54pw24t" path="res://Gui/MinimalPixel v2.ttf" id="4_i6hkt"]
 [ext_resource type="Texture2D" uid="uid://djvbwvg7rq24l" path="res://Graphics/Sprites/Collectables/gem.png" id="4_rsmll"]
 [ext_resource type="Script" path="res://Gui/settings/MasterSlider.gd" id="5_6ih4m"]
+[ext_resource type="Texture2D" uid="uid://dbpp2jnd1u551" path="res://Graphics/Gui/GUIGlobal.png" id="5_66vnm"]
 [ext_resource type="Script" path="res://Gui/settings/MusicSlider.gd" id="6_anup6"]
 [ext_resource type="Script" path="res://Gui/settings/SFXSlider.gd" id="7_bdfor"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4wmbf"]
+texture = ExtResource("5_66vnm")
+region_rect = Rect2(0, 80, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfmy3"]
+texture = ExtResource("5_66vnm")
+region_rect = Rect2(32, 80, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjvho"]
+texture = ExtResource("5_66vnm")
+region_rect = Rect2(16, 80, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v0uik"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mr2da"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kviy8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egjbp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8530"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4px2s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlcho"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ogg64"]
+
 [node name="SettingsNode" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,16 +82,13 @@ grow_vertical = 2
 
 [node name="Ajustes" type="VBoxContainer" parent="TextureRect/SettingsBox"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.5
+offset_left = 26.0
 offset_top = -33.0
-offset_right = 30.5
+offset_right = 87.0
 offset_bottom = 33.0
-grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SoundButton" type="Button" parent="TextureRect/SettingsBox/Ajustes"]
@@ -68,7 +96,7 @@ self_modulate = Color(0.423529, 0.286275, 0.694118, 1)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_aa24l")
-text = "Sound"
+text = "Audio"
 
 [node name="VideoButtton" type="Button" parent="TextureRect/SettingsBox/Ajustes"]
 self_modulate = Color(0.423529, 0.286275, 0.694118, 1)
@@ -83,6 +111,29 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_aa24l")
 text = "Back"
+
+[node name="ExitButton" type="Button" parent="TextureRect/SettingsBox"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -22.0
+offset_right = -19.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_i6hkt")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_4wmbf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qfmy3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xjvho")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v0uik")
+theme_override_styles/focus = SubResource("StyleBoxTexture_mr2da")
+text = "EXIT
+"
 
 [node name="Video" type="Control" parent="TextureRect"]
 visible = false
@@ -115,35 +166,63 @@ theme = ExtResource("3_aa24l")
 [node name="Fullscreen" type="Label" parent="TextureRect/Video/HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 12
 text = "Fullscreen
 "
+horizontal_alignment = 1
 
 [node name="Borderless" type="Label" parent="TextureRect/Video/HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 12
 text = "Borderless
 "
+horizontal_alignment = 1
 
 [node name="Vsync" type="Label" parent="TextureRect/Video/HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 12
 text = "Vsync
 "
+horizontal_alignment = 1
 
 [node name="Checks" type="VBoxContainer" parent="TextureRect/Video/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 10
 
 [node name="Fullscreen" type="CheckBox" parent="TextureRect/Video/HBoxContainer/Checks"]
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_kviy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_egjbp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_h8530")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4px2s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_mlcho")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ogg64")
 
 [node name="Borderless" type="CheckBox" parent="TextureRect/Video/HBoxContainer/Checks"]
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_kviy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_egjbp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_h8530")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4px2s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_mlcho")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ogg64")
 
 [node name="Vsync" type="CheckBox" parent="TextureRect/Video/HBoxContainer/Checks"]
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_kviy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_egjbp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_h8530")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4px2s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_mlcho")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ogg64")
 
 [node name="BackFromVideo" type="Button" parent="TextureRect/Video"]
 self_modulate = Color(0.227451, 0.137255, 0.337255, 1)
@@ -179,10 +258,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = -43.0
-offset_right = 80.0
-offset_bottom = 43.0
+offset_left = -69.0
+offset_top = -37.5
+offset_right = 69.0
+offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -194,6 +273,7 @@ theme = ExtResource("3_aa24l")
 [node name="Master" type="Label" parent="TextureRect/Audio/HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 9
 text = "Master
 "
 horizontal_alignment = 1
@@ -201,6 +281,7 @@ horizontal_alignment = 1
 [node name="Music" type="Label" parent="TextureRect/Audio/HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 9
 text = "Music
 "
 horizontal_alignment = 1
@@ -208,6 +289,7 @@ horizontal_alignment = 1
 [node name="SFX" type="Label" parent="TextureRect/Audio/HBoxContainer/Labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 9
 text = "Sfx
 "
 horizontal_alignment = 1
@@ -271,6 +353,7 @@ text = "Back"
 [connection signal="pressed" from="TextureRect/SettingsBox/Ajustes/SoundButton" to="." method="_on_sound_button_pressed"]
 [connection signal="pressed" from="TextureRect/SettingsBox/Ajustes/VideoButtton" to="." method="_on_video_buttton_pressed"]
 [connection signal="pressed" from="TextureRect/SettingsBox/Ajustes/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TextureRect/SettingsBox/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="TextureRect/Video/HBoxContainer/Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="TextureRect/Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
 [connection signal="pressed" from="TextureRect/Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]
