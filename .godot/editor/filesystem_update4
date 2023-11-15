@@ -1,8 +1,7 @@
-res://Scene/MainScene/LoginScene.tscn
-res://Collectables/gem.gd
-res://Gui/Cancel.tres
-res://Inventory/playerInventory.tres
-res://Scene/MainScene/LoginScene.gd
 res://Gui/slot.tscn
+res://Collectables/gem.gd
+res://Inventory/playerInventory.tres
+res://Gui/Cancel.tres
+res://Scene/MainScene/LoginScene.tscn
 res://Scene/MainScene/singupScene.tscn
 res://Scene/MainScene/singupScene.gd

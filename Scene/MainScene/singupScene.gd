@@ -8,6 +8,10 @@ var password_line
 var message_label
 var message2_label
 
+var db #database object
+var db_name = "res://Data/bibliomania" #path to db
+
+
 func _ready():
 	username_line = $TextureRect/NinePatchRect/VBoxContainer/LineEdit
 	email_line = $TextureRect/NinePatchRect/VBoxContainer/LineEdit2
@@ -37,7 +41,22 @@ func check_and_register(username, email, password):
 		show_message("Invalid email format","red")
 		return	
 		
+	insert_user(username, email, password, 100)
+		
 	show_message("User created","green")
+
+func insert_user(username, email, password, score):
+	db = SQLite.new()
+	db.path = db_name
+	db.open_db()
+	var tableName = "User"
+	var dict : Dictionary = Dictionary()
+	dict["Username"] = username
+	dict["Email"] = email
+	dict["Password"] = password
+	dict["Score"] = score
+	
+	db.insert_row(tableName, dict)
 
 #validar email	
 func is_valid_email(email):
