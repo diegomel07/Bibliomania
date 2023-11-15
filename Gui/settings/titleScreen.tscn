@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://da27qttu4ut11"]
+[gd_scene load_steps=9 format=3 uid="uid://dpmqmcngfwfjt"]
 
-[ext_resource type="Script" path="res://Levels/titleScreen.gd" id="1_1dhni"]
-[ext_resource type="Texture2D" uid="uid://c6sliun2h2b7c" path="res://Graphics/Tiles/TitleScreen/Background.png" id="2_d4s7q"]
-[ext_resource type="PackedScene" uid="uid://0lnrs5keqlct" path="res://Levels/settings.tscn" id="3_6jirm"]
-[ext_resource type="Script" path="res://Levels/CanvasLayer.gd" id="3_h4k3e"]
-[ext_resource type="Texture2D" uid="uid://cb7tu2xo06xe1" path="res://Graphics/Tiles/TitleScreen/Book.png" id="3_ivar0"]
-[ext_resource type="AudioStream" uid="uid://h1lmhrktxjlf" path="res://Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3" id="4_p2oc0"]
+[ext_resource type="Script" path="res://Levels/titleScreen.gd" id="1_pvf5q"]
+[ext_resource type="Texture2D" uid="uid://c6sliun2h2b7c" path="res://Graphics/Tiles/TitleScreen/Background.png" id="2_uo8qm"]
+[ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="3_a4wxp"]
+[ext_resource type="Texture2D" uid="uid://cb7tu2xo06xe1" path="res://Graphics/Tiles/TitleScreen/Book.png" id="4_ty524"]
+[ext_resource type="AudioStream" uid="uid://h1lmhrktxjlf" path="res://Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3" id="5_oo1q6"]
 
 [sub_resource type="Animation" id="Animation_ex0eq"]
 length = 0.001
@@ -45,22 +44,22 @@ _data = {
 "book_animation": SubResource("Animation_dcx5s")
 }
 
-[node name="menu" type="Control"]
+[node name="tileScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1dhni")
+script = ExtResource("1_pvf5q")
 metadata/_edit_horizontal_guides_ = [-1.0]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Book")
-autoplay = "book_animation"
-libraries = {
-"": SubResource("AnimationLibrary_emlm4")
-}
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_oo1q6")
+volume_db = -20.552
+autoplay = true
+bus = &"Music"
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
@@ -75,29 +74,6 @@ offset_right = 40.88
 offset_bottom = 13.98
 rotation = 0.328122
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(160, 90)
-scale = Vector2(0.249781, 0.250556)
-texture = ExtResource("2_d4s7q")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("3_h4k3e")
-
-[node name="Settings" parent="CanvasLayer" instance=ExtResource("3_6jirm")]
-offset_bottom = 3.0
-
-[node name="Book" type="Sprite2D" parent="."]
-position = Vector2(160, 111)
-scale = Vector2(0.24, 0.24)
-texture = ExtResource("3_ivar0")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("4_p2oc0")
-volume_db = -20.552
-autoplay = true
-
 [node name="SettingsButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -110,6 +86,28 @@ offset_bottom = -3.0
 grow_vertical = 0
 rotation = 1.5708
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+scale = Vector2(0.249781, 0.250556)
+texture = ExtResource("2_uo8qm")
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(160, 111)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("4_ty524")
+
+[node name="Settings" parent="." instance=ExtResource("3_a4wxp")]
+visible = false
+layout_mode = 1
+offset_top = 21.5
+offset_bottom = 21.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Book")
+autoplay = "book_animation"
+libraries = {
+"": SubResource("AnimationLibrary_emlm4")
+}
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
