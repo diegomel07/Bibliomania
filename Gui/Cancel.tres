@@ -36,7 +36,8 @@ texture = ExtResource("2_2vb4w")
 region_rect = Rect2(145, 81, 46, 14)
 
 [resource]
-default_font_size = 7
+default_font = ExtResource("1_sc6p5")
+default_font_size = 20
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
