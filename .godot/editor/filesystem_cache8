@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700010825
+::res://::1700064239
 icon.svg::CompressedTexture2D::8785716330008111298::1700007386::1700007386::1::::<><>::
 README.md::TextFile::-1::1700007386::0::1::::<><>::
 Samurai.gd::GDScript::-1::1700007386::0::1::::<>Node2D<>::
@@ -11,10 +11,10 @@ Samurai.gd::GDScript::-1::1700007386::0::1::::<>CharacterBody2D<>::
 Samurai.tscn::PackedScene::942197741703531887::1700007386::0::1::::<><>::res://Characters/Samurai.gd<>uid://muq1ju4pqhja
 snake02.tscn::PackedScene::3593524989884472261::1700007386::0::1::::<><>::uid://dpnd8blgo2y2x
 snake.tscn::PackedScene::3289399754987620343::1700007386::0::1::::<><>::uid://roq4rebdfe7w
-::res://Collectables/::1700010421
+::res://Collectables/::1700015269
 Collectable.gd::GDScript::-1::1700007386::0::1::::<>Area2D<>::
 collectable.tscn::PackedScene::8179914773302175475::1700007386::0::1::::<><>::res://Collectables/Collectable.gd
-gem.gd::GDScript::-1::1700009183::0::1::::<>Area2D<>::
+gem.gd::GDScript::-1::1700015269::0::1::::<>Area2D<>::
 gem.tscn::PackedScene::1649878667410349719::1700007386::0::1::::<><>::uid://dosoabn1xtbg2
 sword.gd::GDScript::-1::1700007386::0::1::::<>Area2D<>::
 sword.tscn::PackedScene::8613915834227492799::1700007386::0::1::::<><>::uid://dosoabn1xtbg2
@@ -228,19 +228,19 @@ yellow_sliderLeft.png::CompressedTexture2D::5430807522659445727::1393239928::170
 yellow_sliderRight.png::CompressedTexture2D::1433691269206228652::1393239928::1700007461::1::::<><>::
 yellow_sliderUp.png::CompressedTexture2D::4767375831146714985::1393239928::1700007461::1::::<><>::
 yellow_tick.png::CompressedTexture2D::5833905600751768661::1393239928::1700007461::1::::<><>::
-::res://Gui/::1700010421
-Cancel.tres::Theme::6685813487398959117::1700009183::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://c35x1vpatt74a::::res://Graphics/Gui/GUICancel.png
+::res://Gui/::1700015323
+Cancel.tres::Theme::6685813487398959117::1700015269::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://c35x1vpatt74a::::res://Graphics/Gui/GUICancel.png
 CanvasLayer.gd::GDScript::-1::1700007386::0::1::::<>CanvasLayer<>::
 Default.tscn.tres::Theme::5959515035754159820::1700007386::0::1::::<><>::uid://dxj8pl54pw24t
 inventory.gd::GDScript::-1::1700007386::0::1::::<>Control<>::
 inventory.tscn::PackedScene::2666649716980534464::1700007386::0::1::::<><>::uid://lbffwhyli3he
 MinimalPixel v2.ttf::FontFile::8794215927650006041::1700007386::1700007386::1::::<><>::
 slot.gd::GDScript::-1::1700007386::0::1::::<>Panel<>::
-slot.tscn::PackedScene::1976855586749943680::1700009235::0::1::::<><>::uid://cldwnd3xebtig::::res://Graphics/Tiles/Inventory/inventory_panel.png<>res://Gui/slot.gd
-::res://Inventory/::1700010421
+slot.tscn::PackedScene::1976855586749943680::1700015323::0::1::::<><>::uid://cldwnd3xebtig::::res://Graphics/Tiles/Inventory/inventory_panel.png<>res://Gui/slot.gd
+::res://Inventory/::1700015269
 inventory.gd::GDScript::-1::1700007386::0::1::::Inventory<>Resource<>::
 inventoryItem.gd::GDScript::-1::1700007386::0::1::::InventoryItem<>Resource<>::
-playerInventory.tres::Resource/Inventory::700256827188296015::1700009183::0::1::::<><>::res://Inventory/inventory.gd
+playerInventory.tres::Resource/Inventory::700256827188296015::1700015269::0::1::::<><>::res://Inventory/inventory.gd
 ::res://Inventory/items/::1700010421
 gem.tres::Resource/Resource::3784632787148495746::1700007386::0::1::::<><>::res://Inventory/inventoryItem.gd<>uid://djvbwvg7rq24l
 sword.tres::Resource/Resource::4607894104018032712::1700007386::0::1::::<><>::res://Inventory/inventoryItem.gd<>uid://bibao5dorngp4
@@ -253,8 +253,8 @@ the neighbourhood - the beach (instrumental, slowed & muffled ).mp3::AudioStream
 door02.tscn::PackedScene::7063888216325121392::1700007386::0::1::::<><>::uid://b5s84y2getm0v
 Door.tscn::PackedScene::191824771648708134::1700007386::0::1::::<><>::uid://bfnpe4qc383ll
 ::res://Scene/::1700010745
-::res://Scene/MainScene/::1700010745
+::res://Scene/MainScene/::1700015323
 LoginScene.gd::GDScript::-1::1700008860::0::1::::<>Control<>::
-LoginScene.tscn::PackedScene::8319546709423674759::1700009382::0::1::::<><>::uid://r7pnsoxd8d0w::::res://Graphics/Ui/PNG/grey_panel.png<>res://Scene/MainScene/LoginScene.gd<>uid://c2iwmviw26odh::::res://Gui/Cancel.tres<>uid://byks4ltbcpt3d::::res://Graphics/Ui/PNG/grey_button01.png<>uid://66klc6e88cg8::::res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg<>uid://c2kqk6pkkvanf::::res://Graphics/Ui/PNG/green_button01.png<>uid://bthfdjwo0wu5y::::res://Graphics/Ui/PNG/green_button06.png<>uid://q5nw3u248tyl::::res://Graphics/Ui/PNG/blue_button01.png<>uid://ds25ckj776gkw::::res://Graphics/Ui/PNG/green_button13.png<>uid://dnfyeqm6nk804::::res://Graphics/Ui/PNG/blue_button13.png
+LoginScene.tscn::PackedScene::8319546709423674759::1700015323::0::1::::<><>::uid://r7pnsoxd8d0w::::res://Graphics/Ui/PNG/grey_panel.png<>res://Scene/MainScene/LoginScene.gd<>uid://c2iwmviw26odh::::res://Gui/Cancel.tres<>uid://byks4ltbcpt3d::::res://Graphics/Ui/PNG/grey_button01.png<>uid://66klc6e88cg8::::res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg<>uid://c2kqk6pkkvanf::::res://Graphics/Ui/PNG/green_button01.png<>uid://bthfdjwo0wu5y::::res://Graphics/Ui/PNG/green_button06.png<>uid://q5nw3u248tyl::::res://Graphics/Ui/PNG/blue_button01.png<>uid://ds25ckj776gkw::::res://Graphics/Ui/PNG/green_button13.png<>uid://dnfyeqm6nk804::::res://Graphics/Ui/PNG/blue_button13.png
 singupScene.gd::GDScript::-1::1700008934::0::1::::<>Control<>::
-singupScene.tscn::PackedScene::5758253538066205307::1700009236::0::1::::<><>::uid://c2iwmviw26odh::::res://Gui/Cancel.tres<>res://Scene/MainScene/singupScene.gd<>uid://r7pnsoxd8d0w::::res://Graphics/Ui/PNG/grey_panel.png<>uid://66klc6e88cg8::::res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg<>uid://byks4ltbcpt3d::::res://Graphics/Ui/PNG/grey_button01.png<>uid://dnfyeqm6nk804::::res://Graphics/Ui/PNG/blue_button13.png<>uid://ds25ckj776gkw::::res://Graphics/Ui/PNG/green_button13.png<>uid://q5nw3u248tyl::::res://Graphics/Ui/PNG/blue_button01.png<>uid://dkyiag51b6jpx::::res://Graphics/Ui/PNG/blue_button06.png
+singupScene.tscn::PackedScene::5758253538066205307::1700015323::0::1::::<><>::uid://c2iwmviw26odh::::res://Gui/Cancel.tres<>res://Scene/MainScene/singupScene.gd<>uid://r7pnsoxd8d0w::::res://Graphics/Ui/PNG/grey_panel.png<>uid://66klc6e88cg8::::res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg<>uid://byks4ltbcpt3d::::res://Graphics/Ui/PNG/grey_button01.png<>uid://dnfyeqm6nk804::::res://Graphics/Ui/PNG/blue_button13.png<>uid://ds25ckj776gkw::::res://Graphics/Ui/PNG/green_button13.png<>uid://q5nw3u248tyl::::res://Graphics/Ui/PNG/blue_button01.png<>uid://dkyiag51b6jpx::::res://Graphics/Ui/PNG/blue_button06.png

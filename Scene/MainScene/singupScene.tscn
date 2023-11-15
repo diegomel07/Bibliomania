@@ -109,12 +109,22 @@ text = "Password
 modulate = Color(0, 0, 0, 0.392157)
 layout_mode = 2
 theme = ExtResource("1_8v7ut")
+secret = true
 
 [node name="Message" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
-modulate = Color(0.929412, 0, 0, 1)
+visible = false
+modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 theme = ExtResource("1_8v7ut")
 text = "username
+"
+
+[node name="Message2" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
+visible = false
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme = ExtResource("1_8v7ut")
+text = "
 "
 
 [node name="CreateButton" type="TextureButton" parent="TextureRect/NinePatchRect/VBoxContainer"]

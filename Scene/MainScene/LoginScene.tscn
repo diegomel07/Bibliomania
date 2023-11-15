@@ -118,13 +118,13 @@ text = "Password
 modulate = Color(0, 0, 0, 0.392157)
 layout_mode = 2
 theme = ExtResource("2_ck75v")
+secret = true
 
 [node name="Message" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
-modulate = Color(0.929412, 0, 0, 1)
+visible = false
+modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 theme = ExtResource("2_ck75v")
-text = "Password
-"
 
 [node name="LoginButton" type="TextureButton" parent="TextureRect/NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 40)
