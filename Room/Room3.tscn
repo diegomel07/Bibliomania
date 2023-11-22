@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://t6843pn1g1h"]
+
+[ext_resource type="Script" path="res://Room/Room3.gd" id="1_fob6i"]
+[ext_resource type="Texture2D" uid="uid://erwvxdvyt1vf" path="res://Room/backgrounds/room3.png" id="1_qf8g1"]
+[ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_hfsac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
+size = Vector2(256, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvusg"]
+size = Vector2(32, 8)
+
+[sub_resource type="GDScript" id="GDScript_xuw2j"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Room1" type="Node2D"]
+script = ExtResource("1_fob6i")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="BL" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 176, 144, 176, 144, 144, 32, 144, 32, 88, 0, 88)
+
+[node name="TR" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(320, 176)
+rotation = 3.14159
+polygon = PackedVector2Array(0, 176, 160, 176, 160, 144, 32, 144, 32, 104, 0, 104)
+
+[node name="TL" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(160, 0, 160, 32, 32, 32, 32, 88, 0, 88, 0, 0)
+
+[node name="BR" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(320, 176)
+rotation = 3.14159
+polygon = PackedVector2Array(144, 0, 144, 32, 32, 32, 32, 72, 0, 72, 0, 0)
+
+[node name="Floor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(160, 88)
+shape = SubResource("RectangleShape2D_khe4g")
+
+[node name="Door2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2(292, 88)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nvusg")
+
+[node name="Door1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
+position = Vector2(160, 148)
+shape = SubResource("RectangleShape2D_nvusg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.399352, 0.400719)
+texture = ExtResource("1_qf8g1")
+script = SubResource("GDScript_xuw2j")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_hfsac")]
+position = Vector2(160, 88)
+
+[connection signal="body_entered" from="Door2" to="." method="_on_door_2_body_entered"]
+[connection signal="body_entered" from="Door1" to="." method="_on_door_1_body_entered"]

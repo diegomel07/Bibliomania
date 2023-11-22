@@ -111,3 +111,6 @@ func drop_item(item: InventoryItem):
 
 func _on_collect_timer_timeout():
 	can_collect = true
+
+func player():
+	pass

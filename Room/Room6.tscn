@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://t6843pn1g1h"]
+
+[ext_resource type="Texture2D" uid="uid://cjlk18vnt1bkp" path="res://Room/backgrounds/room6.png" id="1_hqteh"]
+[ext_resource type="Script" path="res://Room/Room6.gd" id="1_laq2n"]
+[ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_ibtyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
+size = Vector2(256, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvusg"]
+size = Vector2(32, 8)
+
+[node name="Room1" type="Node2D"]
+script = ExtResource("1_laq2n")
+metadata/_edit_horizontal_guides_ = [0.0]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="BL" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 176, 160, 176, 160, 144, 32, 144, 32, 104, 0, 104)
+
+[node name="TR" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(320, 176)
+rotation = 3.14159
+polygon = PackedVector2Array(0, 176, 160, 176, 160, 144, 32, 144, 32, 104, 0, 104)
+
+[node name="TL" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(160, 0, 160, 32, 32, 32, 32, 72, 0, 72, 0, 0)
+
+[node name="BR" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(320, 176)
+rotation = 3.14159
+polygon = PackedVector2Array(160, 0.000396729, 160, 32.0004, 32, 32, 32, 72, 0, 72, 0, 0)
+
+[node name="Floor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(160, 88)
+shape = SubResource("RectangleShape2D_khe4g")
+
+[node name="Door3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
+position = Vector2(28, 88)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nvusg")
+
+[node name="Door2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2(292, 88)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nvusg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.400905, 0.398465)
+texture = ExtResource("1_hqteh")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_ibtyb")]
+position = Vector2(160, 88)
+
+[connection signal="body_entered" from="Door3" to="." method="_on_door_3_body_entered"]
+[connection signal="body_entered" from="Door2" to="." method="_on_door_2_body_entered"]
