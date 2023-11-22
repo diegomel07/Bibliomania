@@ -1,3 +1,4 @@
+AnimationPlayer
 Button
 CanvasLayer
 Control
@@ -8,7 +9,6 @@ Label
 VBoxContainer
 HBoxContainer
 AudioStreamPlayer
-AnimationPlayer
 Sprite2D
 DirectionalLight2D
 PointLight2D

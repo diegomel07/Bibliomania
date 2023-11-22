@@ -39,7 +39,6 @@ region_rect = Rect2(16, 80, 16, 16)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ogg64"]
 
 [node name="SettingsNode" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
