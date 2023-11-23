@@ -5,11 +5,12 @@ var matrix_size = global.matrix_size
 var start_point
 var end_point
 
+
 func _ready():
 	
 	create_matrix()
 	
-	for i in range(3):
+	for i in range(4):
 		
 		start_point = choose_border_point()
 		matrix[start_point[0].x][start_point[0].y]["exists"] = true
@@ -40,16 +41,18 @@ func calculate_room_connections():
 	for x in range(matrix_size):
 		for y in range(matrix_size):
 			if matrix[x][y]["exists"] == true:
-				var connections = 0
+				var connection_array = []
 				if y + 1 < matrix_size and matrix[x][y + 1]["exists"] == true:
-					connections += 2  
+					connection_array.append("right")
 				if y - 1 >= 0 and matrix[x][y - 1]["exists"] == true:
-					connections += 4 
+					connection_array.append("left")
 				if x - 1 >= 0 and matrix[x - 1][y]["exists"] == true:
-					connections += 8  
+					connection_array.append("up")
 				if x + 1 < matrix_size and matrix[x + 1][y]["exists"] == true:
-					connections += 1  
-				matrix[x][y]["room"] = "res://Room/Room" + str(connections) + ".tscn"	
+					connection_array.append("down")
+				# aca podriamos llamar a una funcion que retorne el tipo (square, rectangle, etc) xd
+				matrix[x][y]["type"] = "res://Room/Room" + "Square" + ".tscn"
+				matrix[x][y]["connections"] = connection_array
 				
 func choose_border_point(selected_size = null):
 	
@@ -109,5 +112,3 @@ func change_scene():
 		if global.current_scene == "initialize":
 			global.change_room()
 			global.finish_changedscenes()
-
-

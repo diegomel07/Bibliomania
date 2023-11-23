@@ -4,14 +4,10 @@ var matrix
 var matrix_size = 7
 var current_point
 var end_point
-
 var current_scene = "base"
 var transition_scene = false
 
-var player_exit_posx = 0
-var player_exit_posy = 0
-var player_enter_posx = 0
-var player_enter_posy = 0
+var player_position = "start"
 
 func finish_changedscenes():
 	if transition_scene == true:
@@ -19,7 +15,7 @@ func finish_changedscenes():
 
 func change_room():
 	current_scene = "level1"
-	get_tree().change_scene_to_file(matrix[current_point.x][current_point.y]["room"])
+	get_tree().change_scene_to_file(matrix[current_point.x][current_point.y]["type"])
 
 func next_room(direction):
 
