@@ -5,7 +5,6 @@ var matrix_size = global.matrix_size
 var start_point
 var end_point
 
-
 func _ready():
 	
 	create_matrix()
@@ -26,6 +25,8 @@ func _ready():
 	global.matrix = matrix
 	global.transition_scene = true
 	change_scene()
+	
+	
 	
 func create_matrix():
 	

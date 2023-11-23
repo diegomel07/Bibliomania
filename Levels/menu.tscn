@@ -88,7 +88,7 @@ script = ExtResource("3_h4k3e")
 offset_bottom = 3.0
 
 [node name="Book" type="Sprite2D" parent="."]
-position = Vector2(160, 111)
+position = Vector2(142, 110)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("3_ivar0")
 
@@ -111,5 +111,5 @@ grow_vertical = 0
 rotation = 1.5708
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_start_button_pressed"]

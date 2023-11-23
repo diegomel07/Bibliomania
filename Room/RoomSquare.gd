@@ -1,6 +1,8 @@
 extends Node2D
 
 func _ready():
+	
+	
 	var door_down_Asset = $DoorDown
 	var door_right_Asset = $DoorRight
 	var door_left_Asset = $DoorLeft
@@ -78,7 +80,7 @@ func _on_door_3_body_entered(body):
 			global.player_position = "left"
 
 func _on_door_4_body_entered(body):
-	if body.has_method("player"):
+	if body.has_method("player"): 
 		if "up" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 			global.next_room("up")
 			global.player_position = "up"

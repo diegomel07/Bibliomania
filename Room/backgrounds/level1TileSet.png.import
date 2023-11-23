@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq35xrcq1mytj"
-path="res://.godot/imported/doorH.png-49ac313a0bc238f8095fb84546df26cd.ctex"
+uid="uid://b28t24cmmr25y"
+path="res://.godot/imported/level1TileSet.png-e7d8c6a98f93817c2d9e1ec72b3b8aa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Room/backgrounds/doorH.png"
-dest_files=["res://.godot/imported/doorH.png-49ac313a0bc238f8095fb84546df26cd.ctex"]
+source_file="res://Room/backgrounds/level1TileSet.png"
+dest_files=["res://.godot/imported/level1TileSet.png-e7d8c6a98f93817c2d9e1ec72b3b8aa0.ctex"]
 
 [params]
 

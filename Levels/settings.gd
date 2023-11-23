@@ -47,6 +47,7 @@ func _on_fullscreen_toggled(button_pressed):
 	# Obtén una referencia al objeto OS
 	if button_pressed == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
