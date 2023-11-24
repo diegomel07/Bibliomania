@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://t6843pn1g1h"]
+[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
 
 [ext_resource type="Script" path="res://Room/RoomSquare.gd" id="1_xhat2"]
 [ext_resource type="Texture2D" uid="uid://b28t24cmmr25y" path="res://Room/backgrounds/level1TileSet.png" id="2_08sfc"]
 [ext_resource type="PackedScene" uid="uid://cpfb5oqnkmsva" path="res://Room/level_door.tscn" id="3_7uyri"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_aaabw"]
+[ext_resource type="PackedScene" uid="uid://bweertwcm6i6q" path="res://Room/door_collision.tscn" id="4_3ouf4"]
 [ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="5_ocw3v"]
 [ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="6_snwsx"]
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="7_gxwug"]
@@ -91,7 +92,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608,
 
 [node name="BL" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(3, 0)
-polygon = PackedVector2Array(-3, 150, 113, 150, 113, 125, 22, 125, 22, 94, -3, 94)
+polygon = PackedVector2Array(-3, 150, 113, 150, 113, 125, 22, 125, 22, 86, -3, 86)
 
 [node name="TR" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(320, 176)
@@ -99,7 +100,7 @@ rotation = 3.14159
 polygon = PackedVector2Array(69.9995, 176, 186, 176, 186, 151, 94.9996, 151, 94.9997, 110, 69.9997, 110)
 
 [node name="TL" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(116, 0, 116, 25, 25, 25, 25, 62, 0, 62, 0, 0)
+polygon = PackedVector2Array(116, 0, 116, 25, 25, 25, 25, 66, 0, 62, 0, 0)
 
 [node name="BR" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(320, 176)
@@ -115,20 +116,40 @@ shape = SubResource("RectangleShape2D_khe4g")
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="LevelDoor" parent="Doors" instance=ExtResource("3_7uyri")]
+[node name="UpDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor4" parent="Doors/UpDoor" instance=ExtResource("3_7uyri")]
+position = Vector2(125, 12)
+
+[node name="DoorCollision" parent="Doors/UpDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(125, 15)
+
+[node name="DownDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor" parent="Doors/DownDoor" instance=ExtResource("3_7uyri")]
 position = Vector2(125, 138)
 rotation = 3.14159
 
-[node name="LevelDoor2" parent="Doors" instance=ExtResource("3_7uyri")]
-position = Vector2(238, 75)
-rotation = 1.5708
+[node name="DoorCollision" parent="Doors/DownDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(125, 135)
 
-[node name="LevelDoor3" parent="Doors" instance=ExtResource("3_7uyri")]
+[node name="LeftDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor3" parent="Doors/LeftDoor" instance=ExtResource("3_7uyri")]
 position = Vector2(12, 75)
 rotation = -1.5708
 
-[node name="LevelDoor4" parent="Doors" instance=ExtResource("3_7uyri")]
-position = Vector2(125, 12)
+[node name="DoorCollision" parent="Doors/LeftDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(15, 76)
+
+[node name="RigthDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor2" parent="Doors/RigthDoor" instance=ExtResource("3_7uyri")]
+position = Vector2(238, 75)
+rotation = 1.5708
+
+[node name="DoorCollision" parent="Doors/RigthDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(235, 75)
 
 [node name="Alice" parent="." instance=ExtResource("3_aaabw")]
 position = Vector2(132, 52)
@@ -158,7 +179,7 @@ grow_vertical = 2
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="body_entered" from="Doors/LevelDoor" to="." method="_on_level_door_body_entered"]
-[connection signal="body_entered" from="Doors/LevelDoor2" to="." method="_on_level_door_2_body_entered"]
-[connection signal="body_entered" from="Doors/LevelDoor3" to="." method="_on_level_door_3_body_entered"]
-[connection signal="body_entered" from="Doors/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
+[connection signal="body_entered" from="Doors/UpDoor/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
+[connection signal="body_entered" from="Doors/DownDoor/LevelDoor" to="." method="_on_level_door_body_entered"]
+[connection signal="body_entered" from="Doors/LeftDoor/LevelDoor3" to="." method="_on_level_door_3_body_entered"]
+[connection signal="body_entered" from="Doors/RigthDoor/LevelDoor2" to="." method="_on_level_door_2_body_entered"]

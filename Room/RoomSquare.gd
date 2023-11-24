@@ -2,58 +2,60 @@ extends Node2D
 
 func _ready():
 	
-	var door_down_Asset = $Doors/LevelDoor.sprite
-	var door_right_Asset = $Doors/LevelDoor2.sprite
-	var door_left_Asset = $Doors/LevelDoor3.sprite
-	var door_up_Asset = $Doors/LevelDoor4.sprite
-#	var door_down_Collision = $Doors/Ddown
-#	var door_right_Collision = $Doors/Dright
-#	var door_left_Collision = $Doors/Dleft
-#	var door_up_Collision = $Doors/Dup
+	var door_down_Asset = $Doors/DownDoor/LevelDoor.sprite
+	var door_right_Asset = $Doors/RigthDoor/LevelDoor2.sprite
+	var door_left_Asset = $Doors/LeftDoor/LevelDoor3.sprite
+	var door_up_Asset = $Doors/UpDoor/LevelDoor4.sprite
+	
+	var door_down_collision = $Doors/DownDoor/DoorCollision.collision
+	var door_up_collision = $Doors/UpDoor/DoorCollision.collision
+	var door_left_collision = $Doors/LeftDoor/DoorCollision.collision
+	var door_rigth_collision = $Doors/RigthDoor/DoorCollision.collision
+
 	
 	if "down" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 		door_down_Asset.visible = true
-		#door_down_Collision.disabled = true
+		door_down_collision.disabled = true
 	else:
 		door_down_Asset.visible = false
-		#door_down_Collision.disabled = false
+		door_down_collision.disabled = false
 		
 	if "right" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 		door_right_Asset.visible = true
-		#door_right_Collision.disabled = true
+		door_rigth_collision.disabled = true
 	else:
 		door_right_Asset.visible = false
-		#door_right_Collision = false
+		door_rigth_collision.disabled = false
 		
 	if "left" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 		door_left_Asset.visible = true
-		#door_left_Collision.disabled = true
+		door_left_collision.disabled = true
 	else:
 		door_left_Asset.visible = false
-		#door_left_Collision.disabled = false
+		door_left_collision.disabled = false
 		
 	if "up" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 		door_up_Asset.visible = true
-		#door_up_Collision.disabled = true
+		door_up_collision.disabled = true
 	else:
 		door_up_Asset.visible = false
-		#door_up_Collision.disabled = false
+		door_up_collision.disabled = false
 		
 	if global.player_position == "down":
-		$Alice.position.x = 160
-		$Alice.position.y = 30
+		$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
+		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 20
 	if global.player_position == "left":
-		$Alice.position.x = 280
-		$Alice.position.y = 88
+		$Alice.position.x = $Doors/RigthDoor/LevelDoor2.position.x - 20
+		$Alice.position.y = $Doors/RigthDoor/LevelDoor2.position.y
 	if global.player_position == "right":
-		$Alice.position.x = 40
-		$Alice.position.y = 88
+		$Alice.position.x = $Doors/LeftDoor/LevelDoor3.position.x + 20
+		$Alice.position.y = $Doors/LeftDoor/LevelDoor3.position.y
 	if global.player_position == "up":
-		$Alice.position.x =160
-		$Alice.position.y = 128
+		$Alice.position.x = $Doors/DownDoor/LevelDoor.position.x
+		$Alice.position.y = $Doors/DownDoor/LevelDoor.position.y - 20
 	if global.player_position == "start":
-		$Alice.position.x = 160
-		$Alice.position.y = 88
+		$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
+		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 10
 		
 		
 func _process(delta):
@@ -61,32 +63,28 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("CloseDoors"):
-		$Doors/LevelDoor.ap.play("AboutToClose")
-		$Doors/LevelDoor2.ap.play("AboutToClose")
-		$Doors/LevelDoor3.ap.play("AboutToClose")
-		$Doors/LevelDoor4.ap.play("AboutToClose")
+		
+		for door in $Doors.get_children():
+			door.get_children()[1].collision.disabled = false
+			door.get_children()[0].ap.play("AboutToClose")
 		
 		$Timer.start()
 		await $Timer.timeout
 		
-		$Doors/LevelDoor.ap.play("Close")
-		$Doors/LevelDoor2.ap.play("Close")
-		$Doors/LevelDoor3.ap.play("Close")
-		$Doors/LevelDoor4.ap.play("Close")
+		for door in $Doors.get_children():
+			door.get_children()[0].ap.play("Close")
 		
 	if event.is_action_pressed("OpenDoors"):
-		$Doors/LevelDoor.ap.play("AboutToOpen")
-		$Doors/LevelDoor2.ap.play("AboutToOpen")
-		$Doors/LevelDoor3.ap.play("AboutToOpen")
-		$Doors/LevelDoor4.ap.play("AboutToOpen")
+		
+		for door in $Doors.get_children():
+			door.get_children()[1].collision.disabled = true
+			door.get_children()[0].ap.play("AboutToOpen")
 		
 		$Timer.start()
 		await $Timer.timeout
 		
-		$Doors/LevelDoor.ap.play("Open")
-		$Doors/LevelDoor2.ap.play("Open")
-		$Doors/LevelDoor3.ap.play("Open")
-		$Doors/LevelDoor4.ap.play("Open")
+		for door in $Doors.get_children():
+			door.get_children()[0].ap.play("Open")
 
 func _on_level_door_4_body_entered(body):
 	if body.has_method("player"): 

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700792187
+::res://::1700795514
 default_bus_layout.tres::AudioBusLayout::5556824292860527249::1700084964::0::1::::<><>::
 global.gd::GDScript::-1::1700790411::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::8785716330008111298::1698349015::1700763753::1::::<><>::
@@ -86,14 +86,14 @@ selected_panel.png::CompressedTexture2D::75633974254502480::1699800420::16998004
 ::res://Graphics/Tiles/TitleScreen/::1700084964
 Background.png::CompressedTexture2D::6986537564796586798::1700084964::1700084964::1::::<><>::
 Book.png::CompressedTexture2D::4910281092226513030::1700084964::1700084964::1::::<><>::
-::res://Gui/::1700792187
-Cancel.tres::Theme::6685813487398959117::1700792187::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://c35x1vpatt74a::::res://Graphics/Gui/GUICancel.png
+::res://Gui/::1700792403
+Cancel.tres::Theme::6685813487398959117::1700792403::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://c35x1vpatt74a::::res://Graphics/Gui/GUICancel.png
 CanvasLayer.gd::GDScript::-1::1700777130::0::1::::<>CanvasLayer<>::
-Default.tscn.tres::Theme::5959515035754159820::1700792187::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://deyqbty6ytcs3::::res://Graphics/Gui/GUI.png
+Default.tscn.tres::Theme::5959515035754159820::1700792403::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://deyqbty6ytcs3::::res://Graphics/Gui/GUI.png
 inventory.gd::GDScript::-1::1699800420::0::1::::<>Control<>::
 inventory.tscn::PackedScene::2666649716980534464::1700069836::0::1::::<><>::uid://lbffwhyli3he
 MinimalPixel v2.ttf::FontFile::8794215927650006041::1699800420::1699800420::1::::<><>::
-SettingsButton.tres::Theme::4324319657591692204::1700792186::0::1::::<><>::uid://dbpp2jnd1u551::::res://Graphics/Gui/GUIGlobal.png<>uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf
+SettingsButton.tres::Theme::4324319657591692204::1700792403::0::1::::<><>::uid://dbpp2jnd1u551::::res://Graphics/Gui/GUIGlobal.png<>uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf
 slot.gd::GDScript::-1::1699800420::0::1::::<>Panel<>::
 slot.tscn::PackedScene::1976855586749943680::1700089742::0::1::::<><>::uid://cldwnd3xebtig
 ::res://Gui/PlayerGui/::1700790388
@@ -130,14 +130,15 @@ y2mate.com - Castlevania SOTN Dance of Pales.mp3::AudioStreamMP3::54568543792485
 ::res://Objects/::1699394045
 door02.tscn::PackedScene::7063888216325121392::1698590478::0::1::::<><>::uid://b5s84y2getm0v
 Door.tscn::PackedScene::191824771648708134::1699394045::0::1::::<><>::uid://bfnpe4qc383ll
-::res://Room/::1700792187
+::res://Room/::1700794865
 Initialize.gd::GDScript::-1::1700790418::0::1::::<>Node2D<>::
 Initialize.tscn::PackedScene::7022138325719309017::1700790418::0::1::::<><>::res://Room/Initialize.gd<>uid://dl7xuyjc3owx1::::res://Room/backgrounds/initialize.png
-level_door.tscn::PackedScene::5836110962185189810::1700792131::0::1::::<><>::
+level_door.gd::GDScript::-1::1700793780::0::1::::<>Area2D<>::
+level_door.tscn::PackedScene::5836110962185189810::1700794844::0::1::::<><>::uid://dxkhlqv6otc1v::::res://Room/backgrounds/doorAssets.png<>res://Room/level_door.gd
 Playtest.tscn::PackedScene::820762629507774439::1700785151::0::1::::<><>::res://Room/Initialize.gd<>uid://dq26a4yywyp17::::res://Characters/alice.tscn
-RoomSquare.gd::GDScript::-1::1700792097::0::1::::<>Node2D<>::
-RoomSquare.tscn::PackedScene::41165902433368979::1700792187::0::1::::<><>::res://Room/RoomSquare.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bixaikq5k6fhb::::res://Room/backgrounds/doorCloses.png<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
-::res://Room/backgrounds/::1700792360
+RoomSquare.gd::GDScript::-1::1700794843::0::1::::<>Node2D<>::
+RoomSquare.tscn::PackedScene::41165902433368979::1700794865::0::1::::<><>::res://Room/RoomSquare.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
+::res://Room/backgrounds/::1700792361
 doorAssets.png::CompressedTexture2D::8794694769219416745::1700792361::1700792361::1::::<><>::
 doorCloses.png::CompressedTexture2D::2995426958819996763::1700777130::1700792187::1::::<><>::
 initialize.png::CompressedTexture2D::7998832900531806768::1700777130::1700777130::1::::<><>::
