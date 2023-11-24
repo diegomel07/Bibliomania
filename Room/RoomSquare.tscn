@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
+[gd_scene load_steps=11 format=3 uid="uid://t6843pn1g1h"]
 
 [ext_resource type="Script" path="res://Room/RoomSquare.gd" id="1_xhat2"]
 [ext_resource type="Texture2D" uid="uid://b28t24cmmr25y" path="res://Room/backgrounds/level1TileSet.png" id="2_08sfc"]
+[ext_resource type="PackedScene" uid="uid://cpfb5oqnkmsva" path="res://Room/level_door.tscn" id="3_7uyri"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_aaabw"]
 [ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="5_ocw3v"]
 [ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="6_snwsx"]
-[ext_resource type="Texture2D" uid="uid://bixaikq5k6fhb" path="res://Room/backgrounds/doorCloses.png" id="6_x7a6u"]
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="7_gxwug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ptm"]
@@ -79,9 +79,6 @@ sources/0 = SubResource("TileSetAtlasSource_c8ptm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
 size = Vector2(256, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvusg"]
-size = Vector2(18, 8)
-
 [node name="Room" type="Node2D"]
 script = ExtResource("1_xhat2")
 
@@ -116,79 +113,22 @@ visible = false
 position = Vector2(160, 80)
 shape = SubResource("RectangleShape2D_khe4g")
 
-[node name="Door4" type="Area2D" parent="."]
+[node name="Doors" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
-position = Vector2(125, 17)
-shape = SubResource("RectangleShape2D_nvusg")
-
-[node name="Door3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
-position = Vector2(17, 75)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_nvusg")
-
-[node name="Door2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
-position = Vector2(233, 75)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_nvusg")
-
-[node name="Door1" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
-position = Vector2(125, 133)
-shape = SubResource("RectangleShape2D_nvusg")
-debug_color = Color(0.192157, 0.584314, 0.733333, 0.419608)
-
-[node name="DoorDown" type="Sprite2D" parent="."]
-position = Vector2(125, 137.492)
+[node name="LevelDoor" parent="Doors" instance=ExtResource("3_7uyri")]
+position = Vector2(125, 138)
 rotation = 3.14159
-texture = ExtResource("6_x7a6u")
-hframes = 5
 
-[node name="DoorLeft" type="Sprite2D" parent="."]
-position = Vector2(12.5546, 75)
-rotation = -1.5708
-texture = ExtResource("6_x7a6u")
-hframes = 5
-
-[node name="DoorUp" type="Sprite2D" parent="."]
-position = Vector2(125, 12.5)
-scale = Vector2(1, 1)
-texture = ExtResource("6_x7a6u")
-hframes = 5
-
-[node name="DoorRight" type="Sprite2D" parent="."]
-position = Vector2(237.528, 75)
+[node name="LevelDoor2" parent="Doors" instance=ExtResource("3_7uyri")]
+position = Vector2(238, 75)
 rotation = 1.5708
-scale = Vector2(1, 1)
-texture = ExtResource("6_x7a6u")
-hframes = 5
 
-[node name="Doors" type="StaticBody2D" parent="."]
+[node name="LevelDoor3" parent="Doors" instance=ExtResource("3_7uyri")]
+position = Vector2(12, 75)
+rotation = -1.5708
 
-[node name="Ddown" type="CollisionPolygon2D" parent="Doors"]
-position = Vector2(-29, -109)
-scale = Vector2(0.968751, 1.31945)
-polygon = PackedVector2Array(144.31, 180.463, 177.342, 180.463, 177.342, 204.716, 144.31, 204.716)
-
-[node name="Dup" type="CollisionPolygon2D" parent="Doors"]
-position = Vector2(-34, -251)
-scale = Vector2(0.968751, 1.31945)
-polygon = PackedVector2Array(151.742, 190.231, 177.548, 190.231, 173.419, 206.146, 154.839, 206.146)
-
-[node name="Dleft" type="CollisionPolygon2D" parent="Doors"]
-position = Vector2(-155, -178)
-scale = Vector2(0.968751, 1.31945)
-polygon = PackedVector2Array(148.645, 181.894, 181.677, 181.894, 181.677, 206.146, 148.645, 206.146)
-
-[node name="Dright" type="CollisionPolygon2D" parent="Doors"]
-position = Vector2(85, -183)
-scale = Vector2(0.968751, 1.31945)
-polygon = PackedVector2Array(148.645, 181.894, 181.677, 181.894, 181.677, 206.146, 148.645, 206.146)
+[node name="LevelDoor4" parent="Doors" instance=ExtResource("3_7uyri")]
+position = Vector2(125, 12)
 
 [node name="Alice" parent="." instance=ExtResource("3_aaabw")]
 position = Vector2(132, 52)
@@ -215,7 +155,10 @@ offset_bottom = 62.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="body_entered" from="Door4" to="." method="_on_door_4_body_entered"]
-[connection signal="body_entered" from="Door3" to="." method="_on_door_3_body_entered"]
-[connection signal="body_entered" from="Door2" to="." method="_on_door_2_body_entered"]
-[connection signal="body_entered" from="Door1" to="." method="_on_door_1_body_entered"]
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Doors/LevelDoor" to="." method="_on_level_door_body_entered"]
+[connection signal="body_entered" from="Doors/LevelDoor2" to="." method="_on_level_door_2_body_entered"]
+[connection signal="body_entered" from="Doors/LevelDoor3" to="." method="_on_level_door_3_body_entered"]
+[connection signal="body_entered" from="Doors/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
