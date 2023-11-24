@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
 
-[ext_resource type="Script" path="res://Room/RoomSquare.gd" id="1_xhat2"]
+[ext_resource type="Script" path="res://Room/RoomVerticalRectangle.gd" id="1_wr53k"]
 [ext_resource type="Texture2D" uid="uid://b28t24cmmr25y" path="res://Room/backgrounds/level1TileSet.png" id="2_08sfc"]
 [ext_resource type="PackedScene" uid="uid://cpfb5oqnkmsva" path="res://Room/level_door.tscn" id="3_7uyri"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_aaabw"]
@@ -78,21 +78,21 @@ tile_size = Vector2i(25, 25)
 sources/0 = SubResource("TileSetAtlasSource_c8ptm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
-size = Vector2(256, 128)
+size = Vector2(256, 305.453)
 
 [node name="Room" type="Node2D"]
 scale = Vector2(1.27901, 1.19423)
-script = ExtResource("1_xhat2")
+script = ExtResource("1_wr53k")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6d37o")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608, 0, 3, 262144, 0, 4, 327680, 0, 5, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 2, 196609, 65536, 3, 262145, 65536, 4, 327681, 65536, 5, 2, 131072, 0, 65538, 131072, 1, 196610, 131072, 3, 262146, 131072, 4, 327682, 131072, 5, 3, 196608, 0, 65539, 196608, 1, 131075, 196608, 2, 196611, 196608, 3, 262147, 196608, 4, 327683, 196608, 5, 4, 262144, 0, 65540, 262144, 1, 131076, 262144, 2, 196612, 262144, 3, 262148, 262144, 4, 327684, 262144, 5, 5, 327680, 0, 65541, 327680, 1, 131077, 327680, 2, 196613, 327680, 3, 262149, 327680, 4, 327685, 327680, 5, 6, 393216, 0, 65542, 393216, 1, 131078, 393216, 2, 196614, 393216, 3, 262150, 393216, 4, 327686, 393216, 5, 7, 458752, 0, 65543, 458752, 1, 131079, 458752, 2, 196615, 458752, 3, 262151, 458752, 4, 327687, 458752, 5, 8, 524288, 0, 65544, 524288, 1, 131080, 524288, 2, 196616, 524288, 3, 262152, 524288, 4, 327688, 524288, 5, 9, 589824, 0, 65545, 589824, 1, 131081, 589824, 2, 196617, 589824, 3, 262153, 589824, 4, 327689, 589824, 5, 131074, 131072, 2)
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608, 0, 3, 262144, 0, 4, 327680, 0, 3, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 2, 196609, 65536, 3, 262145, 65536, 4, 327681, 393216, 2, 2, 131072, 0, 65538, 131072, 1, 196610, 131072, 3, 262146, 131072, 4, 327682, 393216, 2, 3, 196608, 0, 65539, 196608, 1, 131075, 196608, 2, 196611, 196608, 3, 262147, 196608, 4, 327683, 393216, 2, 4, 262144, 0, 65540, 262144, 1, 131076, 262144, 2, 196612, 262144, 3, 262148, 262144, 4, 327684, 393216, 2, 5, 327680, 0, 65541, 327680, 1, 131077, 327680, 2, 196613, 327680, 3, 262149, 327680, 4, 327685, 393216, 2, 6, 393216, 0, 65542, 393216, 1, 131078, 393216, 2, 196614, 393216, 3, 262150, 393216, 4, 327686, 393216, 2, 7, 458752, 0, 65543, 458752, 1, 131079, 458752, 2, 196615, 458752, 3, 262151, 458752, 4, 327687, 393216, 2, 8, 524288, 0, 65544, 524288, 1, 131080, 524288, 2, 196616, 524288, 3, 262152, 393216, 2, 327688, 393216, 2, 9, 589824, 0, 65545, 589824, 1, 131081, 589824, 2, 196617, 589824, 3, 262153, 589824, 4, 327689, 589824, 2, 131074, 131072, 2, 393224, 393216, 2, 458760, 393216, 2, 524296, 393216, 2, 589832, 393216, 2, 655368, 393216, 2, 393217, 393216, 2, 458753, 393216, 2, 524289, 393216, 2, 589825, 393216, 2, 655361, 393216, 2, 655362, 393216, 2, 655363, 393216, 2, 655364, 393216, 2, 655365, 393216, 2, 655366, 393216, 2, 655367, 393216, 2, 589831, 393216, 2, 589830, 393216, 2, 589829, 393216, 2, 589828, 393216, 2, 589827, 393216, 2, 589826, 393216, 2, 524290, 393216, 2, 458754, 393216, 2, 393218, 393216, 2, 393219, 393216, 2, 458755, 393216, 2, 524291, 393216, 2, 524292, 393216, 2, 524293, 393216, 2, 458757, 393216, 2, 458756, 393216, 2, 393220, 393216, 2, 393221, 393216, 2, 393222, 393216, 2, 458758, 393216, 2, 524294, 393216, 2, 524295, 393216, 2, 458759, 393216, 2, 393223, 393216, 2, 393225, 589824, 2, 458761, 589824, 2, 524297, 589824, 2, 589833, 589824, 2, 655369, 589824, 2, 720905, 589824, 5, 720904, 524288, 5, 720903, 524288, 5, 720902, 524288, 5, 720901, 524288, 5, 720900, 524288, 5, 720899, 524288, 5, 720898, 524288, 5, 720897, 524288, 5, 720896, 0, 5, 655360, 0, 3, 589824, 0, 3, 524288, 0, 3, 458752, 0, 3, 393216, 0, 3)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="BL" type="CollisionPolygon2D" parent="Walls"]
-position = Vector2(3, 0)
+position = Vector2(0.781855, 150.725)
 polygon = PackedVector2Array(-3, 150, 113, 150, 113, 125, 22, 125, 22, 86, -3, 86)
 
 [node name="TR" type="CollisionPolygon2D" parent="Walls"]
@@ -104,15 +104,26 @@ polygon = PackedVector2Array(69.9995, 176, 186, 176, 186, 151, 94.9996, 151, 94.
 polygon = PackedVector2Array(116, 0, 116, 25, 25, 25, 25, 66, 0, 62, 0, 0)
 
 [node name="BR" type="CollisionPolygon2D" parent="Walls"]
-position = Vector2(320, 176)
+position = Vector2(321.342, 326.57)
 rotation = 3.14159
-polygon = PackedVector2Array(186, 26.0005, 186, 51.0005, 94.9999, 51.0002, 94.9998, 92.0002, 69.9998, 92.0002, 69.9999, 26.0002)
+polygon = PackedVector2Array(186, 26.0005, 186, 51.0005, 94.9999, 51.0002, 94.9998, 92.0002, 70.3666, 92.1097, 69.9999, 26.0002)
+
+[node name="BR2" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(100.077, 190.918)
+rotation = 3.14159
+polygon = PackedVector2Array(78.1855, -5.86133, 98.5137, -5.0239, 99.2953, 92.1098, 75.8397, 87.0856)
+
+[node name="BR3" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(318.997, 186.731)
+rotation = 3.14159
+polygon = PackedVector2Array(93.0407, -14.2349, 94.9998, 92.0002, 68.0211, 92.9471, 69.5851, -13.3976)
 
 [node name="Floor" type="Area2D" parent="."]
 scale = Vector2(0.781053, 0.854414)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(160, 80)
+visible = false
+position = Vector2(158.162, 170.527)
 shape = SubResource("RectangleShape2D_khe4g")
 
 [node name="Doors" type="Node2D" parent="."]
@@ -128,11 +139,11 @@ position = Vector2(125, 15)
 [node name="DownDoor" type="Node2D" parent="Doors"]
 
 [node name="LevelDoor" parent="Doors/DownDoor" instance=ExtResource("3_7uyri")]
-position = Vector2(125, 138)
+position = Vector2(125.879, 285.54)
 rotation = 3.14159
 
 [node name="DoorCollision" parent="Doors/DownDoor" instance=ExtResource("4_3ouf4")]
-position = Vector2(125, 135)
+position = Vector2(125.879, 283.028)
 
 [node name="LeftDoor" type="Node2D" parent="Doors"]
 
@@ -143,6 +154,15 @@ rotation = -1.5708
 [node name="DoorCollision" parent="Doors/LeftDoor" instance=ExtResource("4_3ouf4")]
 position = Vector2(15, 76)
 
+[node name="LeftDoor2" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor3" parent="Doors/LeftDoor2" instance=ExtResource("3_7uyri")]
+position = Vector2(10.8866, 224.222)
+rotation = -1.5708
+
+[node name="DoorCollision" parent="Doors/LeftDoor2" instance=ExtResource("4_3ouf4")]
+position = Vector2(7.31887, 223.575)
+
 [node name="RigthDoor" type="Node2D" parent="Doors"]
 
 [node name="LevelDoor2" parent="Doors/RigthDoor" instance=ExtResource("3_7uyri")]
@@ -152,9 +172,21 @@ rotation = 1.5708
 [node name="DoorCollision" parent="Doors/RigthDoor" instance=ExtResource("4_3ouf4")]
 position = Vector2(235, 75)
 
+[node name="RigthDoor2" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor2" parent="Doors/RigthDoor2" instance=ExtResource("3_7uyri")]
+position = Vector2(234.175, 224.506)
+rotation = 1.5708
+
+[node name="DoorCollision" parent="Doors/RigthDoor2" instance=ExtResource("4_3ouf4")]
+position = Vector2(232.993, 225.508)
+
 [node name="Alice" parent="." instance=ExtResource("3_aaabw")]
 position = Vector2(132, 52)
 up_direction = Vector2(1, -0.0004)
+
+[node name="Camera2D" type="Camera2D" parent="Alice"]
+visible = false
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -183,4 +215,6 @@ one_shot = true
 [connection signal="body_entered" from="Doors/UpDoor/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
 [connection signal="body_entered" from="Doors/DownDoor/LevelDoor" to="." method="_on_level_door_body_entered"]
 [connection signal="body_entered" from="Doors/LeftDoor/LevelDoor3" to="." method="_on_level_door_3_body_entered"]
+[connection signal="body_entered" from="Doors/LeftDoor2/LevelDoor3" to="." method="_on_level_door_3_body_entered_2"]
 [connection signal="body_entered" from="Doors/RigthDoor/LevelDoor2" to="." method="_on_level_door_2_body_entered"]
+[connection signal="body_entered" from="Doors/RigthDoor2/LevelDoor2" to="." method="_on_level_door_2_body_entered_2"]

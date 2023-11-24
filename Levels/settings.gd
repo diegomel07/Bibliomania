@@ -6,14 +6,12 @@ signal closed
 var isOpen: bool = false
 
 func sett_open():
-	print("open")
 	visible = true
 	isOpen = true
 	$TextureRect/SettingsBox.show()
 	opened.emit()
 
 func sett_close():
-	print("close")
 	visible = false
 	isOpen = false	
 	$TextureRect/SettingsBox.hide()

@@ -1,10 +1,12 @@
-res://Room/level_door.tscn
+res://Room/RoomSquare.tscn
 res://Collectables/gem.gd
 res://Inventory/playerInventory.tres
 res://Gui/SettingsButton.tres
 res://Gui/Default.tscn.tres
 res://Gui/Cancel.tres
-res://Room/RoomSquare.gd
-res://Room/RoomSquare.tscn
-res://Room/door_collision.tscn
-res://Room/door_collision.gd
+res://Room/Initialize.tscn
+res://Room/RoomVerticalRectangle.tscn
+res://Room/RoomHorizontalRectangle.tscn
+res://Room/RoomBigSquare.tscn
+res://Room/RoomInvertedL.tscn
+res://Room/RoomL.tscn

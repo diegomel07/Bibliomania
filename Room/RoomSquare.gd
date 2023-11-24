@@ -55,7 +55,7 @@ func _ready():
 		$Alice.position.y = $Doors/DownDoor/LevelDoor.position.y - 20
 	if global.player_position == "start":
 		$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
-		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 10
+		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 20
 		
 		
 func _process(delta):

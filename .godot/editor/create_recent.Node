@@ -1,3 +1,4 @@
+Camera2D
 Node2D
 CollisionShape2D
 StaticBody2D
@@ -21,7 +22,6 @@ AudioStreamPlayer
 DirectionalLight2D
 PointLight2D
 VideoStreamPlayer
-Camera2D
 Panel
 CenterContainer
 GridContainer
