@@ -28,7 +28,6 @@ func _ready():
 	print_simplified()
 
 	calculate_room_connections()
-#	print(start_point, end_point)
 	print_matrix_with_connections()
 	global.current_point = start_point[0]
 	global.end_point = end_point[0]
@@ -82,14 +81,14 @@ func selected_figure(positions, x , y):
 	var figures = []
 	var figure 
 	figures.append("square")
-#	if positions.has("down"):
-#		figures.append("vertical rectangle")
-#	if positions.has("right"):
-#		figures.append("horizontal rectangle")
-#	if positions.has("down") and positions.has("bottom right"):
-#		figures.append("L")
-#	if positions.has("down") and positions.has("right"):
-#		figures.append("inverted L")
+	if positions.has("down"):
+		figures.append("vertical rectangle")
+	if positions.has("right"):
+		figures.append("horizontal rectangle")
+	if positions.has("down") and positions.has("bottom right"):
+		figures.append("L")
+	if positions.has("down") and positions.has("right"):
+		figures.append("inverted L")
 	if positions.has("down") and positions.has("bottom right") and positions.has("right"):
 		figures.append("Big square")
 	figure = figures[randi() % figures.size()]	
@@ -180,7 +179,7 @@ func choose_border_point(selected_size = null):
 func create_paths():
 	for i in range(path.size()):
 		var current_point = path[i]
-		if randf() < 0.6:  
+		if randf() < 0.7:  
 			var random_point = unique_random_point()
 			create_path(current_point, random_point, false)
 	

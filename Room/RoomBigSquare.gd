@@ -469,9 +469,8 @@ func _on_level_door_2_body_entered(body):
 					global.current_point.x -= 1
 					global.next_room("right")
 					global.player_position = "right"
-			"square bottom right":
-				if "right" in global.matrix[global.current_point.x - 1][global.current_point.y]["connections"]:
-					global.current_point.x -= 1
+			"square top right":
+				if "right" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 					global.next_room("right")
 					global.player_position = "right"
 

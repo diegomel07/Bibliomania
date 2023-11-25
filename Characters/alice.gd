@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal item_droped(item: Area2D)
 
-var speed:int = 200
+var speed:int = 80
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
