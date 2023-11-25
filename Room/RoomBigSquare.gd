@@ -23,7 +23,6 @@ func _ready():
 	var door_down_collision2 = $Doors/DownDoor2/DoorCollision.collision
 	var door_left_collision2 = $Doors/LeftDoor2/DoorCollision.collision
 	var door_rigth_collision2 = $Doors/RigthDoor2/DoorCollision.collision
-	
 
 	match entrance:
 		"square top left":
@@ -82,7 +81,12 @@ func _ready():
 			else:
 				door_down_Asset2.visible = false
 				door_down_collision2.disabled = false
-				
+			if global.player_position == "down":
+				$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
+				$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 20
+			if global.player_position == "right":
+				$Alice.position.x = $Doors/LeftDoor/LevelDoor3.position.x + 20
+				$Alice.position.y = $Doors/LeftDoor/LevelDoor3.position.y
 		"square top right":
 			if "right" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 				door_right_Asset.visible = true
@@ -90,6 +94,7 @@ func _ready():
 			else:
 				door_right_Asset.visible = false
 				door_rigth_collision.disabled = false	
+				
 			if "right" in global.matrix[global.current_point.x + 1][global.current_point.y]["connections"]:
 				door_right_Asset2.visible = true
 				door_rigth_collision2.disabled = true
@@ -138,7 +143,13 @@ func _ready():
 			else:
 				door_down_Asset2.visible = false
 				door_down_collision2.disabled = false
-				
+			if global.player_position == "down":
+				$Alice.position.x = $Doors/UpDoor2/LevelDoor4.position.x
+				$Alice.position.y = $Doors/UpDoor2/LevelDoor4.position.y + 20
+			if global.player_position == "left":
+				$Alice.position.x = $Doors/RigthDoor/LevelDoor2.position.x - 20
+				$Alice.position.y = $Doors/RigthDoor/LevelDoor2.position.y
+
 		"square left bot":
 			if "left" in global.matrix[global.current_point.x - 1][global.current_point.y]["connections"]:
 				door_left_Asset.visible = true
@@ -195,6 +206,12 @@ func _ready():
 			else:
 				door_up_Asset2.visible = false
 				door_up_collision2.disabled = false
+			if global.player_position == "right":
+				$Alice.position.x = $Doors/LeftDoor2/LevelDoor3.position.x + 20
+				$Alice.position.y = $Doors/LeftDoor2/LevelDoor3.position.y
+			if global.player_position == "up":
+				$Alice.position.x = $Doors/DownDoor/LevelDoor.position.x
+				$Alice.position.y = $Doors/DownDoor/LevelDoor.position.y - 20
 				
 		"square bottom right":
 			if "right" in global.matrix[global.current_point.x - 1][global.current_point.y]["connections"]:
@@ -252,23 +269,12 @@ func _ready():
 			else:
 				door_down_Asset2.visible = false
 				door_down_collision2.disabled = false
-#
-#	if global.player_position == "down":
-#		$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
-#		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 20
-#	if global.player_position == "left":
-#		$Alice.position.x = $Doors/RigthDoor/LevelDoor2.position.x - 20
-#		$Alice.position.y = $Doors/RigthDoor/LevelDoor2.position.y
-#	if global.player_position == "right":
-#		$Alice.position.x = $Doors/LeftDoor/LevelDoor3.position.x + 20
-#		$Alice.position.y = $Doors/LeftDoor/LevelDoor3.position.y
-#	if global.player_position == "up":
-#		$Alice.position.x = $Doors/DownDoor/LevelDoor.position.x
-#		$Alice.position.y = $Doors/DownDoor/LevelDoor.position.y - 20
-#	if global.player_position == "start":
-#		$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
-#		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 10
-		
+			if global.player_position == "left":
+				$Alice.position.x = $Doors/RigthDoor2/LevelDoor2.position.x - 20
+				$Alice.position.y = $Doors/RigthDoor2/LevelDoor2.position.y
+			if global.player_position == "up":
+				$Alice.position.x = $Doors/DownDoor2/LevelDoor.position.x
+				$Alice.position.y = $Doors/DownDoor2/LevelDoor.position.y - 20		
 		
 func _process(delta):
 	pass
@@ -337,17 +343,16 @@ func _on_level_door_4_body_entered_2(body):
 					global.next_room("up")
 					global.player_position = "up"
 			"square left bot":
-				if "up" in global.matrix[global.current_point.x + 1][global.current_point.y + 1]["connections"]:
+				if "up" in global.matrix[global.current_point.x - 1][global.current_point.y + 1]["connections"]:
 					global.current_point.y += 1
-					global.current_point.x += 1
+					global.current_point.x -= 1
 					global.next_room("up")
 					global.player_position = "up"
 			"square top right":
 				if "up" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 					global.next_room("up")
 					global.player_position = "up"
-					
-					
+			
 func _on_level_door_body_entered(body):
 	if body.has_method("player"):
 		match entrance:
@@ -400,7 +405,7 @@ func _on_level_door_body_entered_2(body):
 func _on_level_door_3_body_entered(body):
 	if body.has_method("player"):
 		match entrance:
-			"square left top":
+			"square top left":
 				if "left" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 					global.next_room("left")
 					global.player_position = "left"
@@ -424,7 +429,7 @@ func _on_level_door_3_body_entered(body):
 func _on_level_door_3_body_entered_2(body):
 	if body.has_method("player"):
 		match entrance:
-			"square left top":
+			"square top left":
 				if "left" in global.matrix[global.current_point.x + 1][global.current_point.y]["connections"]:
 					global.current_point.x += 1
 					global.next_room("left")
@@ -445,10 +450,10 @@ func _on_level_door_3_body_entered_2(body):
 					global.next_room("left")
 					global.player_position = "left"
 					
-func _on_level_door_2_body_entered(body):
+func _on_level_door_2_body_entered(body):	
 	if body.has_method("player"):
 		match entrance:
-			"square left top":
+			"square top left":
 				if "right" in global.matrix[global.current_point.x][global.current_point.y + 1]["connections"]:
 					global.current_point.y += 1
 					global.next_room("right")
@@ -473,7 +478,7 @@ func _on_level_door_2_body_entered(body):
 func _on_level_door_2_body_entered_2(body):
 	if body.has_method("player"):
 		match entrance:
-			"square left top":
+			"square top left":
 				if "right" in global.matrix[global.current_point.x + 1][global.current_point.y + 1]["connections"]:
 					global.current_point.x += 1
 					global.current_point.y += 1

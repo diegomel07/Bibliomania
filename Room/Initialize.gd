@@ -10,16 +10,17 @@ var path
 func _ready():
 	path = []
 	create_matrix()
-	start_point = choose_border_point()
-	matrix[start_point[0].x][start_point[0].y]["exists"] = true
-	matrix[start_point[0].x][start_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
-	matrix[start_point[0].x][start_point[0].y]["figure"] = "Square"
-	matrix[start_point[0].x][start_point[0].y]["id"] = "ID_" + str(randi())
-	end_point = choose_border_point(start_point[1])
-	matrix[end_point[0].x][end_point[0].y]["exists"] = true
-	matrix[end_point[0].x][end_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
-	matrix[end_point[0].x][end_point[0].y]["figure"] = "Square"
-	matrix[end_point[0].x][end_point[0].y]["id"] = "ID_" + str(randi())
+	for i in range(9):
+		start_point = choose_border_point()
+		matrix[start_point[0].x][start_point[0].y]["exists"] = true
+		matrix[start_point[0].x][start_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
+		matrix[start_point[0].x][start_point[0].y]["figure"] = "Square"
+		matrix[start_point[0].x][start_point[0].y]["id"] = "ID_" + str(randi())
+		end_point = choose_border_point(start_point[1])
+		matrix[end_point[0].x][end_point[0].y]["exists"] = true
+		matrix[end_point[0].x][end_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
+		matrix[end_point[0].x][end_point[0].y]["figure"] = "Square"
+		matrix[end_point[0].x][end_point[0].y]["id"] = "ID_" + str(randi())
 	
 	create_path(start_point[0], end_point[0], true)
 
@@ -81,14 +82,14 @@ func selected_figure(positions, x , y):
 	var figures = []
 	var figure 
 	figures.append("square")
-	if positions.has("down"):
-		figures.append("vertical rectangle")
-	if positions.has("right"):
-		figures.append("horizontal rectangle")
-	if positions.has("down") and positions.has("bottom right"):
-		figures.append("L")
-	if positions.has("down") and positions.has("right"):
-		figures.append("inverted L")
+#	if positions.has("down"):
+#		figures.append("vertical rectangle")
+#	if positions.has("right"):
+#		figures.append("horizontal rectangle")
+#	if positions.has("down") and positions.has("bottom right"):
+#		figures.append("L")
+#	if positions.has("down") and positions.has("right"):
+#		figures.append("inverted L")
 	if positions.has("down") and positions.has("bottom right") and positions.has("right"):
 		figures.append("Big square")
 	figure = figures[randi() % figures.size()]	

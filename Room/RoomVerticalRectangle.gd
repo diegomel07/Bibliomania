@@ -63,6 +63,16 @@ func _ready():
 				else:
 					door_down_Asset.visible = false
 					door_down_collision.disabled = false
+
+				if global.player_position == "down":
+					$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
+					$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 20
+				if global.player_position == "left":
+					$Alice.position.x = $Doors/RigthDoor/LevelDoor2.position.x - 20
+					$Alice.position.y = $Doors/RigthDoor/LevelDoor2.position.y
+				if global.player_position == "right":
+					$Alice.position.x = $Doors/LeftDoor/LevelDoor3.position.x + 20
+					$Alice.position.y = $Doors/LeftDoor/LevelDoor3.position.y
 					
 			"rectangle bottom":
 				if "right" in global.matrix[global.current_point.x - 1][global.current_point.y]["connections"]:
@@ -106,26 +116,15 @@ func _ready():
 				else:
 					door_down_Asset.visible = false
 					door_down_collision.disabled = false
-	
-
-	$Alice.position.x = 124
-	$Alice.position.y = 143	
-#	if global.player_position == "down":
-#		$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
-#		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 20
-#	if global.player_position == "left":
-#		$Alice.position.x = $Doors/RigthDoor/LevelDoor2.position.x - 20
-#		$Alice.position.y = $Doors/RigthDoor/LevelDoor2.position.y
-#	if global.player_position == "right":
-#		$Alice.position.x = $Doors/LeftDoor/LevelDoor3.position.x + 20
-#		$Alice.position.y = $Doors/LeftDoor/LevelDoor3.position.y
-#	if global.player_position == "up":
-#		$Alice.position.x = $Doors/DownDoor/LevelDoor.position.x
-#		$Alice.position.y = $Doors/DownDoor/LevelDoor.position.y - 20
-#	if global.player_position == "start":
-#		$Alice.position.x = $Doors/UpDoor/LevelDoor4.position.x
-#		$Alice.position.y = $Doors/UpDoor/LevelDoor4.position.y + 10
-		
+				if global.player_position == "left":
+					$Alice.position.x = $Doors/RigthDoor2/LevelDoor2.position.x - 20
+					$Alice.position.y = $Doors/RigthDoor2/LevelDoor2.position.y
+				if global.player_position == "right":
+					$Alice.position.x = $Doors/LeftDoor2/LevelDoor3.position.x + 20
+					$Alice.position.y = $Doors/LeftDoor2/LevelDoor3.position.y
+				if global.player_position == "up":
+					$Alice.position.x = $Doors/DownDoor/LevelDoor.position.x
+					$Alice.position.y = $Doors/DownDoor/LevelDoor.position.y - 20
 		
 func _process(delta):
 	pass
@@ -159,11 +158,11 @@ func _on_level_door_4_body_entered(body):
 	if body.has_method("player"):
 		match entrance:
 			"rectangle top":
-				if "up" in global.matrix[global.current_point][global.current_point.y]["connections"]:
+				if "up" in global.matrix[global.current_point.x][global.current_point.y]["connections"]:
 					global.next_room("up")
 					global.player_position = "up"
 			"rectangle bottom":
-				if "down" in global.matrix[global.current_point.x - 1][global.current_point.y]["connections"]:
+				if "up" in global.matrix[global.current_point.x - 1][global.current_point.y]["connections"]:
 					global.current_point.x -= 1
 					global.next_room("up")
 					global.player_position = "up"

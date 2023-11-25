@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700834698
+::res://::1700942058
 default_bus_layout.tres::AudioBusLayout::5556824292860527249::1700797180::0::1::::<><>::
 global.gd::GDScript::-1::1700821454::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::8785716330008111298::1700797180::1700797180::1::::<><>::
@@ -7,20 +7,20 @@ README.md::TextFile::-1::1700797180::0::1::::<><>::
 Samurai.gd::GDScript::-1::1700797180::0::1::::<>Node2D<>::
 ::res://Characters/::1700834384
 alice.gd::GDScript::-1::1700797180::0::1::::<>CharacterBody2D<>::
-alice.tscn::PackedScene::8339905536796466928::1700797180::0::1::::<><>::res://Characters/alice.gd<>uid://0tvti2x5qv7r::::res://Graphics/Sprites/animations_Alice-Sheet.png<>uid://j8helsth2xy2::::res://Inventory/playerInventory.tres
+alice.tscn::PackedScene::8339905536796466928::1700797180::0::1::::<><>::res://Characters/alice.gd<>uid://0tvti2x5qv7r
 alicia.tscn::PackedScene::601957989023255634::1700797180::0::1::::<><>::
 Samurai.gd::GDScript::-1::1700797180::0::1::::<>CharacterBody2D<>::
-Samurai.tscn::PackedScene::942197741703531887::1700797180::0::1::::<><>::res://Characters/Samurai.gd<>uid://muq1ju4pqhja::::res://Graphics/Sprites/Samurai-sheet.png
-snake02.tscn::PackedScene::3593524989884472261::1700797180::0::1::::<><>::uid://dpnd8blgo2y2x::::res://Graphics/Sprites/snake02.png
-snake.tscn::PackedScene::3289399754987620343::1700797180::0::1::::<><>::uid://roq4rebdfe7w::::res://Graphics/Sprites/snake.png
-::res://Collectables/::1700834339
+Samurai.tscn::PackedScene::942197741703531887::1700797180::0::1::::<><>::res://Characters/Samurai.gd<>uid://muq1ju4pqhja
+snake02.tscn::PackedScene::3593524989884472261::1700797180::0::1::::<><>::uid://dpnd8blgo2y2x
+snake.tscn::PackedScene::3289399754987620343::1700797180::0::1::::<><>::uid://roq4rebdfe7w
+::res://Collectables/::1700898597
 Collectable.gd::GDScript::-1::1700797180::0::1::::<>Area2D<>::
 collectable.tscn::PackedScene::8179914773302175475::1700797180::0::1::::<><>::res://Collectables/Collectable.gd
 Cursor.png::CompressedTexture2D::8802543474847506681::1700797180::1700797180::1::::<><>::
-gem.gd::GDScript::-1::1700833624::0::1::::<>Area2D<>::
-gem.tscn::PackedScene::1649878667410349719::1700797180::0::1::::<><>::uid://dosoabn1xtbg2::::res://Collectables/collectable.tscn<>uid://djvbwvg7rq24l::::res://Graphics/Sprites/Collectables/gem.png<>res://Collectables/gem.gd<>uid://bt6kl4rs4wtqw::::res://Inventory/items/gem.tres
+gem.gd::GDScript::-1::1700898597::0::1::::<>Area2D<>::
+gem.tscn::PackedScene::1649878667410349719::1700797180::0::1::::<><>::uid://dosoabn1xtbg2
 sword.gd::GDScript::-1::1700797180::0::1::::<>Area2D<>::
-sword.tscn::PackedScene::8613915834227492799::1700797180::0::1::::<><>::uid://dosoabn1xtbg2::::res://Collectables/collectable.tscn<>uid://bibao5dorngp4::::res://Graphics/Sprites/Collectables/sword.png<>res://Collectables/sword.gd<>uid://b6wdlwemfnsce::::res://Inventory/items/sword.tres
+sword.tscn::PackedScene::8613915834227492799::1700797180::0::1::::<><>::uid://dosoabn1xtbg2
 ::res://Graphics/::1700834384
 ::res://Graphics/1x/::1700834339
 attack_0.png::CompressedTexture2D::1073014504868262330::1700797180::1700797180::1::::<><>::
@@ -86,70 +86,70 @@ selected_panel.png::CompressedTexture2D::75633974254502480::1700797180::17007971
 ::res://Graphics/Tiles/TitleScreen/::1700834339
 Background.png::CompressedTexture2D::6986537564796586798::1700797180::1700797180::1::::<><>::
 Book.png::CompressedTexture2D::4910281092226513030::1700797180::1700797180::1::::<><>::
-::res://Gui/::1700834384
-Cancel.tres::Theme::6685813487398959117::1700833624::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://c35x1vpatt74a::::res://Graphics/Gui/GUICancel.png
+::res://Gui/::1700898597
+Cancel.tres::Theme::6685813487398959117::1700898597::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://c35x1vpatt74a::::res://Graphics/Gui/GUICancel.png
 CanvasLayer.gd::GDScript::-1::1700797180::0::1::::<>CanvasLayer<>::
-Default.tscn.tres::Theme::5959515035754159820::1700833624::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://deyqbty6ytcs3::::res://Graphics/Gui/GUI.png
+Default.tscn.tres::Theme::5959515035754159820::1700898597::0::1::::<><>::uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://deyqbty6ytcs3::::res://Graphics/Gui/GUI.png
 inventory.gd::GDScript::-1::1700797180::0::1::::<>Control<>::
-inventory.tscn::PackedScene::2666649716980534464::1700797180::0::1::::<><>::uid://lbffwhyli3he::::res://Graphics/Tiles/Inventory/inventoryBackground.png<>res://Gui/inventory.gd<>uid://3fur1h4sprjs::::res://Gui/slot.tscn<>uid://cq53lvjyrl8iq::::res://Gui/Default.tscn.tres<>uid://c2iwmviw26odh::::res://Gui/Cancel.tres
+inventory.tscn::PackedScene::2666649716980534464::1700797180::0::1::::<><>::uid://lbffwhyli3he
 MinimalPixel v2.ttf::FontFile::8794215927650006041::1700797180::1700797180::1::::<><>::
-SettingsButton.tres::Theme::4324319657591692204::1700833624::0::1::::<><>::uid://dbpp2jnd1u551::::res://Graphics/Gui/GUIGlobal.png<>uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf
+SettingsButton.tres::Theme::4324319657591692204::1700898597::0::1::::<><>::uid://dbpp2jnd1u551::::res://Graphics/Gui/GUIGlobal.png<>uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf
 slot.gd::GDScript::-1::1700797180::0::1::::<>Panel<>::
-slot.tscn::PackedScene::1976855586749943680::1700797180::0::1::::<><>::uid://cldwnd3xebtig::::res://Graphics/Tiles/Inventory/inventory_panel.png<>res://Gui/slot.gd
+slot.tscn::PackedScene::1976855586749943680::1700797180::0::1::::<><>::uid://cldwnd3xebtig
 ::res://Gui/PlayerGui/::1700834384
 liveProgressBaFull.png::CompressedTexture2D::1855865605753190178::1700797180::1700797180::1::::<><>::
 liveProgressBarEmpty.png::CompressedTexture2D::8339114696742878673::1700797180::1700797180::1::::<><>::
 ::res://Gui/settings/::1700834384
 MasterSlider.gd::GDScript::-1::1700797180::0::1::::<>HSlider<>::
 MusicSlider.gd::GDScript::-1::1700797180::0::1::::<>HSlider<>::
-settings.tscn::PackedScene::1466655114133471313::1700797180::0::1::::<><>::res://Levels/settings.gd<>uid://lbffwhyli3he::::res://Graphics/Tiles/Inventory/inventoryBackground.png<>uid://b2uy6bnmbr7gi::::res://Gui/SettingsButton.tres<>uid://dxj8pl54pw24t::::res://Gui/MinimalPixel v2.ttf<>uid://djvbwvg7rq24l::::res://Graphics/Sprites/Collectables/gem.png<>res://Gui/settings/MasterSlider.gd<>uid://dbpp2jnd1u551::::res://Graphics/Gui/GUIGlobal.png<>res://Gui/settings/MusicSlider.gd<>res://Gui/settings/SFXSlider.gd
+settings.tscn::PackedScene::1466655114133471313::1700797180::0::1::::<><>::res://Levels/settings.gd<>uid://lbffwhyli3he
 SettingsBox.gd::GDScript::-1::1700797180::0::1::::<>Control<>::
 settingsNode.gd::GDScript::-1::1700797180::0::1::::<>Control<>::
 SFXSlider.gd::GDScript::-1::1700797180::0::1::::<>HSlider<>::
 titleScreen.gd::GDScript::-1::1700797180::0::1::::<>Control<>::
-titleScreen.tscn::PackedScene::8237860265518951129::1700797180::0::1::::<><>::res://Levels/titleScreen.gd<>uid://c6sliun2h2b7c::::res://Graphics/Tiles/TitleScreen/Background.png<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://cb7tu2xo06xe1::::res://Graphics/Tiles/TitleScreen/Book.png<>uid://h1lmhrktxjlf::::res://Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3
-::res://Inventory/::1700834339
+titleScreen.tscn::PackedScene::8237860265518951129::1700797180::0::1::::<><>::res://Levels/titleScreen.gd<>uid://c6sliun2h2b7c
+::res://Inventory/::1700898597
 inventory.gd::GDScript::-1::1700797180::0::1::::Inventory<>Resource<>::
 inventoryItem.gd::GDScript::-1::1700797180::0::1::::InventoryItem<>Resource<>::
-playerInventory.tres::Resource/Inventory::700256827188296015::1700833624::0::1::::<><>::res://Inventory/inventory.gd
+playerInventory.tres::Resource/Inventory::700256827188296015::1700898597::0::1::::<><>::res://Inventory/inventory.gd
 ::res://Inventory/items/::1700834339
-gem.tres::Resource/InventoryItem::3784632787148495746::1700797180::0::1::::<><>::res://Inventory/inventoryItem.gd<>uid://djvbwvg7rq24l::::res://Graphics/Sprites/Collectables/gem.png
-sword.tres::Resource/InventoryItem::4607894104018032712::1700797180::0::1::::<><>::res://Inventory/inventoryItem.gd<>uid://bibao5dorngp4::::res://Graphics/Sprites/Collectables/sword.png
+gem.tres::Resource/Resource::3784632787148495746::1700797180::0::1::::<><>::res://Inventory/inventoryItem.gd<>uid://djvbwvg7rq24l
+sword.tres::Resource/Resource::4607894104018032712::1700797180::0::1::::<><>::res://Inventory/inventoryItem.gd<>uid://bibao5dorngp4
 ::res://Levels/::1700834384
 base.gd::GDScript::-1::1700797180::0::1::::<>Node2D<>::
-base.tscn::PackedScene::1707732992692477098::1700797180::0::1::::<><>::uid://lyg5q5eonfwi::::res://Graphics/Tiles/Base/base_tileset.png<>res://Levels/base.gd<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://cy6lc2wh4bjy::::res://Objects/Door.tscn<>uid://duyv62gjrbddv::::res://Collectables/sword.tscn<>uid://brgy3jj0ltf1v::::res://Characters/snake02.tscn<>uid://c7v2hbfbx14cy::::res://Objects/door02.tscn<>uid://bm4n6y8pyvc6j::::res://Characters/snake.tscn<>uid://bhit0fk5icq60::::res://Graphics/lights/circle.png<>res://Gui/CanvasLayer.gd<>uid://bd80li557mpc7::::res://Gui/inventory.tscn<>uid://xrhi4ix1qfs6::::res://Collectables/gem.tscn<>uid://dne7msl56aw6a::::res://Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn
+base.tscn::PackedScene::1707732992692477098::1700797180::0::1::::<><>::uid://lyg5q5eonfwi
 CanvasLayer.gd::GDScript::-1::1700797180::0::1::::<>CanvasLayer<>::
 CanvasSettings.gd::GDScript::-1::1700797180::0::1::::<>CanvasLayer<>::
-menu.tscn::PackedScene::7216972795153130122::1700797180::0::1::::<><>::res://Levels/titleScreen.gd<>uid://c6sliun2h2b7c::::res://Graphics/Tiles/TitleScreen/Background.png<>uid://0lnrs5keqlct::::res://Levels/settings.tscn<>res://Levels/CanvasLayer.gd<>uid://cb7tu2xo06xe1::::res://Graphics/Tiles/TitleScreen/Book.png<>uid://h1lmhrktxjlf::::res://Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3
+menu.tscn::PackedScene::7216972795153130122::1700797180::0::1::::<><>::res://Levels/titleScreen.gd<>uid://c6sliun2h2b7c
 settings.gd::GDScript::-1::1700798268::0::1::::<>Control<>::
-settings.tscn::PackedScene::1778249917872590723::1700797180::0::1::::<><>::res://Levels/settings.gd<>uid://lbffwhyli3he::::res://Graphics/Tiles/Inventory/inventoryBackground.png<>uid://b2uy6bnmbr7gi::::res://Gui/SettingsButton.tres
+settings.tscn::PackedScene::1778249917872590723::1700797180::0::1::::<><>::res://Levels/settings.gd<>uid://lbffwhyli3he
 titleScreen.gd::GDScript::-1::1700797180::0::1::::<>Control<>::
 ::res://Music/::1700834339
 the neighbourhood - the beach (instrumental, slowed & muffled ).mp3::AudioStreamMP3::8081939866503015654::1700797180::1700797180::1::::<><>::
 y2mate.com - Castlevania SOTN Dance of Pales.mp3::AudioStreamMP3::545685437924856199::1700797180::1700797180::1::::<><>::
 ::res://Objects/::1700834339
-door02.tscn::PackedScene::7063888216325121392::1700797180::0::1::::<><>::uid://b5s84y2getm0v::::res://Graphics/Tiles/Base/Objects/Door02.png
-Door.tscn::PackedScene::191824771648708134::1700797180::0::1::::<><>::uid://bfnpe4qc383ll::::res://Graphics/Tiles/Base/Objects/Door.png
-::res://Room/::1700834637
+door02.tscn::PackedScene::7063888216325121392::1700797180::0::1::::<><>::uid://b5s84y2getm0v
+Door.tscn::PackedScene::191824771648708134::1700797180::0::1::::<><>::uid://bfnpe4qc383ll
+::res://Room/::1700898599
 door_collision.gd::GDScript::-1::1700797180::0::1::::<>StaticBody2D<>::
 door_collision.tscn::PackedScene::3939107013250987206::1700798268::0::1::::<><>::res://Room/door_collision.gd
 Initialize.gd::GDScript::-1::1700833174::0::1::::<>Node2D<>::
-Initialize.tscn::PackedScene::7022138325719309017::1700833624::0::1::::<><>::res://Room/Initialize.gd<>uid://dl7xuyjc3owx1::::res://Room/backgrounds/initialize.png
+Initialize.tscn::PackedScene::7022138325719309017::1700898597::0::1::::<><>::res://Room/Initialize.gd<>uid://dl7xuyjc3owx1::::res://Room/backgrounds/initialize.png
 level_door.gd::GDScript::-1::1700797180::0::1::::<>Area2D<>::
-level_door.tscn::PackedScene::5836110962185189810::1700798268::0::1::::<><>::uid://dxkhlqv6otc1v::::res://Room/backgrounds/doorAssets.png<>res://Room/level_door.gd
-Playtest.tscn::PackedScene::820762629507774439::1700797180::0::1::::<><>::res://Room/Initialize.gd<>uid://dq26a4yywyp17::::res://Characters/alice.tscn
+level_door.tscn::PackedScene::5836110962185189810::1700798268::0::1::::<><>::uid://dxkhlqv6otc1v
+Playtest.tscn::PackedScene::820762629507774439::1700797180::0::1::::<><>::res://Room/Initialize.gd<>uid://dq26a4yywyp17
 RoomBigSquare.gd::GDScript::-1::1700833146::0::1::::<>Node2D<>::
-RoomBigSquare.tscn::PackedScene::41165902433368979::1700833626::0::1::::<><>::res://Room/RoomBigSquare.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
+RoomBigSquare.tscn::PackedScene::41165902433368979::1700870440::0::1::::<><>::res://Room/RoomBigSquare.gd<>uid://b28t24cmmr25y
 RoomHorizontalRectangle.gd::GDScript::-1::1700824248::0::1::::<>Node2D<>::
-RoomHorizontalRectangle.tscn::PackedScene::41165902433368979::1700833624::0::1::::<><>::res://Room/RoomHorizontalRectangle.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
+RoomHorizontalRectangle.tscn::PackedScene::41165902433368979::1700870440::0::1::::<><>::res://Room/RoomHorizontalRectangle.gd<>uid://b28t24cmmr25y
 RoomInvertedL.gd::GDScript::-1::1700828384::0::1::::<>Node2D<>::
-RoomInvertedL.tscn::PackedScene::41165902433368979::1700833626::0::1::::<><>::res://Room/RoomInvertedL.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
+RoomInvertedL.tscn::PackedScene::41165902433368979::1700898599::0::1::::<><>::res://Room/RoomInvertedL.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
 RoomL.gd::GDScript::-1::1700830488::0::1::::<>Node2D<>::
-RoomL.tscn::PackedScene::41165902433368979::1700833626::0::1::::<><>::res://Room/RoomL.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
+RoomL.tscn::PackedScene::41165902433368979::1700898599::0::1::::<><>::res://Room/RoomL.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
 RoomSquare.gd::GDScript::-1::1700833492::0::1::::<>Node2D<>::
-RoomSquare.tscn::PackedScene::41165902433368979::1700833624::0::1::::<><>::res://Room/RoomSquare.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
+RoomSquare.tscn::PackedScene::41165902433368979::1700898597::0::1::::<><>::res://Room/RoomSquare.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
 RoomVerticalRectangle.gd::GDScript::-1::1700828384::0::1::::<>Node2D<>::
-RoomVerticalRectangle.tscn::PackedScene::41165902433368979::1700833624::0::1::::<><>::res://Room/RoomVerticalRectangle.gd<>uid://b28t24cmmr25y::::res://Room/backgrounds/level1TileSet.png<>uid://cpfb5oqnkmsva::::res://Room/level_door.tscn<>uid://dq26a4yywyp17::::res://Characters/alice.tscn<>uid://bweertwcm6i6q::::res://Room/door_collision.tscn<>res://Gui/CanvasLayer.gd<>uid://u5puilrv8ujx::::res://Gui/settings/settings.tscn<>uid://bd80li557mpc7::::res://Gui/inventory.tscn
+RoomVerticalRectangle.tscn::PackedScene::41165902433368979::1700870439::0::1::::<><>::res://Room/RoomVerticalRectangle.gd<>uid://b28t24cmmr25y
 ::res://Room/backgrounds/::1700834384
 doorAssets.png::CompressedTexture2D::8794694769219416745::1700797180::1700797180::1::::<><>::
 doorCloses.png::CompressedTexture2D::2995426958819996763::1700797180::1700797180::1::::<><>::
