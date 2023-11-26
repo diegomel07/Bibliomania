@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
+[gd_scene load_steps=13 format=3 uid="uid://t6843pn1g1h"]
 
 [ext_resource type="Script" path="res://Room/RoomBigSquare.gd" id="1_w6fjj"]
 [ext_resource type="TileSet" uid="uid://bicrh8c0vpkmj" path="res://Room/backgrounds/LevelTileSet.tres" id="2_mnrb5"]
@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://ksglnjwhxn4m" path="res://Room/map.tscn" id="9_758sf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwp4n"]
-size = Vector2(231.82, 23.2247)
+size = Vector2(176.394, 23.2247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36b2v"]
+size = Vector2(225.792, 18.3736)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
 size = Vector2(572.62, 305.453)
@@ -44,27 +47,23 @@ position = Vector2(571.536, 328.245)
 rotation = 3.14159
 polygon = PackedVector2Array(186, 26.0005, 185.3, 56.9409, 95.3864, 56.9407, 94.9998, 92.0002, 69.9998, 92.0002, 69.9999, 26.0002)
 
-[node name="CD" type="CollisionShape2D" parent="Walls"]
-position = Vector2(249.803, 281.969)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_kwp4n")
-
-[node name="CU" type="CollisionShape2D" parent="Walls"]
-position = Vector2(250.78, 6.80956)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_kwp4n")
-
 [node name="CL" type="CollisionShape2D" parent="Walls"]
-position = Vector2(14.0789, 151.143)
+position = Vector2(14.0789, 150.306)
 rotation = 1.5708
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kwp4n")
 
 [node name="CR" type="CollisionShape2D" parent="Walls"]
 position = Vector2(486.316, 147.794)
 rotation = 1.5708
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kwp4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(250.666, 8.39776)
+shape = SubResource("RectangleShape2D_36b2v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(248.63, 280.516)
+shape = SubResource("RectangleShape2D_36b2v")
 
 [node name="Floor" type="Area2D" parent="."]
 scale = Vector2(0.781053, 0.854414)

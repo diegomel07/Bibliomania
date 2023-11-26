@@ -1,6 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://ksglnjwhxn4m"]
+[gd_scene load_steps=3 format=3 uid="uid://ksglnjwhxn4m"]
 
-[ext_resource type="Script" path="res://Map.gd" id="1_jdyj6"]
+[ext_resource type="Texture2D" uid="uid://b6g4bof8m2cpp" path="res://Graphics/Tiles/Level/Map.png" id="1_fkh2r"]
+[ext_resource type="Script" path="res://Room/MarginContainer.gd" id="2_n6av2"]
 
-[node name="Map" type="Node2D"]
-script = ExtResource("1_jdyj6")
+[node name="Map" type="CanvasLayer"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fkh2r")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("2_n6av2")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1

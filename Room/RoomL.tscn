@@ -58,12 +58,10 @@ polygon = PackedVector2Array(225.956, 85.4107, 226.738, 174.171, 366.69, 174.171
 [node name="a" type="CollisionShape2D" parent="Walls"]
 position = Vector2(250.975, 283.134)
 rotation = 1.5708
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xl6cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(14.0734, 146.119)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_j71ts")
 
 [node name="Floor" type="Area2D" parent="."]

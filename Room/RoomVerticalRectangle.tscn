@@ -118,7 +118,6 @@ position = Vector2(132, 52)
 up_direction = Vector2(1, -0.0004)
 
 [node name="Camera2D" type="Camera2D" parent="Alice"]
-visible = false
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 process_mode = 3
