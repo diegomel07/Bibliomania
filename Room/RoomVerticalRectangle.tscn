@@ -1,81 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
+[gd_scene load_steps=11 format=3 uid="uid://t6843pn1g1h"]
 
 [ext_resource type="Script" path="res://Room/RoomVerticalRectangle.gd" id="1_wr53k"]
-[ext_resource type="Texture2D" uid="uid://b28t24cmmr25y" path="res://Room/backgrounds/level1TileSet.png" id="2_08sfc"]
+[ext_resource type="TileSet" uid="uid://bicrh8c0vpkmj" path="res://Room/backgrounds/LevelTileSet.tres" id="2_eadh4"]
 [ext_resource type="PackedScene" uid="uid://cpfb5oqnkmsva" path="res://Room/level_door.tscn" id="3_7uyri"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_aaabw"]
 [ext_resource type="PackedScene" uid="uid://bweertwcm6i6q" path="res://Room/door_collision.tscn" id="4_3ouf4"]
 [ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="5_ocw3v"]
 [ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="6_snwsx"]
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="7_gxwug"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ptm"]
-texture = ExtResource("2_08sfc")
-texture_region_size = Vector2i(25, 25)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-1:1/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-4:1/0 = 0
-3:1/0 = 0
-2:1/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-5:1/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-0:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_6d37o"]
-tile_size = Vector2i(25, 25)
-sources/0 = SubResource("TileSetAtlasSource_c8ptm")
+[ext_resource type="PackedScene" uid="uid://ksglnjwhxn4m" path="res://Room/map.tscn" id="9_ebg54"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
 size = Vector2(256, 305.453)
@@ -85,15 +18,15 @@ scale = Vector2(1.27901, 1.19423)
 script = ExtResource("1_wr53k")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_6d37o")
+tile_set = ExtResource("2_eadh4")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 196608, 0, 3, 262144, 0, 4, 327680, 0, 3, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 2, 196609, 65536, 3, 262145, 65536, 4, 327681, 393216, 2, 2, 131072, 0, 65538, 131072, 1, 196610, 131072, 3, 262146, 131072, 4, 327682, 393216, 2, 3, 196608, 0, 65539, 196608, 1, 131075, 196608, 2, 196611, 196608, 3, 262147, 196608, 4, 327683, 393216, 2, 4, 262144, 0, 65540, 262144, 1, 131076, 262144, 2, 196612, 262144, 3, 262148, 262144, 4, 327684, 393216, 2, 5, 327680, 0, 65541, 327680, 1, 131077, 327680, 2, 196613, 327680, 3, 262149, 327680, 4, 327685, 393216, 2, 6, 393216, 0, 65542, 393216, 1, 131078, 393216, 2, 196614, 393216, 3, 262150, 393216, 4, 327686, 393216, 2, 7, 458752, 0, 65543, 458752, 1, 131079, 458752, 2, 196615, 458752, 3, 262151, 458752, 4, 327687, 393216, 2, 8, 524288, 0, 65544, 524288, 1, 131080, 524288, 2, 196616, 524288, 3, 262152, 393216, 2, 327688, 393216, 2, 9, 589824, 0, 65545, 589824, 1, 131081, 589824, 2, 196617, 589824, 3, 262153, 589824, 4, 327689, 589824, 2, 131074, 131072, 2, 393224, 393216, 2, 458760, 393216, 2, 524296, 393216, 2, 589832, 393216, 2, 655368, 393216, 2, 393217, 393216, 2, 458753, 393216, 2, 524289, 393216, 2, 589825, 393216, 2, 655361, 393216, 2, 655362, 393216, 2, 655363, 393216, 2, 655364, 393216, 2, 655365, 393216, 2, 655366, 393216, 2, 655367, 393216, 2, 589831, 393216, 2, 589830, 393216, 2, 589829, 393216, 2, 589828, 393216, 2, 589827, 393216, 2, 589826, 393216, 2, 524290, 393216, 2, 458754, 393216, 2, 393218, 393216, 2, 393219, 393216, 2, 458755, 393216, 2, 524291, 393216, 2, 524292, 393216, 2, 524293, 393216, 2, 458757, 393216, 2, 458756, 393216, 2, 393220, 393216, 2, 393221, 393216, 2, 393222, 393216, 2, 458758, 393216, 2, 524294, 393216, 2, 524295, 393216, 2, 458759, 393216, 2, 393223, 393216, 2, 393225, 589824, 2, 458761, 589824, 2, 524297, 589824, 2, 589833, 589824, 2, 655369, 589824, 2, 720905, 589824, 5, 720904, 524288, 5, 720903, 524288, 5, 720902, 524288, 5, 720901, 524288, 5, 720900, 524288, 5, 720899, 524288, 5, 720898, 524288, 5, 720897, 524288, 5, 720896, 0, 5, 655360, 0, 3, 589824, 0, 3, 524288, 0, 3, 458752, 0, 3, 393216, 0, 3)
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 131073, 1, 131072, 131073, 1, 196608, 131073, 1, 262144, 131073, 1, 327680, 131073, 1, 1, 131073, 65536, 65537, 327681, 1, 131073, 327681, 1, 196609, 327681, 1, 262145, 327681, 2, 327681, 327681, 3, 2, 131073, 4, 65538, 393217, 1, 196610, 393217, 1, 262146, 393217, 2, 327682, 393217, 3, 3, 131073, 65536, 65539, 458753, 2, 131075, 262145, 3, 196611, 458753, 2, 262147, 458753, 393218, 4, 65537, 2, 65540, 327681, 2, 131076, 327681, 3, 196612, 327681, 2, 262148, 327681, 3, 5, 65537, 65538, 65541, 327681, 2, 131077, 327681, 3, 196613, 327681, 2, 262149, 327681, 3, 327685, 327681, 1, 6, 131073, 0, 7, 196609, 4, 65543, 327681, 2, 131079, 262145, 3, 196615, 262145, 4, 8, 131073, 0, 65544, 327681, 2, 131080, 327681, 3, 196616, 327681, 1, 262152, 327681, 2, 9, 65537, 0, 65545, 65537, 3, 131081, 65537, 3, 196617, 65537, 3, 262153, 65537, 3, 131074, 393217, 1, 393224, 327681, 2, 524296, 327681, 1, 589832, 327681, 1, 655368, 327681, 1, 393217, 327681, 2, 458753, 327681, 3, 524289, 327681, 1, 589825, 327681, 2, 655361, 327681, 3, 655362, 327681, 3, 655363, 327681, 3, 655364, 327681, 3, 655365, 327681, 3, 655366, 458753, 262146, 655367, 262145, 4, 589831, 262145, 4, 589830, 393217, 2, 589829, 327681, 2, 589828, 327681, 2, 589827, 458753, 2, 589826, 393217, 2, 524290, 393217, 1, 458754, 458753, 262146, 393218, 458753, 65538, 393219, 262145, 1, 458755, 262145, 2, 524291, 262145, 3, 524292, 327681, 3, 524293, 327681, 3, 458757, 327681, 2, 458756, 327681, 2, 393221, 327681, 1, 524295, 262145, 4, 458759, 262145, 3, 393223, 458753, 2, 393225, 65537, 3, 458761, 65537, 3, 524297, 65537, 3, 589833, 65537, 3, 655369, 65537, 3, 720905, 65537, 1, 720904, 196609, 1, 720903, 196609, 1, 720902, 196609, 1, 720901, 1, 65538, 720900, 1, 2, 720899, 196609, 65537, 720898, 196609, 65537, 720897, 196609, 65537, 720896, 1, 1, 655360, 131073, 1, 589824, 131073, 1, 524288, 131073, 1, 458752, 131073, 1, 393216, 131073, 1, 458760, 327681, 3, 327687, 262145, 3, 262151, 458753, 2, 327683, 262145, 1, 327684, 327681, 1, 393220, 327681, 1, 327688, 327681, 3, 327689, 65537, 3, 524294, 458753, 262146, 458758, 393217, 2, 393222, 393217, 1, 327686, 393217, 1, 262150, 458753, 262146, 196614, 393217, 2, 131078, 458753, 262146, 65542, 327681, 2)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="BL" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(0.781855, 150.725)
-polygon = PackedVector2Array(-3, 150, 113, 150, 113, 125, 22, 125, 22, 86, -3, 86)
+polygon = PackedVector2Array(-3, 150, 113, 150, 113.369, 118.905, 23.4556, 118.905, 22, 86, -3, 86)
 
 [node name="TR" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(320, 176)
@@ -106,24 +39,23 @@ polygon = PackedVector2Array(116, 0, 116, 25, 25, 25, 25, 66, 0, 62, 0, 0)
 [node name="BR" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(321.342, 326.57)
 rotation = 3.14159
-polygon = PackedVector2Array(186, 26.0005, 186, 51.0005, 94.9999, 51.0002, 94.9998, 92.0002, 70.3666, 92.1097, 69.9999, 26.0002)
+polygon = PackedVector2Array(186, 26.0005, 186.081, 56.9407, 94.604, 56.9405, 94.9998, 92.0002, 70.3666, 92.1097, 69.9999, 26.0002)
 
 [node name="BR2" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(100.077, 190.918)
 rotation = 3.14159
-polygon = PackedVector2Array(78.1855, -5.86133, 98.5137, -5.0239, 99.2953, 92.1098, 75.8397, 87.0856)
+polygon = PackedVector2Array(76.6214, -24.2832, 98.5137, -5.0239, 99.2953, 92.1098, 75.8392, 102.995)
 
 [node name="BR3" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2(318.997, 186.731)
 rotation = 3.14159
-polygon = PackedVector2Array(93.0407, -14.2349, 94.9998, 92.0002, 68.0211, 92.9471, 69.5851, -13.3976)
+polygon = PackedVector2Array(93.8229, -26.7955, 93.8226, 100.483, 68.0211, 92.9471, 69.5851, -13.3976)
 
 [node name="Floor" type="Area2D" parent="."]
 scale = Vector2(0.781053, 0.854414)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-visible = false
-position = Vector2(158.162, 170.527)
+position = Vector2(163.167, 173.467)
 shape = SubResource("RectangleShape2D_khe4g")
 
 [node name="Doors" type="Node2D" parent="."]
@@ -157,11 +89,11 @@ position = Vector2(15, 76)
 [node name="LeftDoor2" type="Node2D" parent="Doors"]
 
 [node name="LevelDoor3" parent="Doors/LeftDoor2" instance=ExtResource("3_7uyri")]
-position = Vector2(10.8866, 224.222)
+position = Vector2(12.5613, 224.222)
 rotation = -1.5708
 
 [node name="DoorCollision" parent="Doors/LeftDoor2" instance=ExtResource("4_3ouf4")]
-position = Vector2(7.31887, 223.575)
+position = Vector2(8.88258, 223.575)
 
 [node name="RigthDoor" type="Node2D" parent="Doors"]
 
@@ -175,11 +107,11 @@ position = Vector2(235, 75)
 [node name="RigthDoor2" type="Node2D" parent="Doors"]
 
 [node name="LevelDoor2" parent="Doors/RigthDoor2" instance=ExtResource("3_7uyri")]
-position = Vector2(234.175, 224.506)
+position = Vector2(237.525, 224.506)
 rotation = 1.5708
 
 [node name="DoorCollision" parent="Doors/RigthDoor2" instance=ExtResource("4_3ouf4")]
-position = Vector2(232.993, 225.508)
+position = Vector2(236.902, 225.508)
 
 [node name="Alice" parent="." instance=ExtResource("3_aaabw")]
 position = Vector2(132, 52)
@@ -211,6 +143,8 @@ grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Map" parent="." instance=ExtResource("9_ebg54")]
 
 [connection signal="body_entered" from="Doors/UpDoor/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
 [connection signal="body_entered" from="Doors/DownDoor/LevelDoor" to="." method="_on_level_door_body_entered"]

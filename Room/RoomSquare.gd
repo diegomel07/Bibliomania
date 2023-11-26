@@ -62,6 +62,7 @@ func _process(delta):
 	pass
 
 func _input(event):
+
 	if event.is_action_pressed("CloseDoors"):
 		
 		for door in $Doors.get_children():

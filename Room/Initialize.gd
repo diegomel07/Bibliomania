@@ -4,6 +4,7 @@ var matrix
 var matrix_size = global.matrix_size
 var start_point
 var end_point
+var current_room
 
 var path
 
@@ -15,12 +16,12 @@ func _ready():
 		matrix[start_point[0].x][start_point[0].y]["exists"] = true
 		matrix[start_point[0].x][start_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
 		matrix[start_point[0].x][start_point[0].y]["figure"] = "Square"
-		matrix[start_point[0].x][start_point[0].y]["id"] = "ID_" + str(randi())
+		matrix[start_point[0].x][start_point[0].y]["id"] = randi()
 		end_point = choose_border_point(start_point[1])
 		matrix[end_point[0].x][end_point[0].y]["exists"] = true
 		matrix[end_point[0].x][end_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
 		matrix[end_point[0].x][end_point[0].y]["figure"] = "Square"
-		matrix[end_point[0].x][end_point[0].y]["id"] = "ID_" + str(randi())
+		matrix[end_point[0].x][end_point[0].y]["id"] = randi()
 	
 	create_path(start_point[0], end_point[0], true)
 
@@ -77,7 +78,7 @@ func validate_figure(x,y, connections):
 	selected_figure(positions, x, y)
 		
 func selected_figure(positions, x , y):
-	var id = "ID_" + str(randi())
+	var id = randi()
 	var figures = []
 	var figure 
 	figures.append("square")
@@ -92,6 +93,8 @@ func selected_figure(positions, x , y):
 	if positions.has("down") and positions.has("bottom right") and positions.has("right"):
 		figures.append("Big square")
 	figure = figures[randi() % figures.size()]	
+	
+	var id_figure
 	
 	match figure:
 		"square":
@@ -219,7 +222,6 @@ func sign(value):
 	return (value > 0) - (value < 0)
 	
 func print_matrix_with_connections():
-	
 	for x in range(matrix_size):
 		var row_str = ""
 		for y in range(matrix_size):
@@ -238,7 +240,6 @@ func print_simplified():
 		print(row_str)
 				
 func change_scene():
-	
 	if global.transition_scene == true:
 		if global.current_scene == "initialize":
 			global.change_room()
