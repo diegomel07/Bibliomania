@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://di5ygoy2ld8v3"]
+
+[ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="1_ggt1l"]
+[ext_resource type="Texture2D" uid="uid://66klc6e88cg8" path="res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg" id="3_oevr4"]
+[ext_resource type="Texture2D" uid="uid://r7pnsoxd8d0w" path="res://Graphics/Ui/PNG/grey_panel.png" id="4_1vs0x"]
+[ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="5_4l3rv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_22oqf"]
+line_spacing = 2.0
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu_Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -89.0
+offset_right = 679.0
+offset_bottom = 549.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.381772, 0.280258)
+size_flags_horizontal = 0
+theme = ExtResource("1_ggt1l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 0
+offset_top = -4.0
+offset_right = 834.0
+offset_bottom = 639.0
+scale = Vector2(1.00528, 1)
+theme = ExtResource("1_ggt1l")
+texture = ExtResource("3_oevr4")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -190.0
+offset_right = 155.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ggt1l")
+texture = ExtResource("4_1vs0x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -146.0
+offset_right = 114.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ggt1l")
+
+[node name="Title" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_ggt1l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Bibliomania
+"
+
+[node name="Ajustes" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Ajustes
+
+"
+label_settings = SubResource("LabelSettings_22oqf")
+horizontal_alignment = 1
+
+[node name="Sound" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("5_4l3rv")
+theme_override_font_sizes/font_size = 26
+text = "Sonido"
+
+[node name="Screen" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("5_4l3rv")
+theme_override_font_sizes/font_size = 26
+text = "Pantalla"
+
+[node name="Delete" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("5_4l3rv")
+theme_override_font_sizes/font_size = 26
+text = "Borrar cuenta"
+
+[node name="Back" type="Button" parent="TextureRect/NinePatchRect"]
+layout_mode = 0
+offset_left = 16.7999
+offset_top = 314.949
+offset_right = 97.7999
+offset_bottom = 357.949
+theme = ExtResource("5_4l3rv")
+theme_override_font_sizes/font_size = 15
+text = "Regresar"

@@ -97,6 +97,7 @@ scale = Vector2(0.24, 0.24)
 texture = ExtResource("4_ty524")
 
 [node name="Settings" parent="." instance=ExtResource("3_a4wxp")]
+visible = false
 layout_mode = 1
 offset_top = 21.5
 offset_bottom = 21.5

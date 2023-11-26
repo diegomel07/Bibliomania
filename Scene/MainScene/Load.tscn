@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://basoo0rhr731c"]
+
+[ext_resource type="Texture2D" uid="uid://r7pnsoxd8d0w" path="res://Graphics/Ui/PNG/grey_panel.png" id="1_khdvh"]
+[ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="2_yuwnh"]
+[ext_resource type="FontFile" uid="uid://dxj8pl54pw24t" path="res://Gui/MinimalPixel v2.ttf" id="3_okh6x"]
+[ext_resource type="Texture2D" uid="uid://dnkdtvu03dlwl" path="res://Graphics/Ui/PNG/green_boxCheckmark.png" id="4_i0erq"]
+[ext_resource type="Texture2D" uid="uid://cm6kon1naysoo" path="res://Graphics/Ui/PNG/red_boxCross.png" id="5_qhoy5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsdbo"]
+line_spacing = 1.0
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.807843, 0, 0.32549, 0)
+
+[node name="Load" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -51.0
+offset_right = 97.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_khdvh")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -27.0
+offset_right = 76.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_yuwnh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "¿Cargar esta partida?"
+label_settings = SubResource("LabelSettings_wsdbo")
+
+[node name="Yes" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 60.0
+offset_bottom = 94.1053
+theme_override_constants/icon_max_width = 17
+theme_override_fonts/font = ExtResource("3_okh6x")
+theme_override_font_sizes/font_size = 14
+text = "Si"
+icon = ExtResource("4_i0erq")
+
+[node name="No" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 70.0
+offset_right = 184.0
+offset_bottom = 94.1053
+theme_override_constants/icon_max_width = 17
+theme_override_fonts/font = ExtResource("3_okh6x")
+theme_override_font_sizes/font_size = 14
+text = "No
+"
+icon = ExtResource("5_qhoy5")

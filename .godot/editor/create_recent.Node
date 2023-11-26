@@ -1,11 +1,13 @@
-AnimationPlayer
 Button
+Label
+TextureRect
+TextureButton
+CheckButton
+AnimationPlayer
 CanvasLayer
 Control
-TextureRect
 HSlider
 CheckBox
-Label
 VBoxContainer
 HBoxContainer
 AudioStreamPlayer

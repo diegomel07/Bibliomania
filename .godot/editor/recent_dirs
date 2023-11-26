@@ -1,11 +1,12 @@
 res://Scene/MainScene
-res://Graphics/Sprites/Collectables
-res://Gui
-res://Levels
+res://Graphics/Ui/PNG
+res://Objects
 res://Gui/settings
+res://Gui
+res://Characters
+res://Graphics/Sprites/Collectables
+res://Levels
 res://Inventory/items
 res://Collectables
 res://
 res://Inventory
-res://Characters
-res://Objects
