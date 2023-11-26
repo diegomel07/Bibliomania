@@ -1,0 +1,360 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_f3hpd"]
+
+[resource]
+script = ExtResource("1_f3hpd")
+using_states = PackedStringArray()
+titles = {
+"discussion": "25",
+"start": "5"
+}
+character_names = PackedStringArray("Serpent", "Alicia", "Alice")
+first_title = "5"
+lines = {
+"10": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "11",
+"parent_id": "5",
+"tags": PackedStringArray("mood=serpentHappy"),
+"text": "Ha pasado un tiempo desde la ultima vez que tuve un invitado.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ha pasado un tiempo desde la ultima vez que tuve un invitado.",
+"type": "dialogue"
+},
+"11": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "12",
+"parent_id": "5",
+"tags": PackedStringArray("mood=serpentHappy"),
+"text": "Mi nombre es SERPENT.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Mi nombre es SERPENT.",
+"type": "dialogue"
+},
+"12": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "14",
+"parent_id": "5",
+"tags": PackedStringArray("mood=serpentHappy"),
+"text": "Mi pequeña invitada Número 431, ¿Cuál es tu nombre?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Mi pequeña invitada Número 431, ¿Cuál es tu nombre?",
+"type": "dialogue"
+},
+"14": {
+"character": "Alicia",
+"character_replacements": Array[Dictionary]([]),
+"id": "14",
+"next_id": "15",
+"parent_id": "5",
+"tags": PackedStringArray("mood=aliceHappy"),
+"text": "Soy Alicia. Ji Ji Ji.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Soy Alicia. Ji Ji Ji.",
+"type": "dialogue"
+},
+"15": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "15",
+"next_id": "16",
+"parent_id": "5",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Entonces Alicia, por favor siéntete como en tu casa en esta habitación",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Entonces Alicia, por favor siéntete como en tu casa en esta habitación",
+"type": "dialogue"
+},
+"16": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "22",
+"parent_id": "5",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Pero por favor ten en cuenta no salir.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Pero por favor ten en cuenta no salir.",
+"type": "dialogue"
+},
+"18": {
+"id": "18",
+"next_conditional_id": "22",
+"next_id": "19",
+"next_id_after": "22",
+"type": "condition"
+},
+"19": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "19",
+"next_id": "20",
+"parent_id": "18",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Siéntete como en tu casa en esta habitación.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Siéntete como en tu casa en esta habitación.",
+"type": "dialogue"
+},
+"2": {
+"id": "2",
+"next_id": "5",
+"text": "start",
+"type": "title"
+},
+"20": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "20",
+"next_id": "22",
+"parent_id": "18",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Pero por favor ten en cuenta no salir.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Pero por favor ten en cuenta no salir.",
+"type": "dialogue"
+},
+"22": {
+"id": "22",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"23": {
+"id": "23",
+"next_id": "25",
+"text": "discussion",
+"type": "title"
+},
+"25": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "25",
+"next_id": "26",
+"tags": PackedStringArray("mood=serpentThreat"),
+"text": "NO TE DIJE QUE NO SALIERAS DE TU HABITACIÓN!? ¿¡",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "NO TE DIJE QUE NO SALIERAS DE TU HABITACIÓN!? ¿¡",
+"type": "dialogue"
+},
+"26": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "26",
+"next_id": "28",
+"tags": PackedStringArray("mood=serpentThreat"),
+"text": "Si te alejas de tu habitación, ¡Tu cuerpo se PUDRIRA!
+ ",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Si te alejas de tu habitación, ¡Tu cuerpo se PUDRIRA!
+ ",
+"type": "dialogue"
+},
+"28": {
+"character": "Alicia",
+"character_replacements": Array[Dictionary]([]),
+"id": "28",
+"next_id": "30",
+"tags": PackedStringArray("mood=aliceConfused"),
+"text": "No lo entiendo",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "No lo entiendo",
+"type": "dialogue"
+},
+"30": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "30",
+"next_id": "31",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "La mansión tiene 431 HUESPEDES Y 431 CUARTOS",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "La mansión tiene 431 HUESPEDES Y 431 CUARTOS",
+"type": "dialogue"
+},
+"31": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "31",
+"next_id": "32",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Si deseas volver al mundo exterior tendrás que llegar a la habitación 000",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Si deseas volver al mundo exterior tendrás que llegar a la habitación 000",
+"type": "dialogue"
+},
+"32": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "32",
+"next_id": "33",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Tu habitación es la 431",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu habitación es la 431",
+"type": "dialogue"
+},
+"33": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "33",
+"next_id": "34",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "En otras palabras, sobre tu posición actual,",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "En otras palabras, sobre tu posición actual,",
+"type": "dialogue"
+},
+"34": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "34",
+"next_id": "35",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Tendrás que pasar por 431 habitaciones.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tendrás que pasar por 431 habitaciones.",
+"type": "dialogue"
+},
+"35": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "35",
+"next_id": "36",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Ahí esta el problema. Como he dicho,",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ahí esta el problema. Como he dicho,",
+"type": "dialogue"
+},
+"36": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "36",
+"next_id": "38",
+"tags": PackedStringArray("mood=neutralSerpent"),
+"text": "Cuanto más lejos te encuentres de esta sala…",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Cuanto más lejos te encuentres de esta sala…",
+"type": "dialogue"
+},
+"38": {
+"character": "Alice",
+"character_replacements": Array[Dictionary]([]),
+"id": "38",
+"next_id": "40",
+"tags": PackedStringArray("mood=aliceConfused"),
+"text": "¿Más se pudrirá mi cuerpo?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "¿Más se pudrirá mi cuerpo?",
+"type": "dialogue"
+},
+"40": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "40",
+"next_id": "42",
+"tags": PackedStringArray("mood=serpentHappy"),
+"text": "Precisamente",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Precisamente",
+"type": "dialogue"
+},
+"42": {
+"character": "Alice",
+"character_replacements": Array[Dictionary]([]),
+"id": "42",
+"next_id": "44",
+"tags": PackedStringArray("mood=aliceThreat"),
+"text": "Significa, que tengo que apurarme.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Significa, que tengo que apurarme.",
+"type": "dialogue"
+},
+"44": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "44",
+"next_id": "49",
+"tags": PackedStringArray("mood=serpentThreat"),
+"text": "TE ARREPENTIRAS DE ESTO, ALICIA.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "TE ARREPENTIRAS DE ESTO, ALICIA.",
+"type": "dialogue"
+},
+"49": {
+"id": "49",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"5": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "State"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "first_interaction"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "variable",
+"value": "false"
+}, {
+"type": "colon"
+}])
+},
+"id": "5",
+"next_conditional_id": "18",
+"next_id": "6",
+"next_id_after": "22",
+"type": "condition"
+},
+"6": {
+"id": "6",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "State"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "first_interaction"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "9",
+"parent_id": "5",
+"type": "mutation"
+},
+"9": {
+"character": "Serpent",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "10",
+"parent_id": "5",
+"tags": PackedStringArray("mood=serpentHappy"),
+"text": "Bienvenida a mi Mansión.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Bienvenida a mi Mansión.",
+"type": "dialogue"
+}
+}
+metadata/dialogue_manager_version = "2.29.2"

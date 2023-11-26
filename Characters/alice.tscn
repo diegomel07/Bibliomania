@@ -122,7 +122,7 @@ inventory = ExtResource("2_1xam4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rjrgr")
 hframes = 26
-frame = 18
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
@@ -144,4 +144,6 @@ wait_time = 0.5
 one_shot = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]
