@@ -1,0 +1,156 @@
+[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
+
+[ext_resource type="Script" path="res://Room/RoomHorizontalRectangle.gd" id="1_hdyiq"]
+[ext_resource type="TileSet" uid="uid://bicrh8c0vpkmj" path="res://Room/backgrounds/LevelTileSet.tres" id="2_j3x56"]
+[ext_resource type="PackedScene" uid="uid://cpfb5oqnkmsva" path="res://Room/level_door.tscn" id="3_7uyri"]
+[ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_aaabw"]
+[ext_resource type="PackedScene" uid="uid://bweertwcm6i6q" path="res://Room/door_collision.tscn" id="4_3ouf4"]
+[ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="5_ocw3v"]
+[ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="6_snwsx"]
+[ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="7_gxwug"]
+[ext_resource type="PackedScene" uid="uid://ksglnjwhxn4m" path="res://Room/map.tscn" id="9_lx6vu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ahv5"]
+size = Vector2(231.429, 26.1554)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
+size = Vector2(574.622, 128)
+
+[node name="Room" type="Node2D"]
+scale = Vector2(1.27901, 1.19423)
+script = ExtResource("1_hdyiq")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_j3x56")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 131073, 1, 131072, 131073, 1, 196608, 131073, 1, 262144, 131073, 1, 327680, 1, 1, 1, 131073, 65536, 65537, 327681, 1, 131073, 327681, 1, 196609, 327681, 2, 262145, 327681, 3, 327681, 196609, 65537, 2, 131073, 2, 65538, 393217, 1, 196610, 393217, 2, 262146, 327681, 3, 327682, 196609, 65537, 3, 131073, 65536, 65539, 458753, 2, 131075, 262145, 3, 196611, 458753, 2, 262147, 327681, 3, 327683, 196609, 65537, 4, 65537, 2, 65540, 327681, 2, 131076, 327681, 3, 196612, 327681, 2, 262148, 327681, 3, 327684, 1, 2, 5, 65537, 65538, 65541, 327681, 2, 131077, 327681, 3, 196613, 327681, 2, 262149, 327681, 3, 327685, 1, 65538, 6, 131073, 0, 65542, 327681, 2, 131078, 458753, 262146, 196614, 393217, 2, 262150, 458753, 262146, 327686, 196609, 1, 7, 196609, 2, 65543, 327681, 2, 131079, 262145, 3, 196615, 262145, 4, 262151, 262145, 4, 327687, 196609, 1, 8, 131073, 0, 65544, 393217, 2, 131080, 458753, 262146, 196616, 393217, 1, 262152, 393217, 1, 327688, 196609, 1, 9, 65537, 2, 65545, 262145, 4, 131081, 262145, 4, 196617, 262145, 4, 262153, 262145, 4, 327689, 1, 2, 131074, 393217, 1, 262154, 393217, 1, 65546, 393217, 1, 131082, 393217, 1, 196618, 393217, 1, 262155, 262145, 3, 262156, 327681, 3, 262157, 327681, 3, 262158, 327681, 3, 262159, 327681, 3, 262160, 458753, 262146, 262161, 262145, 4, 262162, 327681, 1, 196626, 327681, 1, 131090, 327681, 3, 131089, 262145, 3, 131088, 458753, 262146, 196623, 327681, 2, 196622, 327681, 2, 196621, 458753, 2, 196620, 393217, 2, 196619, 458753, 2, 131084, 393217, 1, 131083, 262145, 4, 65547, 262145, 4, 65548, 393217, 1, 65549, 458753, 2, 65550, 327681, 2, 65551, 327681, 2, 131085, 262145, 3, 131086, 327681, 3, 131087, 327681, 3, 196624, 393217, 2, 196625, 262145, 4, 65553, 327681, 2, 65552, 327681, 2, 65554, 327681, 2, 327690, 1, 2, 327691, 196609, 65537, 327692, 196609, 65537, 327693, 196609, 65537, 327694, 1, 2, 327695, 1, 65538, 327696, 196609, 1, 327697, 196609, 1, 327698, 196609, 1, 327699, 65537, 1, 262163, 196609, 0, 196627, 196609, 0, 131091, 196609, 0, 65555, 196609, 0, 19, 65537, 0, 18, 131073, 0, 17, 196609, 3, 16, 131073, 0, 15, 65537, 65538, 14, 65537, 2, 13, 131073, 65536, 12, 131073, 3, 11, 131073, 65536, 10, 65537, 2, 0, 1, 0)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="BL" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(3, 0)
+polygon = PackedVector2Array(-3, 150, 113, 150, 111.933, 122.255, 22.8012, 122.255, 22, 86, -3, 86)
+
+[node name="TR" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(570.754, 175.008)
+rotation = 3.14159
+polygon = PackedVector2Array(69.9995, 176, 94.5233, 176, 186, 176, 186, 151, 94.9996, 151, 94.9997, 110, 69.9997, 110)
+
+[node name="TL" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(116, 0, 116, 25, 25, 25, 25, 66, 0, 62, 0, 0)
+
+[node name="BR" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(571.536, 177.52)
+rotation = 3.14159
+polygon = PackedVector2Array(186, 26.0005, 186.081, 54.4288, 95.3861, 54.4286, 94.9998, 92.0002, 69.9998, 92.0002, 69.9999, 26.0002)
+
+[node name="CU" type="CollisionShape2D" parent="Walls"]
+position = Vector2(250.666, 14.4324)
+shape = SubResource("RectangleShape2D_2ahv5")
+
+[node name="CD" type="CollisionShape2D" parent="Walls"]
+position = Vector2(250.193, 135.332)
+shape = SubResource("RectangleShape2D_2ahv5")
+
+[node name="Floor" type="Area2D" parent="."]
+scale = Vector2(0.781053, 0.854414)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(319.311, 80)
+shape = SubResource("RectangleShape2D_khe4g")
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="UpDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor4" parent="Doors/UpDoor" instance=ExtResource("3_7uyri")]
+position = Vector2(125, 12)
+
+[node name="DoorCollision" parent="Doors/UpDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(125, 15)
+
+[node name="UpDoor2" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor4" parent="Doors/UpDoor2" instance=ExtResource("3_7uyri")]
+position = Vector2(374.508, 13.3978)
+
+[node name="DoorCollision" parent="Doors/UpDoor2" instance=ExtResource("4_3ouf4")]
+position = Vector2(374.508, 16.3978)
+
+[node name="DownDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor" parent="Doors/DownDoor" instance=ExtResource("3_7uyri")]
+position = Vector2(125, 138)
+rotation = 3.14159
+
+[node name="DoorCollision" parent="Doors/DownDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(125, 135)
+
+[node name="DownDoor2" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor" parent="Doors/DownDoor2" instance=ExtResource("3_7uyri")]
+position = Vector2(377.636, 136.978)
+rotation = 3.14159
+
+[node name="DoorCollision" parent="Doors/DownDoor2" instance=ExtResource("4_3ouf4")]
+position = Vector2(377.636, 133.978)
+
+[node name="LeftDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor3" parent="Doors/LeftDoor" instance=ExtResource("3_7uyri")]
+position = Vector2(12, 75)
+rotation = -1.5708
+
+[node name="DoorCollision" parent="Doors/LeftDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(15, 76)
+
+[node name="RigthDoor" type="Node2D" parent="Doors"]
+
+[node name="LevelDoor2" parent="Doors/RigthDoor" instance=ExtResource("3_7uyri")]
+position = Vector2(486.221, 72.9927)
+rotation = 1.5708
+
+[node name="DoorCollision" parent="Doors/RigthDoor" instance=ExtResource("4_3ouf4")]
+position = Vector2(466.767, 72.8503)
+
+[node name="Alice" parent="." instance=ExtResource("3_aaabw")]
+position = Vector2(250.975, 72.0129)
+up_direction = Vector2(1, -0.0004)
+
+[node name="Camera2D" type="Camera2D" parent="Alice"]
+visible = false
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("5_ocw3v")
+
+[node name="SettingsNode" parent="Canvas" instance=ExtResource("6_snwsx")]
+
+[node name="inventory" parent="Canvas" instance=ExtResource("7_gxwug")]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -62.5
+offset_right = 112.5
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Map" parent="." instance=ExtResource("9_lx6vu")]
+
+[connection signal="body_entered" from="Doors/UpDoor/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
+[connection signal="body_entered" from="Doors/UpDoor2/LevelDoor4" to="." method="_on_level_door_4_body_entered_2"]
+[connection signal="body_entered" from="Doors/DownDoor/LevelDoor" to="." method="_on_level_door_body_entered"]
+[connection signal="body_entered" from="Doors/DownDoor2/LevelDoor" to="." method="_on_level_door_body_entered_2"]
+[connection signal="body_entered" from="Doors/LeftDoor/LevelDoor3" to="." method="_on_level_door_3_body_entered"]
+[connection signal="body_entered" from="Doors/RigthDoor/LevelDoor2" to="." method="_on_level_door_2_body_entered"]
