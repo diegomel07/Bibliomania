@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxt3tyw1v5sd"]
+
+[ext_resource type="Script" path="res://Room/Initialize.gd" id="1_chyxs"]
+[ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="2_y03x8"]
+
+[node name="Playtest" type="Node2D"]
+script = ExtResource("1_chyxs")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_y03x8")]
+position = Vector2(160, 88)

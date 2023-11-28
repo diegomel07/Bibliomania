@@ -6,14 +6,12 @@ signal closed
 var isOpen: bool = false
 
 func sett_open():
-	print("open")
 	visible = true
 	isOpen = true
 	$TextureRect/SettingsBox.show()
 	opened.emit()
 
 func sett_close():
-	print("close")
 	visible = false
 	isOpen = false	
 	$TextureRect/SettingsBox.hide()
@@ -47,6 +45,7 @@ func _on_fullscreen_toggled(button_pressed):
 	# Obtén una referencia al objeto OS
 	if button_pressed == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 

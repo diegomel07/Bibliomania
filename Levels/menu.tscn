@@ -88,7 +88,7 @@ script = ExtResource("3_h4k3e")
 offset_bottom = 3.0
 
 [node name="Book" type="Sprite2D" parent="."]
-position = Vector2(160, 111)
+position = Vector2(142, 110)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("3_ivar0")
 

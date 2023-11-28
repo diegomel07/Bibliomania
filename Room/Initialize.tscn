@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7btuew4sor8d"]
+
+[ext_resource type="Script" path="res://Room/Initialize.gd" id="1_0yhs5"]
+[ext_resource type="Texture2D" uid="uid://dl7xuyjc3owx1" path="res://Room/backgrounds/initialize.png" id="2_oejic"]
+
+[node name="Initialize" type="Node2D"]
+script = ExtResource("1_0yhs5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.4003, 0.412844)
+texture = ExtResource("2_oejic")
