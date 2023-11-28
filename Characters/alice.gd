@@ -3,6 +3,13 @@ extends CharacterBody2D
 signal item_droped(item: Area2D)
 
 var speed:int = 80
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+var health = 100
+var damage = 20
+var player_alive = true
+var attack_in_progress = false
+
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -14,24 +21,27 @@ var can_collect: bool = true
 
 func _ready():
 	inventory.droped.connect(drop_item)
-
+				
 func _process(_delta):
-	
+	enemy_attack()
+	attack()
+	if health <= 0:
+		player_alive = false
+		health = 0
+		print("game over")
+		self.queue_free()
+		#game over
+		
 	# input
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction.normalized() * speed
-	
 	# flipping the character
 	if direction.x != 0:
 		sprite.flip_h = (direction.x >= -1 and direction.x < 0)
-	
 	move_and_slide()
-	
 	if past_direction != direction:
 		update_animations(direction)
-	
 	past_direction = direction
-	
 	mouse_rotation(ap.current_animation)
 
 
@@ -40,15 +50,17 @@ func update_animations(direction: Vector2) -> void:
 	# idle
 	if direction == Vector2.ZERO:
 		if past_direction.y == -1:
-			ap.play("idle_up")
+			if attack_in_progress == false:
+				ap.play("idle_up")
 		else:
-			ap.play("idle")
+			if attack_in_progress == false:
+				ap.play("idle")
 	
 	elif direction.y == -1:
-		ap.play("up")
+			ap.play("up")
 	
 	elif direction.y == 1:
-		ap.play("down")
+			ap.play("down")
 	
 	else:
 		ap.play("run")
@@ -85,7 +97,6 @@ func mouse_rotation(current_animation: String) -> void:
 				sprite.flip_h = true
 				ap.play_backwards("run")
 		
-
 func _on_area_2d_area_entered(area):
 	if area.has_method("collect") and can_collect:
 		if area not in current_inventory:
@@ -109,5 +120,47 @@ func drop_item(item: InventoryItem):
 	current_inventory.erase(current_inventory[pos])
 
 
-func _on_collect_timer_timeout():
+func _on_collect_timer_timeout() -> void:
 	can_collect = true
+
+#switch to active event in samurai_(enemy)
+func player() -> void:
+	pass
+	
+func _on_hitbox_area_body_entered(body) -> void:
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
+
+
+func _on_hitbox_area_body_exited(body) -> void:
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+
+func enemy_attack() -> void:
+	if enemy_inattack_range and enemy_attack_cooldown == true:
+		health -= damage
+		enemy_attack_cooldown = false
+		$attackCooldown.start()
+		print("alice health",health)
+
+func _on_attack_cooldown_timeout() -> void:
+	enemy_attack_cooldown = true
+
+func attack() -> void:
+	var direction:Vector2 = get_local_mouse_position().normalized()
+	
+	if Input.is_action_just_pressed("attack"):
+		Globala.player_current_attack = true
+		attack_in_progress = true
+		if direction.y < 0:
+			$AnimatedAttack2D.play("attack_up")
+			$dealAttackDamage.start()
+		elif direction.y > 0:
+			$AnimatedAttack2D.play("attack_down")
+			$dealAttackDamage.start()
+
+	
+func _on_deal_attack_damage_timeout() -> void:
+	$dealAttackDamage.stop()
+	Globala.player_current_attack = false
+	attack_in_progress = false	

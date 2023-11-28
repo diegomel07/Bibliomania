@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ylid3q5usvcc"]
+[gd_scene load_steps=22 format=3 uid="uid://ylid3q5usvcc"]
 
 [ext_resource type="Texture2D" uid="uid://lyg5q5eonfwi" path="res://Graphics/Tiles/Base/base_tileset.png" id="1_e5byf"]
 [ext_resource type="Script" path="res://Levels/base.gd" id="1_yp154"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Levels/CanvasSettings.gd" id="13_668qy"]
 [ext_resource type="AudioStream" uid="uid://dne7msl56aw6a" path="res://Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3" id="13_uss0v"]
 [ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="14_nytxb"]
+[ext_resource type="PackedScene" uid="uid://1lf5w7t62vjf" path="res://Characters/samurai_(enemy).tscn" id="16_sonpl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2fbw"]
 texture = ExtResource("1_e5byf")
@@ -166,6 +167,9 @@ position = Vector2(7.62939e-06, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_7n57p")
 
+[node name="samurai (enemy)" parent="." instance=ExtResource("16_sonpl")]
+position = Vector2(216, 90)
+
 [node name="Door02" parent="." instance=ExtResource("5_ocljt")]
 position = Vector2(159, 23)
 
@@ -222,7 +226,6 @@ stream = ExtResource("13_uss0v")
 autoplay = true
 bus = &"Music"
 
-[connection signal="item_droped" from="Alice" to="." method="_on_alice_item_droped"]
 [connection signal="closed" from="CanvasInventory/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasInventory/inventory" to="." method="_on_inventory_opened"]
 [connection signal="closed" from="CanvasSettings/SettingsNode" to="." method="_on_settings_node_closed"]

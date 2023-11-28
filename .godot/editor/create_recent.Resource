@@ -1,3 +1,4 @@
+Animation
 Theme
 InventoryItem
 Inventory
