@@ -108,6 +108,7 @@ theme = ExtResource("5_cne56")
 theme_override_font_sizes/font_size = 26
 
 [node name="Back" type="Button" parent="TextureRect/NinePatchRect"]
+layout_mode = 0
 offset_left = 16.7999
 offset_top = 318.518
 offset_right = 97.7999

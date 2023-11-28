@@ -66,6 +66,7 @@ text = "Si"
 icon = ExtResource("4_wwvox")
 
 [node name="No" type="Button" parent="TextureRect"]
+layout_mode = 0
 offset_left = 134.0
 offset_top = 70.0
 offset_right = 184.0

@@ -20,8 +20,6 @@ func _on_inventory_closed():
 func _on_inventory_opened():
 	$DirectionalLight2D.energy = 0.6
 	get_tree().paused = true
-	
-
 
 func _on_alice_item_droped(item):
 	item.position = $Alice.position

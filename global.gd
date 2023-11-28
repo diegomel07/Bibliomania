@@ -8,6 +8,11 @@ var end_point
 var current_scene = "base"
 var transition_scene = false
 
+var health = 100
+var damage = 33
+
+var player_current_attack = false
+
 var player_position = "start"
 
 func finish_changedscenes():

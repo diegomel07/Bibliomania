@@ -158,6 +158,7 @@ process_mode = 3
 script = ExtResource("5_ocw3v")
 
 [node name="SettingsNode" parent="Canvas" instance=ExtResource("6_snwsx")]
+visible = false
 
 [node name="inventory" parent="Canvas" instance=ExtResource("7_gxwug")]
 process_mode = 3

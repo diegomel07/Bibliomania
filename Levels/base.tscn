@@ -172,7 +172,7 @@ texture = ExtResource("8_7n57p")
 position = Vector2(159, 23)
 
 [node name="Snake02" parent="." instance=ExtResource("4_fmv4c")]
-position = Vector2(77, 144)
+position = Vector2(77, 145)
 
 [node name="Lamps" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_um7bc")
@@ -185,6 +185,7 @@ process_mode = 3
 script = ExtResource("8_c1cpp")
 
 [node name="SettingsNode" parent="Canvas" instance=ExtResource("14_nytxb")]
+visible = false
 
 [node name="inventory" parent="Canvas" instance=ExtResource("8_pddqf")]
 process_mode = 3
