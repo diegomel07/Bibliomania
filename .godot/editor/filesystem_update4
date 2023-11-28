@@ -1,4 +1,4 @@
-res://Characters/samurai_(enemy).tscn
+res://Levels/base.tscn
 res://Collectables/gem.gd
 res://Inventory/playerInventory.tres
 res://Inventory/items/sword.tres
@@ -6,7 +6,5 @@ res://Gui/Default.tscn.tres
 res://Gui/Cancel.tres
 res://Inventory/items/gem.tres
 res://Gui/SettingsButton.tres
-res://Characters/samurai_(enemy).gd
-res://Levels/base.tscn
+res://Characters/samurai_(enemy).tscn
 res://Characters/alice.tscn
-res://Characters/alice.gd
