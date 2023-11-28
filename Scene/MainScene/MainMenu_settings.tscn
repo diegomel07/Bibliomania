@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://di5ygoy2ld8v3"]
+[gd_scene load_steps=7 format=3 uid="uid://di5ygoy2ld8v3"]
 
 [ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="1_ggt1l"]
+[ext_resource type="Script" path="res://Scene/MainScene/MainMenu_settings.gd" id="2_6q70v"]
 [ext_resource type="Texture2D" uid="uid://66klc6e88cg8" path="res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg" id="3_oevr4"]
 [ext_resource type="Texture2D" uid="uid://r7pnsoxd8d0w" path="res://Graphics/Ui/PNG/grey_panel.png" id="4_1vs0x"]
 [ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="5_4l3rv"]
@@ -26,6 +27,7 @@ grow_vertical = 2
 scale = Vector2(0.381772, 0.280258)
 size_flags_horizontal = 0
 theme = ExtResource("1_ggt1l")
+script = ExtResource("2_6q70v")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(50, 20)
@@ -117,3 +119,5 @@ offset_bottom = 357.949
 theme = ExtResource("5_4l3rv")
 theme_override_font_sizes/font_size = 15
 text = "Regresar"
+
+[connection signal="pressed" from="TextureRect/NinePatchRect/Back" to="." method="_on_back_pressed"]
