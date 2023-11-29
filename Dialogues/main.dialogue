@@ -1,0 +1,49 @@
+
+~ start
+
+
+if State.first_interaction == false:
+	set State.first_interaction = true
+	
+	
+	Serpent: Bienvenida a mi Mansión. [#mood=serpentHappy]
+	Serpent: Ha pasado un tiempo desde la ultima vez que tuve un invitado. [#mood=serpentHappy]
+	Serpent: Mi nombre es SERPENT. [#mood=serpentHappy]
+	Serpent: Mi pequeña invitada Número 431, ¿Cuál es tu nombre? [#mood=serpentHappy]
+	 
+	Alicia: Soy Alicia. Ji Ji Ji. [#mood=aliceHappy]
+	Serpent: Entonces Alicia, por favor siéntete como en tu casa en esta habitación [#mood=neutralSerpent]
+	Serpent: Pero por favor ten en cuenta no salir. [#mood=neutralSerpent]
+ 
+else:
+	Serpent: Siéntete como en tu casa en esta habitación. [#mood=neutralSerpent]
+	Serpent: Pero por favor ten en cuenta no salir. [#mood=neutralSerpent]
+
+=> END
+~ discussion
+
+Serpent: NO TE DIJE QUE NO SALIERAS DE TU HABITACIÓN!? [#mood=serpentThreat]¿¡
+Serpent: Si te alejas de tu habitación, ¡Tu cuerpo se PUDRIRA! [#mood=serpentThreat]
+	 
+Alicia: No lo entiendo [#mood=aliceConfused]
+ 
+Serpent: La mansión tiene 431 HUESPEDES Y 431 CUARTOS [#mood=neutralSerpent] 
+Serpent: Si deseas volver al mundo exterior tendrás que llegar a la habitación 000 [#mood=neutralSerpent] 
+Serpent: Tu habitación es la 431 [#mood=neutralSerpent] 
+Serpent: En otras palabras, sobre tu posición actual, [#mood=neutralSerpent] 
+Serpent: Tendrás que pasar por 431 habitaciones. [#mood=neutralSerpent] 
+Serpent: Ahí esta el problema. Como he dicho, [#mood=neutralSerpent] 
+Serpent: Cuanto más lejos te encuentres de esta sala… [#mood=neutralSerpent] 
+ 
+Alice: ¿Más se pudrirá mi cuerpo? [#mood=aliceConfused] 
+ 
+Serpent: Precisamente [#mood=serpentHappy]
+ 
+Alice: Significa, que tengo que apurarme. [#mood=aliceThreat]
+ 
+Serpent: TE ARREPENTIRAS DE ESTO, ALICIA. [#mood=serpentThreat]
+
+
+
+
+=> END

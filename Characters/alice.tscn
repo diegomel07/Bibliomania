@@ -232,6 +232,8 @@ texture = ExtResource("4_5n06f")
 hframes = 24
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]
 [connection signal="body_entered" from="hitbox_area" to="." method="_on_hitbox_area_body_entered"]
 [connection signal="body_exited" from="hitbox_area" to="." method="_on_hitbox_area_body_exited"]

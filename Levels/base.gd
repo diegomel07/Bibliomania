@@ -1,7 +1,7 @@
 extends Node2D
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
-
+# Called every frame. 'delta' is the elapsed time since the previous frame. m
+	
+	
 func _process(_delta):
 	
 	if $Alice.position.x > 400 or $Alice.position.x < -400:

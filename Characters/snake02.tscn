@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://brgy3jj0ltf1v"]
+[gd_scene load_steps=6 format=3 uid="uid://brgy3jj0ltf1v"]
 
 [ext_resource type="Texture2D" uid="uid://cibxg2wgcdmgi" path="res://Graphics/Sprites/SerpentAbove.png" id="1_uye64"]
 
@@ -35,15 +35,33 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_6jo3q"]
+resource_name = "talking"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 6]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_quwn5"]
 _data = {
 "RESET": SubResource("Animation_sdjhl"),
-"idle": SubResource("Animation_tejr1")
+"idle": SubResource("Animation_tejr1"),
+"talking": SubResource("Animation_6jo3q")
 }
 
 [node name="Sprite2D" type="Sprite2D"]
 texture = ExtResource("1_uye64")
-hframes = 4
+hframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
