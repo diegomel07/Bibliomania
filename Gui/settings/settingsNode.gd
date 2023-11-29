@@ -51,5 +51,6 @@ func _on_fullscreen_toggled(button_pressed):
 
 
 func _on_exit_button_pressed():
+	global.saveData()
 	get_tree().quit()
 
