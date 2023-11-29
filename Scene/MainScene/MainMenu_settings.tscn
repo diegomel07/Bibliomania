@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://di5ygoy2ld8v3"]
+[gd_scene load_steps=5 format=3 uid="uid://di5ygoy2ld8v3"]
 
 [ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="1_ggt1l"]
-[ext_resource type="Texture2D" uid="uid://66klc6e88cg8" path="res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg" id="3_oevr4"]
 [ext_resource type="Texture2D" uid="uid://r7pnsoxd8d0w" path="res://Graphics/Ui/PNG/grey_panel.png" id="4_1vs0x"]
 [ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="5_4l3rv"]
 
@@ -27,33 +26,23 @@ scale = Vector2(0.381772, 0.280258)
 size_flags_horizontal = 0
 theme = ExtResource("1_ggt1l")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(50, 20)
-layout_mode = 0
-offset_top = -4.0
-offset_right = 834.0
-offset_bottom = 639.0
-scale = Vector2(1.00528, 1)
-theme = ExtResource("1_ggt1l")
-texture = ExtResource("3_oevr4")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="TextureRect"]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.0
-offset_top = -190.0
-offset_right = 155.0
-offset_bottom = 190.0
+offset_left = -156.117
+offset_top = -191.5
+offset_right = 153.883
+offset_bottom = 188.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ggt1l")
 texture = ExtResource("4_1vs0x")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/NinePatchRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -68,7 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ggt1l")
 
-[node name="Title" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Title" type="Label" parent="NinePatchRect/VBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
@@ -79,7 +68,7 @@ theme_override_font_sizes/font_size = 40
 text = "Bibliomania
 "
 
-[node name="Ajustes" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Ajustes" type="Label" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
 text = "Ajustes
 
@@ -87,28 +76,28 @@ text = "Ajustes
 label_settings = SubResource("LabelSettings_22oqf")
 horizontal_alignment = 1
 
-[node name="Sound" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Sound" type="Button" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("5_4l3rv")
 theme_override_font_sizes/font_size = 26
 text = "Sonido"
 
-[node name="Screen" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Screen" type="Button" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("5_4l3rv")
 theme_override_font_sizes/font_size = 26
 text = "Pantalla"
 
-[node name="Delete" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Delete" type="Button" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("5_4l3rv")
 theme_override_font_sizes/font_size = 26
 text = "Borrar cuenta"
 
-[node name="Back" type="Button" parent="TextureRect/NinePatchRect"]
+[node name="Back" type="Button" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 16.7999
 offset_top = 314.949

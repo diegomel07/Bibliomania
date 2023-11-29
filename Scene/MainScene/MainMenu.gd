@@ -1,5 +1,7 @@
 extends Control
 
+@onready "res://Scene/MainScene/PlayMenu.tscn"
+
 var db #database object
 var db_name = "res://Data/bibliomania" #path to db
 
@@ -26,4 +28,16 @@ func searchDataSlots():
 
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://Gui/settings/titleScreen.tscn")
+	get_tree().change_scene_to_file("res://Scene/MainScene/MainMenu.tscn")
+
+
+func _on_ajustes_pressed():
+	get_tree().change_scene_to_file("res://Scene/MainScene/MainMenu_settings.tscn")
+
+
+func _on_cerrar_sesion_pressed():
+	get_tree().change_scene_to_file("res://Scene/MainScene/LoginScene.tscn")
+
+
+func _on_jugar_pressed():
+	get_tree().change_scene_to_file("res://Scene/MainScene/PlayMenu.tscn")

@@ -130,10 +130,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -94.5
-offset_top = 2.5
-offset_right = -17.5
-offset_bottom = 26.5
+offset_left = -92.5
+offset_top = -5.5
+offset_right = -15.5
+offset_bottom = 18.5
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -145,6 +145,30 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_xjvho")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_v0uik")
 theme_override_styles/focus = SubResource("StyleBoxTexture_mr2da")
 text = "Save and Exit"
+
+[node name="RestartButton" type="Button" parent="TextureRect/SettingsBox"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = 18.5
+offset_right = -31.5
+offset_bottom = 42.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_i6hkt")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_4wmbf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qfmy3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xjvho")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v0uik")
+theme_override_styles/focus = SubResource("StyleBoxTexture_mr2da")
+text = "Restart"
 
 [node name="Video" type="Control" parent="TextureRect"]
 visible = false
@@ -362,7 +386,7 @@ theme = ExtResource("3_aa24l")
 text = "Back"
 
 [node name="Cassette" type="Sprite2D" parent="."]
-position = Vector2(32, -11)
+position = Vector2(31, -17)
 rotation = 0.106465
 scale = Vector2(0.488095, 0.442982)
 texture = ExtResource("10_4wrmq")
@@ -371,6 +395,7 @@ texture = ExtResource("10_4wrmq")
 [connection signal="pressed" from="TextureRect/SettingsBox/Ajustes/VideoButtton" to="." method="_on_video_buttton_pressed"]
 [connection signal="pressed" from="TextureRect/SettingsBox/Ajustes/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="TextureRect/SettingsBox/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TextureRect/SettingsBox/RestartButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="TextureRect/Video/HBoxContainer/Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="TextureRect/Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
 [connection signal="pressed" from="TextureRect/Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]

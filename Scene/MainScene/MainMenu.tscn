@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci8dgyanlnkim"]
+[gd_scene load_steps=8 format=3 uid="uid://ci8dgyanlnkim"]
 
 [ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="1_23clb"]
 [ext_resource type="Script" path="res://Scene/MainScene/MainMenu.gd" id="2_hjndn"]
 [ext_resource type="Texture2D" uid="uid://66klc6e88cg8" path="res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg" id="3_l4ded"]
 [ext_resource type="Texture2D" uid="uid://r7pnsoxd8d0w" path="res://Graphics/Ui/PNG/grey_panel.png" id="4_00tpu"]
 [ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="5_qbwef"]
+[ext_resource type="PackedScene" uid="uid://ctif1itl17bne" path="res://Scene/MainScene/MainMenu_Exit.tscn" id="6_ewerm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_22oqf"]
 line_spacing = 2.0
@@ -103,13 +104,6 @@ theme = ExtResource("5_qbwef")
 theme_override_font_sizes/font_size = 26
 text = "Ajustes"
 
-[node name="Estadisticas" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = ExtResource("5_qbwef")
-theme_override_font_sizes/font_size = 26
-text = "Estadisticas"
-
 [node name="Cerrar sesion" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -117,4 +111,9 @@ theme = ExtResource("5_qbwef")
 theme_override_font_sizes/font_size = 26
 text = "Cerrar sesion"
 
+[node name="Close" parent="." instance=ExtResource("6_ewerm")]
+layout_mode = 1
+
 [connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Ajustes" to="." method="_on_ajustes_pressed"]
+[connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Cerrar sesion" to="." method="_on_cerrar_sesion_pressed"]
