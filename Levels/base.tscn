@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="8_c1cpp"]
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="8_pddqf"]
 [ext_resource type="PackedScene" uid="uid://xrhi4ix1qfs6" path="res://Collectables/gem.tscn" id="10_jr153"]
-[ext_resource type="PackedScene" uid="uid://c6dwxfbw2cj6l" path="res://Gui/settings/settingsNode.tscn" id="13_r44h8"]
+[ext_resource type="PackedScene" uid="uid://207fyv11i2ku" path="res://Gui/settings/settingsNode.tscn" id="13_r44h8"]
 [ext_resource type="AudioStream" uid="uid://dne7msl56aw6a" path="res://Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3" id="13_uss0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2fbw"]

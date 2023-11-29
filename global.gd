@@ -79,6 +79,16 @@ func loadData():
 	db.query("SELECT * from GameData where user_id = " + str(global.user_id) +  " and id = " + str(slot_id) +";")
 	
 	# se asigna cada espacio del resultado a las variables globales
+	matrix = db.query_result[0]["matrix"] # toca arreglarla
+	matrix_size = db.query_result[0]["matrix_size"]
+	rooms_alredy_passed = db.query_result[0]["rooms_already_passed"] # toca arreglarla
+	current_point = db.query_result[0]["current_point"]
+	end_point = db.query_result[0]["end_point"]
+	current_scene = db.query_result[0]["current_scene"]
+	death_count = db.query_result[0]["death_count"]
+	health = db.query_result[0]["health"]
+	damage = db.query_result[0]["damage"]
+	level_count = db.query_result[0]["level_count"]
 	
 
 func deleteData():
