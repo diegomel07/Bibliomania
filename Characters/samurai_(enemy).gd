@@ -49,6 +49,7 @@ func deal_with_damage():
 			take_damage = false
 			print("samurai health =", health)
 			if health <= 0:
+				global.death_count += 1
 				self.queue_free()
 		
 func _on_take_damage_cooldown_timeout():

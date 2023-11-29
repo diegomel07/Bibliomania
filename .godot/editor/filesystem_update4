@@ -29,3 +29,6 @@ res://Scene/MainScene/MainMenu_Exit.tscn
 res://Scene/MainScene/MainMenu_statistics.tscn
 res://Scene/MainScene/LoginScene.tscn
 res://Gui/settings/titleScreen.tscn
+res://Scene/MainScene/singupScene.tscn
+res://Levels/titleScreen.gd
+res://Scene/MainScene/LoginScene.gd

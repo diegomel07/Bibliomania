@@ -116,3 +116,5 @@ offset_bottom = 361.518
 theme = ExtResource("5_cne56")
 theme_override_font_sizes/font_size = 15
 text = "Regresar"
+
+[connection signal="pressed" from="TextureRect/NinePatchRect/Back" to="." method="_on_back_pressed"]
