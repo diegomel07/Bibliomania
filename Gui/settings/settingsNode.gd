@@ -54,3 +54,6 @@ func _on_exit_button_pressed():
 	global.saveData()
 	get_tree().quit()
 
+func _on_restart_button_pressed():
+	get_tree().change_scene_to_file("res://Room/Initialize.tscn")
+	global.current_scene = "initialize"

@@ -147,7 +147,6 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_mr2da")
 text = "Save and Exit"
 
 [node name="RestartButton" type="Button" parent="TextureRect/SettingsBox"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -395,7 +394,7 @@ texture = ExtResource("10_4wrmq")
 [connection signal="pressed" from="TextureRect/SettingsBox/Ajustes/VideoButtton" to="." method="_on_video_buttton_pressed"]
 [connection signal="pressed" from="TextureRect/SettingsBox/Ajustes/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="TextureRect/SettingsBox/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="TextureRect/SettingsBox/RestartButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TextureRect/SettingsBox/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="toggled" from="TextureRect/Video/HBoxContainer/Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="TextureRect/Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
 [connection signal="pressed" from="TextureRect/Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]

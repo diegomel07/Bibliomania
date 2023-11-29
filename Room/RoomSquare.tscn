@@ -110,6 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SettingsNode" parent="Canvas" instance=ExtResource("8_2ihws")]
+visible = false
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -120,9 +121,6 @@ one_shot = true
 
 [node name="samurai (enemy)" parent="Enemies" instance=ExtResource("10_hl4yj")]
 position = Vector2(201.719, 102.995)
-
-[node name="samurai (enemy)2" parent="Enemies" instance=ExtResource("10_hl4yj")]
-position = Vector2(57.0754, 80.3865)
 
 [connection signal="body_entered" from="Doors/UpDoor/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
 [connection signal="body_entered" from="Doors/DownDoor/LevelDoor" to="." method="_on_level_door_body_entered"]

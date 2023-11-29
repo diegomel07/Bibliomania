@@ -31,7 +31,8 @@ func _process(_delta):
 		global.health = 0
 		print("game over")
 		get_tree().change_scene_to_file("res://Levels/base.tscn")
-		global.health = 100
+		global.health = 10000
+		global.current_scene = "base"
 		#game over
 		
 	
@@ -129,6 +130,9 @@ func dialogue():
 		
 	if on_door and first_interaction == false and Input.is_action_pressed("accept"):
 		DialogueManager.show_dialogue_balloon(load("res://Dialogues/main.dialogue"),"discussion")
+		get_tree().change_scene_to_file("res://Room/Initialize.tscn")
+		global.current_scene = "initialize"
+		global.finish_changedscenes()
 		
 	elif Input.is_action_pressed("accept") and (on_door or on_serpent) :
 		if $"../Snake".position != snake_position:

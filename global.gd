@@ -8,8 +8,8 @@ var slot_id
 var matrix 
 var matrix_size = 7
 var rooms_alredy_passed: Array
-var current_point
-var end_point
+var current_point: Vector2 = Vector2.ZERO
+var end_point: Vector2 = Vector2.ZERO
 var current_scene = "base"
 var transition_scene = false
 var level_count = 1
@@ -21,7 +21,7 @@ var db_name = "res://Data/bibliomania" #path to db
 var death_count = 0
 
 # alice
-var health = 100
+var health = 100000
 var damage = 33
 
 var player_current_attack = false
@@ -57,7 +57,6 @@ func saveData():
 	var tableName = "GameData"
 	var dict : Dictionary = Dictionary()
 	dict["user_id"] = user_id
-	dict["matrix"] = parseMatrix() # la matrix debe venir en una cadena de texto
 	dict["matrix_size"] = matrix_size
 	dict["rooms_already_passed"] = parseRoomsId() # debe venir en una cadena de texto
 	dict["current_point_x"] = current_point.x
@@ -69,10 +68,26 @@ func saveData():
 	dict["health"] = health
 	dict["damage"] = damage
 	dict["level_count"] = level_count
-	
-	db.query("UPDATE GameData SET matrix = " + parseMatrix() + ", rooms_alredy_passed = " + parseRoomsId() + ", current_point_x = " + str(current_point.x) + ", current_point_y = " + str(current_point.y)  + ", end_point_x = "+ str(end_point.x) + ", end_point_y = " + str(end_point.y) + ", current_scene = " + current_scene + ", death_count = " + str(death_count) + ", health = " + str(health) + ", damage = " + str(damage) + ", level_count = " + str(level_count) + " WHERE id = " + str(slot_id) + ";")
-	
 
+	db.query("UPDATE GameData SET rooms_already_passed = '" + parseRoomsId() + "', current_point_x = " + str(current_point.x) + ", current_point_y = " + str(current_point.y)  + ", end_point_x = "+ str(end_point.x) + ", end_point_y = " + str(end_point.y) + ", current_scene = '" + current_scene + "', death_count = " + str(death_count) + ", health = " + str(health) + ", damage = " + str(damage) + ", level_count = " + str(level_count) + " WHERE id = " + str(slot_id) + ";")
+	
+	saveMatrix()
+
+func saveMatrix():
+	var path = "res://Data/matrixjson.json"
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(matrix))
+	
+	file.close()
+
+func loadMatrix():
+	var path = "res://Data/matrixjson.json"
+	var file = FileAccess.open(path, FileAccess.READ)
+	var text = JSON.parse_string(file.get_line())
+	
+	matrix = text
+	
+	file.close()
 
 func loadData():
 	db = SQLite.new()
@@ -84,22 +99,23 @@ func loadData():
 	print(db.query_result)
 	
 	# se asigna cada espacio del resultado a las variables globales
-	if db.query_result[0]["matrix"]:
-		matrix = desparseMatrix(db.query_result[0]["matrix"]) # toca arreglarla
 	matrix_size = db.query_result[0]["matrix_size"]
 	if db.query_result[0]["rooms_already_passed"]:
 		rooms_alredy_passed = desparseRoomsId(db.query_result[0]["rooms_already_passed"]) # toca arreglarla
-	if db.query_result[0]["current_point_x"] and db.query_result[0]["current_point_y"]:
-		current_point.x = db.query_result[0]["current_point_x"]
-		current_point.y = db.query_result[0]["current_point_y"]
-	if db.query_result[0]["end_point_x"] and db.query_result[0]["end_point_y"]:
-		end_point.x = db.query_result[0]["end_point_x"]
-		end_point.y = db.query_result[0]["end_point_y"]
+		
 	current_scene = db.query_result[0]["current_scene"]
 	death_count = db.query_result[0]["death_count"]
 	health = db.query_result[0]["health"]
 	damage = db.query_result[0]["damage"]
 	level_count = db.query_result[0]["level_count"]
+	
+	if current_scene != "base":
+		current_point.x = db.query_result[0]["current_point_x"]
+		current_point.y = db.query_result[0]["current_point_y"]
+		end_point.x = db.query_result[0]["end_point_x"]
+		end_point.y = db.query_result[0]["end_point_y"]
+	
+	loadMatrix()
 	
 
 func deleteData():

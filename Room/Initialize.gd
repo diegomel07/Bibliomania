@@ -11,25 +11,25 @@ var path
 func _ready():
 	path = []
 	create_matrix()
-	for i in range(9):
-		start_point = choose_border_point()
-		matrix[start_point[0].x][start_point[0].y]["exists"] = true
-		matrix[start_point[0].x][start_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
-		matrix[start_point[0].x][start_point[0].y]["figure"] = "Square"
-		matrix[start_point[0].x][start_point[0].y]["id"] = randi()
-		end_point = choose_border_point(start_point[1])
-		matrix[end_point[0].x][end_point[0].y]["exists"] = true
-		matrix[end_point[0].x][end_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
-		matrix[end_point[0].x][end_point[0].y]["figure"] = "Square"
-		matrix[end_point[0].x][end_point[0].y]["id"] = randi()
+
+	start_point = choose_border_point()
+	matrix[start_point[0].x][start_point[0].y]["exists"] = true
+	matrix[start_point[0].x][start_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
+	matrix[start_point[0].x][start_point[0].y]["figure"] = "Square"
+	matrix[start_point[0].x][start_point[0].y]["id"] = randi()
+	end_point = choose_border_point(start_point[1])
+	matrix[end_point[0].x][end_point[0].y]["exists"] = true
+	matrix[end_point[0].x][end_point[0].y]["type"] = "res://Room/Room" + "Square" + ".tscn"
+	matrix[end_point[0].x][end_point[0].y]["figure"] = "Square"
+	matrix[end_point[0].x][end_point[0].y]["id"] = randi()
 	
 	create_path(start_point[0], end_point[0], true)
 
 	create_paths()
-	print_simplified()
+	#print_simplified()
 
 	calculate_room_connections()
-	print_matrix_with_connections()
+	#print_matrix_with_connections()
 	global.current_point = start_point[0]
 	global.end_point = end_point[0]
 	global.matrix = matrix
@@ -151,15 +151,15 @@ func selected_figure(positions, x , y):
 			matrix[x][y]["figure"] = "square top left"
 			matrix[x][y]["id"] = id
 			matrix[x][y]["type"] = "res://Room/Room" + "BigSquare" + ".tscn"
-			
+
 			matrix[positions["down"].x][positions["down"].y]["figure"] = "square left bot"
 			matrix[positions["down"].x][positions["down"].y]["id"] = id
 			matrix[positions["down"].x][positions["down"].y]["type"] = "res://Room/Room" + "BigSquare" + ".tscn"
-			
+
 			matrix[positions["right"].x][positions["right"].y]["figure"] = "square top right"
 			matrix[positions["right"].x][positions["right"].y]["id"] = id
 			matrix[positions["right"].x][positions["right"].y]["type"] = "res://Room/Room" + "BigSquare" + ".tscn"
-			
+
 			matrix[positions["bottom right"].x][positions["bottom right"].y]["figure"] = "square bottom right"
 			matrix[positions["bottom right"].x][positions["bottom right"].y]["id"] = id
 			matrix[positions["bottom right"].x][positions["bottom right"].y]["type"] = "res://Room/Room" + "BigSquare" + ".tscn"
@@ -229,7 +229,6 @@ func print_matrix_with_connections():
 				row_str += "[" + str(matrix[x][y]["figure"]) + "] "
 			else:
 				row_str += "      0      "
-		print(row_str)
 		
 func print_simplified():
 	
@@ -237,7 +236,6 @@ func print_simplified():
 		var row_str = ""
 		for y in range(matrix_size):
 			row_str += str(int(matrix[x][y]["exists"])) + " "
-		print(row_str)
 				
 func change_scene():
 	if global.transition_scene == true:

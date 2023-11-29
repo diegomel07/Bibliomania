@@ -37,14 +37,14 @@ func _on_settings_node_opened():
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("player"):
-		global.transition_scene = true
+		pass
+		#global.transition_scene = true
 
 func _on_area_2d_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false
 		
 func change_scene():
-	
 	if global.transition_scene == true:
 		if global.current_scene == "base":
 			get_tree().change_scene_to_file("res://Room/Initialize.tscn")

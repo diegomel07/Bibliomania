@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
+[gd_scene load_steps=13 format=3 uid="uid://t6843pn1g1h"]
 
 [ext_resource type="Script" path="res://Room/RoomHorizontalRectangle.gd" id="1_hdyiq"]
 [ext_resource type="TileSet" uid="uid://bicrh8c0vpkmj" path="res://Room/backgrounds/LevelTileSet.tres" id="2_j3x56"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="7_gxwug"]
 [ext_resource type="PackedScene" uid="uid://207fyv11i2ku" path="res://Gui/settings/settingsNode.tscn" id="8_cpo8d"]
 [ext_resource type="PackedScene" uid="uid://ksglnjwhxn4m" path="res://Room/map.tscn" id="9_lx6vu"]
+[ext_resource type="PackedScene" uid="uid://bojveau2n1sml" path="res://Characters/samurai_(enemy).tscn" id="10_5ll1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ahv5"]
 size = Vector2(231.429, 26.1554)
@@ -148,6 +149,9 @@ visible = false
 one_shot = true
 
 [node name="Map" parent="." instance=ExtResource("9_lx6vu")]
+
+[node name="samurai (enemy)" parent="." instance=ExtResource("10_5ll1k")]
+position = Vector2(114.151, 72.8503)
 
 [connection signal="body_entered" from="Doors/UpDoor/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
 [connection signal="body_entered" from="Doors/UpDoor2/LevelDoor4" to="." method="_on_level_door_4_body_entered_2"]

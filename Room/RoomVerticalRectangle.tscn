@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t6843pn1g1h"]
+[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
 
 [ext_resource type="Script" path="res://Room/RoomVerticalRectangle.gd" id="1_wr53k"]
 [ext_resource type="TileSet" uid="uid://bicrh8c0vpkmj" path="res://Room/backgrounds/LevelTileSet.tres" id="2_eadh4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="7_gxwug"]
 [ext_resource type="PackedScene" uid="uid://207fyv11i2ku" path="res://Gui/settings/settingsNode.tscn" id="7_tvqgd"]
 [ext_resource type="PackedScene" uid="uid://ksglnjwhxn4m" path="res://Room/map.tscn" id="9_ebg54"]
+[ext_resource type="PackedScene" uid="uid://bojveau2n1sml" path="res://Characters/samurai_(enemy).tscn" id="10_ywy5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khe4g"]
 size = Vector2(256, 305.453)
@@ -124,6 +125,7 @@ process_mode = 3
 script = ExtResource("5_ocw3v")
 
 [node name="SettingsNode" parent="Canvas" instance=ExtResource("7_tvqgd")]
+visible = false
 offset_left = -1.0
 offset_top = -19.0
 offset_right = -1.0
@@ -148,6 +150,9 @@ grow_vertical = 2
 one_shot = true
 
 [node name="Map" parent="." instance=ExtResource("9_ebg54")]
+
+[node name="samurai (enemy)2" parent="." instance=ExtResource("10_ywy5c")]
+position = Vector2(81.3129, 220.226)
 
 [connection signal="body_entered" from="Doors/UpDoor/LevelDoor4" to="." method="_on_level_door_4_body_entered"]
 [connection signal="body_entered" from="Doors/DownDoor/LevelDoor" to="." method="_on_level_door_body_entered"]
