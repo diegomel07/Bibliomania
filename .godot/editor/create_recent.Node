@@ -30,16 +30,3 @@ HSlider
 CheckBox
 Label
 VBoxContainer
-AudioStreamPlayer
-DirectionalLight2D
-PointLight2D
-VideoStreamPlayer
-Panel
-CenterContainer
-GridContainer
-NinePatchRect
-AnimationTree
-CollisionPolygon2D
-TileMap
-CharacterBody2D
-AnimatedSprite2D
