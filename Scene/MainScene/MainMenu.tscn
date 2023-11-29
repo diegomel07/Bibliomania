@@ -48,9 +48,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -155.0
-offset_top = -190.0
+offset_top = -128.5
 offset_right = 155.0
-offset_bottom = 190.0
+offset_bottom = 128.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_23clb")
@@ -64,9 +64,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -114.0
-offset_top = -146.0
+offset_top = -96.5
 offset_right = 114.0
-offset_bottom = 146.0
+offset_bottom = 146.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_23clb")
@@ -97,13 +97,6 @@ theme = ExtResource("5_qbwef")
 theme_override_font_sizes/font_size = 26
 text = "Jugar"
 
-[node name="Ajustes" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = ExtResource("5_qbwef")
-theme_override_font_sizes/font_size = 26
-text = "Ajustes"
-
 [node name="Cerrar sesion" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -112,8 +105,12 @@ theme_override_font_sizes/font_size = 26
 text = "Cerrar sesion"
 
 [node name="Close" parent="." instance=ExtResource("6_ewerm")]
+visible = false
 layout_mode = 1
+offset_left = 220.027
+offset_top = 206.952
+offset_right = -343.973
+offset_bottom = -245.048
 
 [connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
-[connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Ajustes" to="." method="_on_ajustes_pressed"]
 [connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Cerrar sesion" to="." method="_on_cerrar_sesion_pressed"]

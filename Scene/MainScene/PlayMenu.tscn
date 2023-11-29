@@ -147,5 +147,37 @@ theme = ExtResource("5_cne56")
 theme_override_font_sizes/font_size = 15
 text = "Regresar"
 
+[node name="Play" type="Button" parent="TextureRect/NinePatchRect"]
+visible = false
+layout_mode = 0
+offset_left = 207.009
+offset_top = 318.518
+offset_right = 288.009
+offset_bottom = 361.518
+theme = ExtResource("5_cne56")
+theme_override_font_sizes/font_size = 15
+text = "Jugar
+"
+
+[node name="Erase" type="Button" parent="TextureRect/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.7926
+offset_top = -61.4824
+offset_right = 39.2074
+offset_bottom = -18.4824
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_cne56")
+theme_override_font_sizes/font_size = 15
+text = "Borrar"
+
 [connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Node2D/Slot 1" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="TextureRect/NinePatchRect/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="TextureRect/NinePatchRect/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TextureRect/NinePatchRect/Erase" to="." method="_on_erase_pressed"]

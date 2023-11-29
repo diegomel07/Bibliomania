@@ -1,6 +1,6 @@
 extends Control
 
-@onready "res://Scene/MainScene/PlayMenu.tscn"
+@onready var exit = $Close
 
 var db #database object
 var db_name = "res://Data/bibliomania" #path to db
@@ -42,8 +42,21 @@ func _on_ajustes_pressed():
 
 
 func _on_cerrar_sesion_pressed():
-	get_tree().change_scene_to_file("res://Scene/MainScene/LoginScene.tscn")
+	exit.exit_open()
 
 
 func _on_jugar_pressed():
 	get_tree().change_scene_to_file("res://Scene/MainScene/PlayMenu.tscn")
+
+
+func _on_play_pressed():
+	pass # Replace with function body.
+
+
+func _on_erase_pressed():
+	pass # Replace with function body.
+
+
+func _on_slot_1_pressed():
+	$TextureRect/NinePatchRect/Play.show()
+	$TextureRect/NinePatchRect/Erase.show()
