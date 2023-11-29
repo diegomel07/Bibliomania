@@ -6,6 +6,7 @@ res://Inventory/playerInventory.tres
 res://Inventory/items/sword.tres
 res://Gui/Default.tscn.tres
 res://Inventory/items/gem.tres
+res://Scene/MainScene/MainMenu.gd
 res://Scene/MainScene/singupScene.tscn
 res://Scene/MainScene/LoginScene.tscn
 res://Gui/settings/titleScreen.tscn
@@ -13,4 +14,10 @@ res://Gui/settings/settingsNode.tscn
 res://Gui/settings/settings.tscn
 res://Characters/alice.tscn
 res://Levels/base.tscn
-res://Levels/base.gd
+res://global.gd
+res://Room/RoomSquare.tscn
+res://Room/backgrounds/LevelTileSet.tres
+res://Room/RoomL.tscn
+res://Room/RoomInvertedL.tscn
+res://Room/RoomVerticalRectangle.tscn
+res://Room/RoomHorizontalRectangle.tscn

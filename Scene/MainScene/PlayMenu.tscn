@@ -108,23 +108,31 @@ text = "Jugar
 label_settings = SubResource("LabelSettings_hlrft")
 horizontal_alignment = 1
 
-[node name="Slot 1" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Node2D" type="Node2D" parent="TextureRect/NinePatchRect/VBoxContainer"]
+
+[node name="Slot 1" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer/Node2D"]
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+offset_top = 83.0
+offset_right = 228.0
+offset_bottom = 133.0
 theme = ExtResource("5_cne56")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxTexture_ua674")
 
-[node name="Slot 2" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Slot 2" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer/Node2D"]
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+offset_top = 137.0
+offset_right = 228.0
+offset_bottom = 187.0
 theme = ExtResource("5_cne56")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxTexture_a3h1h")
 
-[node name="Slot 3" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer"]
+[node name="Slot 3" type="Button" parent="TextureRect/NinePatchRect/VBoxContainer/Node2D"]
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+offset_top = 191.0
+offset_right = 228.0
+offset_bottom = 241.0
 theme = ExtResource("5_cne56")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxTexture_ugybo")
@@ -139,4 +147,5 @@ theme = ExtResource("5_cne56")
 theme_override_font_sizes/font_size = 15
 text = "Regresar"
 
+[connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Node2D/Slot 1" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="TextureRect/NinePatchRect/Back" to="." method="_on_back_pressed"]
