@@ -22,3 +22,4 @@ res://Scene/MainScene/Global.gd
 res://Scene/MainScene/Bienvenida.gd
 res://Global.gd
 res://Scene/MainScene/MainMenu.gd
+res://Scene/MainScene/PlayMenu.gd

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmi6xe6kf0f20"]
 
 [ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="1_ul4kr"]
-[ext_resource type="Script" path="res://Scene/MainScene/MainMenu.gd" id="2_j2euj"]
+[ext_resource type="Script" path="res://Scene/MainScene/PlayMenu.gd" id="2_h3nsx"]
 [ext_resource type="Texture2D" uid="uid://66klc6e88cg8" path="res://Graphics/Ui/PNG/44da78b4a24e3278998a9f8c810600d4.jpg" id="3_bh66a"]
 [ext_resource type="Texture2D" uid="uid://r7pnsoxd8d0w" path="res://Graphics/Ui/PNG/grey_panel.png" id="4_i0yfi"]
 [ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="5_cne56"]
@@ -27,7 +27,7 @@ grow_vertical = 2
 scale = Vector2(0.381772, 0.280258)
 size_flags_horizontal = 0
 theme = ExtResource("1_ul4kr")
-script = ExtResource("2_j2euj")
+script = ExtResource("2_h3nsx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(50, 20)
