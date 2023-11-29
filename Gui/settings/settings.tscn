@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://u5puilrv8ujx"]
 
-[ext_resource type="Script" path="res://Levels/settings.gd" id="1_flnlx"]
+[ext_resource type="Script" path="res://Gui/settings/settings.gd" id="1_3onwa"]
 [ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Graphics/Tiles/Inventory/inventoryBackground.png" id="2_lvn78"]
 [ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="3_aa24l"]
 [ext_resource type="FontFile" uid="uid://dxj8pl54pw24t" path="res://Gui/MinimalPixel v2.ttf" id="4_i6hkt"]
@@ -48,7 +48,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource("1_flnlx")
+script = ExtResource("1_3onwa")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

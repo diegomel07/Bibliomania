@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="8_c1cpp"]
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="8_pddqf"]
 [ext_resource type="PackedScene" uid="uid://xrhi4ix1qfs6" path="res://Collectables/gem.tscn" id="10_jr153"]
+[ext_resource type="PackedScene" uid="uid://c6dwxfbw2cj6l" path="res://Gui/settings/settingsNode.tscn" id="13_r44h8"]
 [ext_resource type="AudioStream" uid="uid://dne7msl56aw6a" path="res://Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3" id="13_uss0v"]
-[ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="14_nytxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2fbw"]
 texture = ExtResource("1_e5byf")
@@ -184,8 +184,7 @@ layer_0/tile_data = PackedInt32Array(-262141, 65536, 1, -196605, 65536, 2, -1310
 process_mode = 3
 script = ExtResource("8_c1cpp")
 
-[node name="SettingsNode" parent="Canvas" instance=ExtResource("14_nytxb")]
-visible = false
+[node name="SettingsNode" parent="Canvas" instance=ExtResource("13_r44h8")]
 
 [node name="inventory" parent="Canvas" instance=ExtResource("8_pddqf")]
 process_mode = 3
@@ -229,8 +228,6 @@ shape = SubResource("RectangleShape2D_44hna")
 
 [connection signal="child_entered_tree" from="Door" to="." method="_on_door_child_entered_tree"]
 [connection signal="item_droped" from="Alice" to="." method="_on_alice_item_droped"]
-[connection signal="closed" from="Canvas/SettingsNode" to="." method="_on_settings_node_closed"]
-[connection signal="opened" from="Canvas/SettingsNode" to="." method="_on_settings_node_opened"]
 [connection signal="closed" from="Canvas/inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="Canvas/inventory" to="." method="_on_inventory_opened"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
