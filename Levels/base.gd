@@ -47,6 +47,7 @@ func change_scene():
 	
 	if global.transition_scene == true:
 		if global.current_scene == "base":
-			get_tree().change_scene_to_file("res://Room/Initialize.tscn")
-			global.current_scene = "initialize"
-			global.finish_changedscenes()
+			pass
+#			get_tree().change_scene_to_file("res://Room/Initialize.tscn")
+#			global.current_scene = "initialize"
+#			global.finish_changedscenes()
