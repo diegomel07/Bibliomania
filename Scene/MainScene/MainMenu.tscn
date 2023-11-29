@@ -84,7 +84,7 @@ text = "Bibliomania
 
 [node name="Bienvenida" type="Label" parent="TextureRect/NinePatchRect/VBoxContainer"]
 layout_mode = 2
-text = "Bienvenido ___
+text = "Bienvenido
 
 "
 label_settings = SubResource("LabelSettings_22oqf")
@@ -126,6 +126,7 @@ offset_top = 4.0
 offset_right = -417.0
 offset_bottom = -318.0
 scale = Vector2(2, 2)
+theme = ExtResource("5_qbwef")
 
 [connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Ajustes" to="." method="_on_ajustes_pressed"]

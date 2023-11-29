@@ -3,7 +3,7 @@ extends Control
 var settings_screen_path ="res://Scene/MainScene/MainMenu_settings.tscn"
 var statistics_screen_path ="res://Scene/MainScene/MainMenu_statistics.tscn"
 var Play_screen_path ="res://Scene/MainScene/PlayMenu.tscn"
-@onready var settings = $Exit
+@onready var Exit = $Exit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +28,7 @@ func _on_jugar_pressed():
 
 
 func _on_cerrar_sesion_pressed():
-	settings.sett_open()
+	Exit.sett_open()
 
 
 func _on_back_pressed():
