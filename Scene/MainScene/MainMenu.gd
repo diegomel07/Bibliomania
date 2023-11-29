@@ -7,6 +7,7 @@ var Play_screen_path ="res://Scene/MainScene/PlayMenu.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$TextureRect/NinePatchRect/VBoxContainer/Bienvenida.text="Bienvenido "+Global.CURRENTUSER
 	pass # Replace with function body.
 
 

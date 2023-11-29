@@ -35,7 +35,8 @@ func check_and_register(username, password):
 		show_message("User or Password incorrect")
 		return
 	
-	get_tree().change_scene_to_file("res://Gui/settings/titleScreen.tscn")
+	Global.CURRENTUSER = username
+	get_tree().change_scene_to_file("res://Scene/MainScene/MainMenu.tscn")
 	
 	message_label.visible = false
 
@@ -45,3 +46,7 @@ func show_message(message):
 
 func _on_singup_button_button_down():
 	get_tree().change_scene_to_file(singup_screen_path)
+
+
+func _on_back_button_down():
+	get_tree().change_scene_to_file("res://Gui/settings/titleScreen.tscn")

@@ -13,3 +13,12 @@ res://Scene/MainScene/PlayMenu.tscn
 res://Scene/MainScene/Delete.tscn
 res://Scene/MainScene/Load.tscn
 res://Scene/MainScene/MainMenu_settings.tscn
+res://Scene/MainScene/singupScene.gd
+res://Levels/titleScreen.gd
+res://Scene/MainScene/LoginScene.gd
+res://Scene/MainScene/MainMenu_Exit.gd
+res://Scene/MainScene/MainMenu_SettingsDelete.gd
+res://Scene/MainScene/Global.gd
+res://Scene/MainScene/Bienvenida.gd
+res://Global.gd
+res://Scene/MainScene/MainMenu.gd

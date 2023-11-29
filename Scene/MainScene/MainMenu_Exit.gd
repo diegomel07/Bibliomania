@@ -26,3 +26,12 @@ func _on_no_pressed():
 	isOpen = false	
 	$TextureRect.hide()
 	closed.emit()
+
+
+func _on_yes_pressed():
+	visible = false
+	isOpen = false	
+	$TextureRect.hide()
+	closed.emit()
+	Global.CURRENTUSER = ""
+	get_tree().change_scene_to_file("res://Gui/settings/titleScreen.tscn")

@@ -1,3 +1,4 @@
+res://
 res://Scene/MainScene
 res://Graphics/Ui/PNG
 res://Objects
@@ -8,5 +9,4 @@ res://Graphics/Sprites/Collectables
 res://Levels
 res://Inventory/items
 res://Collectables
-res://
 res://Inventory

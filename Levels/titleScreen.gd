@@ -11,7 +11,7 @@ func _on_settings_button_pressed():
 		settings.sett_open()
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://Levels/base.tscn")
+	get_tree().change_scene_to_file("res://Scene/MainScene/LoginScene.tscn")
 
 
 

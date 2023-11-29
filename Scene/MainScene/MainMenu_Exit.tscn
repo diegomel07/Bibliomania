@@ -80,4 +80,5 @@ text = "No
 "
 icon = ExtResource("5_x1evg")
 
+[connection signal="pressed" from="TextureRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="TextureRect/No" to="." method="_on_no_pressed"]
