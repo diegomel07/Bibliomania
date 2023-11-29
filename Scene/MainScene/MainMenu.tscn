@@ -116,3 +116,5 @@ layout_mode = 2
 theme = ExtResource("5_qbwef")
 theme_override_font_sizes/font_size = 26
 text = "Cerrar sesion"
+
+[connection signal="pressed" from="TextureRect/NinePatchRect/VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]

@@ -121,7 +121,6 @@ one_shot = true
 
 [node name="samurai (enemy)" parent="Enemies" instance=ExtResource("10_hl4yj")]
 position = Vector2(201.719, 102.995)
-scale = Vector2(1, 1)
 
 [node name="samurai (enemy)2" parent="Enemies" instance=ExtResource("10_hl4yj")]
 position = Vector2(57.0754, 80.3865)
