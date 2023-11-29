@@ -34,7 +34,7 @@ func check_and_register(username, password):
 	if db.query_result.size() == 0:
 		show_message("User or Password incorrect")
 		return
-	
+	global.user_id = db.query_result[0]["ID"]
 	get_tree().change_scene_to_file("res://Gui/settings/titleScreen.tscn")
 	
 	message_label.visible = false

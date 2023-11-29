@@ -19,7 +19,7 @@ var can_collect: bool = true
 
 func _ready():
 	inventory.droped.connect(drop_item)
-				
+
 func _process(_delta):
 	enemy_attack()
 	attack()
