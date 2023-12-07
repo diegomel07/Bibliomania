@@ -29,6 +29,8 @@ func _process(_delta):
 	if global.health <= 0:
 		player_alive = false
 		global.health = 0
+		global.deaths += 1
+		
 		print("game over")
 		get_tree().change_scene_to_file("res://Levels/base.tscn")
 		global.health = 10000

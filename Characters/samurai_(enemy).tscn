@@ -94,7 +94,7 @@ height = 14.0
 radius = 63.0079
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qypct"]
-radius = 36.0313
+radius = 30.0419
 
 [node name="samurai (enemy)" type="CharacterBody2D"]
 position = Vector2(215, 66)

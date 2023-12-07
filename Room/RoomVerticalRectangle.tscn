@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://t6843pn1g1h"]
+[gd_scene load_steps=13 format=3 uid="uid://t6843pn1g1h"]
 
 [ext_resource type="Script" path="res://Room/RoomVerticalRectangle.gd" id="1_wr53k"]
 [ext_resource type="TileSet" uid="uid://bicrh8c0vpkmj" path="res://Room/backgrounds/LevelTileSet.tres" id="2_eadh4"]
+[ext_resource type="Texture2D" uid="uid://x256q14kp1cy" path="res://Graphics/Gui/4544827697_03827201b5_o.png" id="2_l28gk"]
 [ext_resource type="PackedScene" uid="uid://cpfb5oqnkmsva" path="res://Room/level_door.tscn" id="3_7uyri"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_aaabw"]
 [ext_resource type="PackedScene" uid="uid://bweertwcm6i6q" path="res://Room/door_collision.tscn" id="4_3ouf4"]
@@ -17,6 +18,10 @@ size = Vector2(256, 305.453)
 [node name="Room" type="Node2D"]
 scale = Vector2(1.27901, 1.19423)
 script = ExtResource("1_wr53k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 1)
+texture = ExtResource("2_l28gk")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_eadh4")
