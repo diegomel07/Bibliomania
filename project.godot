@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bibliomania"
-run/main_scene="res://Scene/MainScene/singupScene.tscn"
+run/main_scene="res://Gui/settings/titleScreen.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 

@@ -27,7 +27,6 @@ script = ExtResource("1_0nvyw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(268.176, -10.8857)
-scale = Vector2(1, 1)
 texture = ExtResource("2_g0p0w")
 
 [node name="TileMap" type="TileMap" parent="."]

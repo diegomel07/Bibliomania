@@ -51,94 +51,93 @@ func next_room(direction):
 			current_point.y -= 1
 	change_room()
 
-func saveData():
-	db = SQLite.new()
-	db.path = db_name
-	db.open_db()
-	var tableName = "GameData"
+#func saveData():
+#	db = SQLite.new()
+#	db.path = db_name
+#	db.open_db()
+#	var tableName = "GameData"
+#
+#	db.query("UPDATE GameData SET rooms_already_passed = '" + parseRoomsId() + "', current_point_x = " + str(current_point.x) + ", current_point_y = " + str(current_point.y)  + 
+#	", end_point_x = "+ str(end_point.x) + ", end_point_y = " + str(end_point.y) + ", current_scene = '" + current_scene + "', death_count = " + str(death_count) + ", health = " + 
+#	str(health) + ", damage = " + str(damage) + ", level_count = " + str(level_count) + ", deaths = " + str(deaths) + " WHERE id = " + str(slot_id) + ";")
+#
+#	saveMatrix()
 
-	db.query("UPDATE GameData SET rooms_already_passed = '" + parseRoomsId() + "', current_point_x = " + str(current_point.x) + ", current_point_y = " + str(current_point.y)  + 
-	", end_point_x = "+ str(end_point.x) + ", end_point_y = " + str(end_point.y) + ", current_scene = '" + current_scene + "', death_count = " + str(death_count) + ", health = " + 
-	str(health) + ", damage = " + str(damage) + ", level_count = " + str(level_count) + ", deaths = " + str(deaths) + " WHERE id = " + str(slot_id) + ";")
-	
-	saveMatrix()
+#func saveMatrix():
+#	var path = "res://Data/matrixjson.json"
+#	var file = FileAccess.open(path, FileAccess.WRITE)
+#	file.store_string(JSON.stringify(matrix))
+#
+#	file.close()
+#
+#func loadMatrix():
+#	var path = "res://Data/matrixjson.json"
+#	var file = FileAccess.open(path, FileAccess.READ)
+#	var text = JSON.parse_string(file.get_line())
+#
+#	matrix = text
+#
+#	file.close()
 
-func saveMatrix():
-	var path = "res://Data/matrixjson.json"
-	var file = FileAccess.open(path, FileAccess.WRITE)
-	file.store_string(JSON.stringify(matrix))
-	
-	file.close()
+#func loadData():
+#	db = SQLite.new()
+#	db.path = db_name
+#	db.open_db()
+#	# seria elegir la que se quiere cargar de acuerdo al slot presionado
+#	db.query("SELECT * from GameData where user_id = " + str(global.user_id) +  " and id = " + str(slot_id) +";")
+#
+#
+#	# se asigna cada espacio del resultado a las variables globales
+#	matrix_size = db.query_result[0]["matrix_size"]
+#	if db.query_result[0]["rooms_already_passed"]:
+#		rooms_alredy_passed = desparseRoomsId(db.query_result[0]["rooms_already_passed"]) # toca arreglarla
+#
+#	current_scene = db.query_result[0]["current_scene"]
+#	death_count = db.query_result[0]["death_count"]
+#	health = db.query_result[0]["health"]
+#	damage = db.query_result[0]["damage"]
+#	deaths = db.query_result[0]["deaths"]
+#	level_count = db.query_result[0]["level_count"]
+#
+#	if current_scene != "base":
+#		current_point.x = db.query_result[0]["current_point_x"]
+#		current_point.y = db.query_result[0]["current_point_y"]
+#		end_point.x = db.query_result[0]["end_point_x"]
+#		end_point.y = db.query_result[0]["end_point_y"]
+#
+#	loadMatrix()
 
-func loadMatrix():
-	var path = "res://Data/matrixjson.json"
-	var file = FileAccess.open(path, FileAccess.READ)
-	var text = JSON.parse_string(file.get_line())
-	
-	matrix = text
-	
-	file.close()
+#func deleteData():
+#	db = SQLite.new()
+#	db.path = db_name
+#	db.open_db()
+#	db.query("DELETE from GameData where user_id = " + str(global.user_id) +  " and id = " + str(slot_id) +";")
 
-func loadData():
-	db = SQLite.new()
-	db.path = db_name
-	db.open_db()
-	# seria elegir la que se quiere cargar de acuerdo al slot presionado
-	db.query("SELECT * from GameData where user_id = " + str(global.user_id) +  " and id = " + str(slot_id) +";")
-
-	
-	# se asigna cada espacio del resultado a las variables globales
-	matrix_size = db.query_result[0]["matrix_size"]
-	if db.query_result[0]["rooms_already_passed"]:
-		rooms_alredy_passed = desparseRoomsId(db.query_result[0]["rooms_already_passed"]) # toca arreglarla
-		
-	current_scene = db.query_result[0]["current_scene"]
-	death_count = db.query_result[0]["death_count"]
-	health = db.query_result[0]["health"]
-	damage = db.query_result[0]["damage"]
-	deaths = db.query_result[0]["deaths"]
-	level_count = db.query_result[0]["level_count"]
-	
-	if current_scene != "base":
-		current_point.x = db.query_result[0]["current_point_x"]
-		current_point.y = db.query_result[0]["current_point_y"]
-		end_point.x = db.query_result[0]["end_point_x"]
-		end_point.y = db.query_result[0]["end_point_y"]
-	
-	loadMatrix()
-	
-
-func deleteData():
-	db = SQLite.new()
-	db.path = db_name
-	db.open_db()
-	db.query("DELETE from GameData where user_id = " + str(global.user_id) +  " and id = " + str(slot_id) +";")
-
-func parseMatrix() -> String:
-	var parse_matrix: String = ''
-	for i in range(matrix_size):
-		for j in range(matrix_size):
-			parse_matrix += str(matrix[i][j])
-	return parse_matrix
-	
-
-func parseRoomsId() -> String:
-	var parse_ids: String = ''
-	for id in rooms_alredy_passed:
-		parse_ids += str(id) + ' '
-	return parse_ids
-
-func desparseRoomsId(a: String):
-	rooms_alredy_passed =  a.split(" ")
-	for i in range(rooms_alredy_passed.size()):
-		rooms_alredy_passed[i] = int(rooms_alredy_passed[i])
-	return rooms_alredy_passed
-
-
-func desparseMatrix(m):
-	if m:
-		for i in range(matrix_size):
-			for j in range(matrix_size):
-				matrix[i][j] = int(m[i+j])
-		return matrix
-	return 
+#func parseMatrix() -> String:
+#	var parse_matrix: String = ''
+#	for i in range(matrix_size):
+#		for j in range(matrix_size):
+#			parse_matrix += str(matrix[i][j])
+#	return parse_matrix
+#
+#
+#func parseRoomsId() -> String:
+#	var parse_ids: String = ''
+#	for id in rooms_alredy_passed:
+#		parse_ids += str(id) + ' '
+#	return parse_ids
+#
+#func desparseRoomsId(a: String):
+#	rooms_alredy_passed =  a.split(" ")
+#	for i in range(rooms_alredy_passed.size()):
+#		rooms_alredy_passed[i] = int(rooms_alredy_passed[i])
+#	return rooms_alredy_passed
+#
+#
+#func desparseMatrix(m):
+#	if m:
+#		for i in range(matrix_size):
+#			for j in range(matrix_size):
+#				matrix[i][j] = int(m[i+j])
+#		return matrix
+#	return 
