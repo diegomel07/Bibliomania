@@ -2,10 +2,6 @@ extends CharacterBody2D
 
 signal item_droped(item: Area2D)
 var speed:int = 80
-var enemy_inattack_range = false
-var enemy_attack_cooldown = true
-var player_alive = true
-var attack_in_progress = false
 
 
 @onready var ap = $AnimationPlayer
@@ -24,19 +20,6 @@ func _ready():
 	inventory.droped.connect(drop_item)
 
 func _process(_delta):
-	enemy_attack()
-	attack()
-	if global.health <= 0:
-		player_alive = false
-		global.health = 0
-		global.deaths += 1
-		
-		print("game over")
-		get_tree().change_scene_to_file("res://Levels/base.tscn")
-		global.health = 10000
-		global.current_scene = "base"
-		#game over
-		
 	
 	dialogue()
 	# input
@@ -59,11 +42,9 @@ func update_animations(direction: Vector2) -> void:
 	# idle
 	if direction == Vector2.ZERO:
 		if past_direction.y == -1:
-			if attack_in_progress == false:
-				ap.play("idle_up")
+			ap.play("idle_up")
 		else:
-			if attack_in_progress == false:
-				ap.play("idle")
+			ap.play("idle")
 	
 	elif direction.y == -1:
 			ap.play("up")
@@ -145,7 +126,6 @@ func dialogue():
 		DialogueManager.show_dialogue_balloon(load("res://Dialogues/main.dialogue"),"start")	
 
 
-
 func _on_collect_timer_timeout() -> void:
 	can_collect = true
 
@@ -153,52 +133,6 @@ func _on_collect_timer_timeout() -> void:
 func player() -> void:
 	pass
 	
-func _on_hitbox_area_body_entered(body) -> void:
-	if body.has_method("enemy"):
-		enemy_inattack_range = true
-
-
-func _on_hitbox_area_body_exited(body) -> void:
-	if body.has_method("enemy"):
-		enemy_inattack_range = false
-
-func enemy_attack() -> void:
-	if enemy_inattack_range and enemy_attack_cooldown == true:
-		global.health -= global.damage
-		enemy_attack_cooldown = false
-		$attackCooldown.start()
-		print("alice health", global.health)
-
-func _on_attack_cooldown_timeout() -> void:
-	enemy_attack_cooldown = true
-
-func attack() -> void:
-	var direction:Vector2 = get_local_mouse_position().normalized()
-	
-	if Input.is_action_just_pressed("attack"):
-		global.player_current_attack = true
-		attack_in_progress = true
-		if direction.y < -0.5:
-			ap.play("attackUp")
-			$dealAttackDamage.start()
-		elif direction.y > 0.5:
-			ap.play("attackDown")
-			$dealAttackDamage.start()
-	
-		elif direction.x < 0:
-			$sword.flip_h = true
-			ap.play("attackSide")
-			$dealAttackDamage.start()
-			
-		elif direction.x > 0:
-			$sword.flip_h = false
-			ap.play("attackSide")
-			$dealAttackDamage.start()
-
-func _on_deal_attack_damage_timeout() -> void:
-	$dealAttackDamage.stop()
-	global.player_current_attack = false
-	attack_in_progress = false
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("openDoor"):

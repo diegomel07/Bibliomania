@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq26a4yywyp17"]
+[gd_scene load_steps=17 format=3 uid="uid://dq26a4yywyp17"]
 
 [ext_resource type="Script" path="res://Characters/alice.gd" id="1_aft4l"]
 [ext_resource type="Texture2D" uid="uid://0tvti2x5qv7r" path="res://Graphics/Sprites/animations_Alice-Sheet.png" id="1_rjrgr"]
@@ -182,9 +182,6 @@ size = Vector2(8, 13.5)
 radius = 6.0
 height = 18.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_d8y8y"]
-radius = 9.48683
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_aft4l")
@@ -214,18 +211,6 @@ shape = SubResource("CapsuleShape2D_kkxfg")
 wait_time = 0.5
 one_shot = true
 
-[node name="hitbox_area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox_area"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_d8y8y")
-
-[node name="attackCooldown" type="Timer" parent="."]
-wait_time = 3.0
-
-[node name="dealAttackDamage" type="Timer" parent="."]
-wait_time = 0.2
-
 [node name="sword" type="Sprite2D" parent="."]
 position = Vector2(6, -1)
 texture = ExtResource("4_5n06f")
@@ -235,7 +220,3 @@ hframes = 24
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]
-[connection signal="body_entered" from="hitbox_area" to="." method="_on_hitbox_area_body_entered"]
-[connection signal="body_exited" from="hitbox_area" to="." method="_on_hitbox_area_body_exited"]
-[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
-[connection signal="timeout" from="dealAttackDamage" to="." method="_on_deal_attack_damage_timeout"]
