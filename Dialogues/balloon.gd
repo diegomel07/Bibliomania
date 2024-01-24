@@ -34,7 +34,7 @@ var dialogue_line: DialogueLine:
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
 		
-		var portrait_path : String = "res://Graphics/Portrait_images/%s.png" % dialogue_line.get_tag_value("mood")
+		var portrait_path : String = "res://Assets/Graphics/Portrait_images/%s.png" % dialogue_line.get_tag_value("mood")
 		if FileAccess.file_exists(portrait_path):
 			print(dialogue_line.tags[0])
 			portrait.texture = load(portrait_path)

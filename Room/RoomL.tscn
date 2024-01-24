@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Room/RoomL.gd" id="1_owehh"]
 [ext_resource type="TileSet" uid="uid://bicrh8c0vpkmj" path="res://Room/backgrounds/LevelTileSet.tres" id="2_jhdcx"]
-[ext_resource type="Texture2D" uid="uid://x256q14kp1cy" path="res://Graphics/Gui/4544827697_03827201b5_o.png" id="2_m3nea"]
+[ext_resource type="Texture2D" uid="uid://x256q14kp1cy" path="res://Assets/Graphics/Gui/4544827697_03827201b5_o.png" id="2_w3b3r"]
 [ext_resource type="PackedScene" uid="uid://cpfb5oqnkmsva" path="res://Room/level_door.tscn" id="3_7uyri"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="3_aaabw"]
 [ext_resource type="PackedScene" uid="uid://bweertwcm6i6q" path="res://Room/door_collision.tscn" id="4_3ouf4"]
@@ -26,7 +26,7 @@ script = ExtResource("1_owehh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(84.4403, 78.7118)
-texture = ExtResource("2_m3nea")
+texture = ExtResource("2_w3b3r")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_jhdcx")

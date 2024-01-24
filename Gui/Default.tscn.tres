@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://cq53lvjyrl8iq"]
 
 [ext_resource type="FontFile" uid="uid://dxj8pl54pw24t" path="res://Gui/MinimalPixel v2.ttf" id="1_oripb"]
-[ext_resource type="Texture2D" uid="uid://deyqbty6ytcs3" path="res://Graphics/Gui/GUI.png" id="2_r60wg"]
+[ext_resource type="Texture2D" uid="uid://deyqbty6ytcs3" path="res://Assets/Graphics/Gui/GUI.png" id="2_r60wg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8eqe"]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dne7msl56aw6a"
+path="res://.godot/imported/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3-6c243c3dfcedfaba0910e4b94fd8aaf4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3"
+dest_files=["res://.godot/imported/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3-6c243c3dfcedfaba0910e4b94fd8aaf4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://bd80li557mpc7"]
 
-[ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Graphics/Tiles/Inventory/inventoryBackground.png" id="1_dvixe"]
+[ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Assets/Graphics/Tiles/Inventory/inventoryBackground.png" id="1_dvixe"]
 [ext_resource type="Script" path="res://Gui/inventory.gd" id="1_mh4ia"]
 [ext_resource type="PackedScene" uid="uid://3fur1h4sprjs" path="res://Gui/slot.tscn" id="2_p4sy3"]
 [ext_resource type="Theme" uid="uid://cq53lvjyrl8iq" path="res://Gui/Default.tscn.tres" id="4_u3ejq"]
 [ext_resource type="Theme" uid="uid://c2iwmviw26odh" path="res://Gui/Cancel.tres" id="5_6vw2s"]
+
 
 [node name="inventoryGui" type="Control"]
 custom_minimum_size = Vector2(225, 125)

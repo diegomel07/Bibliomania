@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpmqmcngfwfjt"]
 
 [ext_resource type="Script" path="res://Levels/titleScreen.gd" id="1_pvf5q"]
-[ext_resource type="Texture2D" uid="uid://c6sliun2h2b7c" path="res://Graphics/Tiles/TitleScreen/Background.png" id="2_uo8qm"]
 [ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="3_a4wxp"]
-[ext_resource type="Texture2D" uid="uid://cb7tu2xo06xe1" path="res://Graphics/Tiles/TitleScreen/Book.png" id="4_ty524"]
-[ext_resource type="AudioStream" uid="uid://h1lmhrktxjlf" path="res://Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3" id="5_oo1q6"]
+[ext_resource type="Texture2D" uid="uid://c6sliun2h2b7c" path="res://Assets/Graphics/Tiles/TitleScreen/Background.png" id="3_miygu"]
+[ext_resource type="Texture2D" uid="uid://cb7tu2xo06xe1" path="res://Assets/Graphics/Tiles/TitleScreen/Book.png" id="4_tyuev"]
+[ext_resource type="AudioStream" uid="uid://h1lmhrktxjlf" path="res://Assets/Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3" id="5_oo1q6"]
 
 [sub_resource type="Animation" id="Animation_ex0eq"]
 length = 0.001
@@ -89,12 +89,12 @@ rotation = 1.5708
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(160, 90)
 scale = Vector2(0.249781, 0.250556)
-texture = ExtResource("2_uo8qm")
+texture = ExtResource("3_miygu")
 
 [node name="Book" type="Sprite2D" parent="."]
 position = Vector2(160, 111)
 scale = Vector2(0.24, 0.24)
-texture = ExtResource("4_ty524")
+texture = ExtResource("4_tyuev")
 
 [node name="Settings" parent="." instance=ExtResource("3_a4wxp")]
 visible = false

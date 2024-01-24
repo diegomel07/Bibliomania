@@ -1,6 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://brgy3jj0ltf1v"]
 
-[ext_resource type="Texture2D" uid="uid://cibxg2wgcdmgi" path="res://Graphics/Sprites/SerpentAbove.png" id="1_uye64"]
+[ext_resource type="Texture2D" uid="uid://cibxg2wgcdmgi" path="res://Assets/Graphics/Sprites/SerpentAbove.png" id="1_uye64"]
+
 
 [sub_resource type="Animation" id="Animation_sdjhl"]
 length = 0.001

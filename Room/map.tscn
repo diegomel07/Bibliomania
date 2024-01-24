@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://ksglnjwhxn4m"]
 
-[ext_resource type="Texture2D" uid="uid://b6g4bof8m2cpp" path="res://Graphics/Tiles/Level/Map.png" id="1_fkh2r"]
+[ext_resource type="Texture2D" uid="uid://b6g4bof8m2cpp" path="res://Assets/Graphics/Tiles/Level/Map.png" id="1_fkh2r"]
 [ext_resource type="Script" path="res://Room/MarginContainer.gd" id="2_n6av2"]
+
 
 [node name="Map" type="CanvasLayer"]
 visible = false

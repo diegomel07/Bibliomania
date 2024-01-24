@@ -1,4 +1,4 @@
-res://Room/RoomBigSquare.tscn
+res://Characters/alice.tscn
 res://Collectables/gem.gd
 res://Gui/SettingsButton.tres
 res://Room/backgrounds/LevelTileSet.tres
@@ -11,5 +11,6 @@ res://Room/RoomSquare.tscn
 res://Room/RoomL.tscn
 res://Room/RoomInvertedL.tscn
 res://Room/RoomHorizontalRectangle.tscn
-res://Characters/alice.tscn
-res://Characters/alice.gd
+res://Room/RoomBigSquare.tscn
+res://Dialogues/balloon.tscn
+res://Dialogues/balloon.gd

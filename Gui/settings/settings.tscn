@@ -1,14 +1,15 @@
 [gd_scene load_steps=21 format=3 uid="uid://u5puilrv8ujx"]
 
 [ext_resource type="Script" path="res://Gui/settings/settings.gd" id="1_3onwa"]
-[ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Graphics/Tiles/Inventory/inventoryBackground.png" id="2_lvn78"]
+[ext_resource type="Texture2D" uid="uid://lbffwhyli3he" path="res://Assets/Graphics/Tiles/Inventory/inventoryBackground.png" id="2_lvn78"]
 [ext_resource type="Theme" uid="uid://b2uy6bnmbr7gi" path="res://Gui/SettingsButton.tres" id="3_aa24l"]
 [ext_resource type="FontFile" uid="uid://dxj8pl54pw24t" path="res://Gui/MinimalPixel v2.ttf" id="4_i6hkt"]
-[ext_resource type="Texture2D" uid="uid://djvbwvg7rq24l" path="res://Graphics/Sprites/Collectables/gem.png" id="4_rsmll"]
+[ext_resource type="Texture2D" uid="uid://djvbwvg7rq24l" path="res://Assets/Graphics/Sprites/Collectables/gem.png" id="4_rsmll"]
 [ext_resource type="Script" path="res://Gui/settings/MasterSlider.gd" id="5_6ih4m"]
-[ext_resource type="Texture2D" uid="uid://dbpp2jnd1u551" path="res://Graphics/Gui/GUIGlobal.png" id="5_66vnm"]
+[ext_resource type="Texture2D" uid="uid://dbpp2jnd1u551" path="res://Assets/Graphics/Gui/GUIGlobal.png" id="5_66vnm"]
 [ext_resource type="Script" path="res://Gui/settings/MusicSlider.gd" id="6_anup6"]
 [ext_resource type="Script" path="res://Gui/settings/SFXSlider.gd" id="7_bdfor"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4wmbf"]
 texture = ExtResource("5_66vnm")

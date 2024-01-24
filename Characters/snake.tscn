@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bm4n6y8pyvc6j"]
 
-[ext_resource type="Texture2D" uid="uid://c2xu43j5eurk6" path="res://Graphics/Sprites/SerpentBelow.png" id="1_1ij60"]
+[ext_resource type="Texture2D" uid="uid://c2xu43j5eurk6" path="res://Assets/Graphics/Sprites/SerpentBelow.png" id="1_1ij60"]
 [ext_resource type="Script" path="res://Characters/snake.gd" id="1_f651o"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txksp"]
 size = Vector2(20, 10)

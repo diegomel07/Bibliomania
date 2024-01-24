@@ -1,11 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://da27qttu4ut11"]
 
 [ext_resource type="Script" path="res://Levels/titleScreen.gd" id="1_1dhni"]
-[ext_resource type="Texture2D" uid="uid://c6sliun2h2b7c" path="res://Graphics/Tiles/TitleScreen/Background.png" id="2_d4s7q"]
-[ext_resource type="PackedScene" uid="uid://0lnrs5keqlct" path="res://Levels/settings.tscn" id="3_6jirm"]
+[ext_resource type="Texture2D" uid="uid://c6sliun2h2b7c" path="res://Assets/Graphics/Tiles/TitleScreen/Background.png" id="2_d4s7q"]
+[ext_resource type="PackedScene" path="res://Levels/settings.tscn" id="3_6jirm"]
 [ext_resource type="Script" path="res://Levels/CanvasLayer.gd" id="3_h4k3e"]
-[ext_resource type="Texture2D" uid="uid://cb7tu2xo06xe1" path="res://Graphics/Tiles/TitleScreen/Book.png" id="3_ivar0"]
-[ext_resource type="AudioStream" uid="uid://h1lmhrktxjlf" path="res://Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3" id="4_p2oc0"]
+[ext_resource type="Texture2D" uid="uid://cb7tu2xo06xe1" path="res://Assets/Graphics/Tiles/TitleScreen/Book.png" id="3_ivar0"]
+[ext_resource type="AudioStream" uid="uid://h1lmhrktxjlf" path="res://Assets/Music/y2mate.com - Castlevania SOTN Dance of Pales.mp3" id="4_p2oc0"]
+
 
 [sub_resource type="Animation" id="Animation_ex0eq"]
 length = 0.001

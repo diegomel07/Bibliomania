@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://dq26a4yywyp17"]
 
 [ext_resource type="Script" path="res://Characters/alice.gd" id="1_aft4l"]
-[ext_resource type="Texture2D" uid="uid://0tvti2x5qv7r" path="res://Graphics/Sprites/animations_Alice-Sheet.png" id="1_rjrgr"]
+[ext_resource type="Texture2D" uid="uid://0tvti2x5qv7r" path="res://Assets/Graphics/Sprites/animations_Alice-Sheet.png" id="1_rjrgr"]
 [ext_resource type="Resource" uid="uid://j8helsth2xy2" path="res://Inventory/playerInventory.tres" id="2_1xam4"]
-[ext_resource type="Texture2D" uid="uid://0y817o3ukqmy" path="res://Graphics/Sprites/AttackAnimations.png" id="4_5n06f"]
+[ext_resource type="Texture2D" uid="uid://0y817o3ukqmy" path="res://Assets/Graphics/Sprites/AttackAnimations.png" id="4_5n06f"]
 
 [sub_resource type="Animation" id="Animation_pkc8e"]
 length = 0.001

@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://ylid3q5usvcc"]
 
-[ext_resource type="Texture2D" uid="uid://lyg5q5eonfwi" path="res://Graphics/Tiles/Base/base_tileset.png" id="1_e5byf"]
+[ext_resource type="Texture2D" uid="uid://lyg5q5eonfwi" path="res://Assets/Graphics/Tiles/Base/base_tileset.png" id="1_e5byf"]
 [ext_resource type="Script" path="res://Levels/base.gd" id="1_yp154"]
 [ext_resource type="PackedScene" uid="uid://dq26a4yywyp17" path="res://Characters/alice.tscn" id="2_jtcvw"]
 [ext_resource type="PackedScene" uid="uid://cy6lc2wh4bjy" path="res://Objects/Door.tscn" id="2_sqwrr"]
@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://brgy3jj0ltf1v" path="res://Characters/snake02.tscn" id="4_fmv4c"]
 [ext_resource type="PackedScene" uid="uid://c7v2hbfbx14cy" path="res://Objects/door02.tscn" id="5_ocljt"]
 [ext_resource type="PackedScene" uid="uid://bm4n6y8pyvc6j" path="res://Characters/snake.tscn" id="6_7fhrx"]
-[ext_resource type="Texture2D" uid="uid://bhit0fk5icq60" path="res://Graphics/lights/circle.png" id="8_7n57p"]
+[ext_resource type="Texture2D" uid="uid://bhit0fk5icq60" path="res://Assets/Graphics/lights/circle.png" id="8_7n57p"]
 [ext_resource type="Script" path="res://Gui/CanvasLayer.gd" id="8_c1cpp"]
 [ext_resource type="PackedScene" uid="uid://bd80li557mpc7" path="res://Gui/inventory.tscn" id="8_pddqf"]
 [ext_resource type="PackedScene" uid="uid://xrhi4ix1qfs6" path="res://Collectables/gem.tscn" id="10_jr153"]
 [ext_resource type="PackedScene" uid="uid://u5puilrv8ujx" path="res://Gui/settings/settings.tscn" id="13_fdoga"]
-[ext_resource type="AudioStream" uid="uid://dne7msl56aw6a" path="res://Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3" id="13_uss0v"]
+[ext_resource type="AudioStream" uid="uid://dne7msl56aw6a" path="res://Assets/Music/the neighbourhood - the beach (instrumental, slowed & muffled ).mp3" id="13_uss0v"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2fbw"]
 texture = ExtResource("1_e5byf")
